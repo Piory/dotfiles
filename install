@@ -1,0 +1,22 @@
+#!/bin/bash
+NEOVIM_CONFIG_PATH='~/.config/nvim'
+
+set -eu
+
+if !(type 'nvim' > /dev/null 2>&1); then
+  echo '######################################'
+  echo '##          Install neovim          ##'
+  echo '######################################'
+  brew install nvim
+fi
+
+echo '######################################'
+echo '##       Setup neovim config        ##'
+echo '######################################'
+echo "Make diresctory ${NEOVIM_CONFIG_PATH}"
+mkdir -p "$NEOVIM_CONFIG_PATH"
+echo 'Copy neovim config'
+## cp -r -f init.lua lua $NEOVIM_CONFIG_PATH
+cp -Rf ./* "$NEOVIM_CONFIG_PATH"
+
+echo 'Neovim install completed!!!'
