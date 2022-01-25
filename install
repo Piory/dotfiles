@@ -1,5 +1,8 @@
 #!/bin/bash
-NEOVIM_CONFIG_PATH='~/.config/nvim'
+NEOVIM_CONFIG_PATH="$HOME/.config/nvim"
+PACKER_NVIM_INSTALL_PATH="$HOME/.local/share/nvim/site/pack/packer/opt/packer.nvim"
+
+echo 'Start install neovim!!!'
 
 set -eu
 
@@ -10,13 +13,22 @@ if !(type 'nvim' > /dev/null 2>&1); then
   brew install nvim
 fi
 
+if [ ! -e $PACKER_NVIM_INSTALL_PATH ]; then
+  echo ''
+  echo '######################################'
+  echo '##       Install packer.nvim        ##'
+  echo '######################################'
+  git clone https://github.com/wbthomason/packer.nvim $PACKER_NVIM_INSTALL_PATH
+fi
+
+echo ''
 echo '######################################'
 echo '##       Setup neovim config        ##'
 echo '######################################'
 echo "Make diresctory ${NEOVIM_CONFIG_PATH}"
-mkdir -p "$NEOVIM_CONFIG_PATH"
+rm -fr $NEOVIM_CONFIG_PATH
+mkdir -p $NEOVIM_CONFIG_PATH
 echo 'Copy neovim config'
-## cp -r -f init.lua lua $NEOVIM_CONFIG_PATH
-cp -Rf ./* "$NEOVIM_CONFIG_PATH"
+cp -Rf ./* $NEOVIM_CONFIG_PATH
 
 echo 'Neovim install completed!!!'
