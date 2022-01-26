@@ -1,0 +1,17 @@
+|coc|file
+|nvim|file
+z|zsh|file
+bi|bin|file
+us|usr|file
+coma|command|around
+lua|lua|buffer
+LU|LUA_LANGUAGE_SERVER_INSTALL_PATH|around
+LUA|LUA_LANGUAGE_SERVER_INSTALL_PATH|around
+ser|server|around
+ln|language|around
+sh|share|file
+la|language|around
+lua|lua|around
+Insta|Install|around
+|share|file
+firebas|FirebaseAuthService|tsserver-typescript

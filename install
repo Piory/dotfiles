@@ -1,25 +1,87 @@
-#!/bin/bash
+#!/bin/zsh
+
 NEOVIM_CONFIG_PATH="$HOME/.config/nvim"
 PACKER_NVIM_INSTALL_PATH="$HOME/.local/share/nvim/site/pack/packer/opt/packer.nvim"
+HOMEBREW_DEPENDENCIES=(nvim nodebrew, anyenv)
+NODE_VERSION='16.13.2'
+LUA_LANGUAGE_SERVER_INSTALL_PATH="$HOME/.local/share/lua-language-server"
 
 echo 'Start install neovim!!!'
 
 set -eu
 
-if !(type 'nvim' > /dev/null 2>&1); then
-  echo '######################################'
-  echo '##          Install neovim          ##'
-  echo '######################################'
-  brew install nvim
+echo ''
+echo '######################################'
+echo '##       Install dependencies       ##'
+echo '######################################'
+for dependencie in "${HOMEBREW_DEPENDENCIES[@]}"
+do
+  if ! existsCommand() { $dependencie }; then
+    echo "Install $dependencie"
+    brew install $dependencie
+  else
+    echo "Installed $dependencie"
+  fi
+done
+
+echo ''
+echo '######################################'
+echo '##          Install nodenv          ##'
+echo '######################################'
+if ! existsCommand() { nodenv }; then
+  echo 'Install nodenv'
+  anyenv install nodenv
+else
+  echo 'Installed nodenv'
 fi
 
-if [ ! -e $PACKER_NVIM_INSTALL_PATH ]; then
-  echo ''
-  echo '######################################'
-  echo '##       Install packer.nvim        ##'
-  echo '######################################'
-  git clone https://github.com/wbthomason/packer.nvim $PACKER_NVIM_INSTALL_PATH
+echo ''
+echo '######################################'
+echo '##           Install node           ##'
+echo '######################################'
+if ! existsCommand() { node }; then
+  echo "Install node version is $NODE_VERSION"
+  nodenv install $NODE_VERSION
+  nodenv rehash
+  nodenv global $NODE_VERSION
+else
+  echo "Installed node (version: $(node -v))"
 fi
+
+# パスが通らない場合は下記を ~/.zshrc に追記`
+# export PATH=$PATH:`npm bin -g`
+echo ''
+echo '######################################'
+echo '##           Install yarn           ##'
+echo '######################################'
+if ! existsCommand() { yarn }; then
+  echo "Install yarn"
+  npm install -g yarn
+else
+  echo 'Installed yarn'
+fi
+
+echo ''
+echo '######################################'
+echo '##       Install packer.nvim        ##'
+echo '######################################'
+if [[ ! -e $PACKER_NVIM_INSTALL_PATH ]] then
+  echo 'Install packer.nvim'
+  git clone https://github.com/wbthomason/packer.nvim $PACKER_NVIM_INSTALL_PATH
+else
+  echo 'Installed packer.nvim'
+fi
+
+echo ''
+echo '######################################'
+echo '##           Install LSP            ##'
+echo '######################################'
+# if [[! -e $LUA_LANGUAGE_SERVER_INSTALL_PATH ]] then
+#   echo 'Install lua-language-server'
+#   git clone https://github.com/sumneko/lua-language-server $LUA_LANGUAGE_SERVER_INSTALL_PATH
+# else
+#   echo 'Installed lua-language-server'
+# fi
 
 echo ''
 echo '######################################'
@@ -29,6 +91,10 @@ echo "Make diresctory ${NEOVIM_CONFIG_PATH}"
 rm -fr $NEOVIM_CONFIG_PATH
 mkdir -p $NEOVIM_CONFIG_PATH
 echo 'Copy neovim config'
-cp -Rf ./* $NEOVIM_CONFIG_PATH
+cp -Rf 'init.lua' 'lua' $NEOVIM_CONFIG_PATH
 
 echo 'Neovim install completed!!!'
+
+existsCommand() {
+  builtin command -v $1 > /dev/null
+}
