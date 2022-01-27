@@ -1,14 +1,37 @@
 #!/bin/zsh
 
 NEOVIM_CONFIG_PATH="$HOME/.config/nvim"
-PACKER_NVIM_INSTALL_PATH="$HOME/.local/share/nvim/site/pack/packer/opt/packer.nvim"
+DEIN_VIM_INSTALL_PATH="$HOME/.cache/dein"
 HOMEBREW_DEPENDENCIES=(nvim anyenv)
 NODE_VERSION='16.13.2'
-LUA_LANGUAGE_SERVER_INSTALL_PATH="$HOME/.local/share/lua-language-server"
 
 echo 'Start install neovim!!!'
 
-set -eu
+echo ''
+echo '#####################################'
+echo '##       Setup neovim config        ##'
+echo '######################################'
+echo "Make diresctory ${NEOVIM_CONFIG_PATH}"
+rm -fr $NEOVIM_CONFIG_PATH
+mkdir -p $NEOVIM_CONFIG_PATH
+echo 'Copy neovim config'
+cp -Rf init.vim init dein $NEOVIM_CONFIG_PATH
+
+echo ''
+echo '######################################'
+echo '##           Install dein           ##'
+echo '######################################'
+if [[ ! -e $DEIN_VIM_INSTALL_PATH/repos ]] then
+  installer_sh_path=./installer.sh
+  echo 'Download dein.vim'
+  curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > $installer_sh_path
+  echo 'Install dein.vim'
+  sh $installer_sh_path $DEIN_VIM_INSTALL_PATH
+  rm $installer_sh_path
+  echo 'Done'
+else
+  echo 'Installed dein.vim'
+fi
 
 echo ''
 echo '######################################'
@@ -19,7 +42,15 @@ do
   if ! builtin command -v $dependencie > /dev/null; then
     echo "Install $dependencie"
     brew install $dependencie
-    if [[ $($dependencie == 'anyenv') ]] then
+    brew cleanup $dependencie
+    if $dependencie == 'anyenv'; then
+      # コケたら以下を実行してみる
+      # zsh にパスを通す
+      # $ echo 'eval "$(anyenv init -)"' >> ~/.zshrc
+      # # anyenv の初期化
+      # $ annyenv init
+      # シェルを再起動
+      # $ exec $SHELL -l
       echo "Initialize $dependncie"
       yes | anyenv install --init
       source ~/.zshrc
@@ -40,18 +71,18 @@ else
   echo 'Installed nodenv'
 fi
 
-# echo ''
-# echo '######################################'
-# echo '##           Install node           ##'
-# echo '######################################'
-# if ! builtin command -v node > /dev/null; then
-#   echo "Install node version is $NODE_VERSION"
-#   yes | nodenv install $NODE_VERSION
-#   nodenv rehash
-#   nodenv global $NODE_VERSION
-# else
-#   echo "Installed node (version: $(node -v))"
-# fi
+echo ''
+echo '######################################'
+echo '##           Install node           ##'
+echo '######################################'
+if ! builtin command -v node > /dev/null; then
+  echo "Install node version is $NODE_VERSION"
+  yes | nodenv install $NODE_VERSION
+  nodenv rehash
+  nodenv global $NODE_VERSION
+else
+  echo "Installed node (version: $(node -v))"
+fi
 
 echo ''
 echo '######################################'
@@ -66,36 +97,5 @@ else
   echo 'Installed yarn'
 fi
 
-echo ''
-echo '######################################'
-echo '##       Install packer.nvim        ##'
-echo '######################################'
-if [[ ! -e $PACKER_NVIM_INSTALL_PATH ]] then
-  echo 'Install packer.nvim'
-  git clone https://github.com/wbthomason/packer.nvim $PACKER_NVIM_INSTALL_PATH
-else
-  echo 'Installed packer.nvim'
-fi
-
-echo ''
-echo '######################################'
-echo '##           Install LSP            ##'
-echo '######################################'
-if [[ ! -e $LUA_LANGUAGE_SERVER_INSTALL_PATH ]] then
-  echo 'Install lua-language-server'
-  git clone https://github.com/sumneko/lua-language-server $LUA_LANGUAGE_SERVER_INSTALL_PATH
-else
-  echo 'Installed lua-language-server'
-fi
-
-echo ''
-echo '######################################'
-echo '##       Setup neovim config        ##'
-echo '######################################'
-echo "Make diresctory ${NEOVIM_CONFIG_PATH}"
-rm -fr $NEOVIM_CONFIG_PATH
-mkdir -p $NEOVIM_CONFIG_PATH
-echo 'Copy neovim config'
-cp -Rf 'init.lua' 'lua' $NEOVIM_CONFIG_PATH
 
 echo 'Neovim install completed!!!'

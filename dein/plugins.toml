@@ -1,0 +1,29 @@
+[[plugins]]
+repo = 'junegunn/zf'
+build_on = '''
+./install -all
+'''
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+
+# ヘルプ日本語化
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+
+# Google 翻訳
+[[plugins]]
+repo = 'skanehira/translate.vim'
+
+# LSP
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+build = './install.sh nightly'
+hook_add = '''
+  let g:coc_global_extensions = [
+    \'coc-word',
+    \'coc-json',
+    \'coc-tsserver',
+    \'coc-java',
+  \]
+'''

@@ -1,0 +1,7 @@
+# dein本体
+[[plugins]]
+repo = 'hougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
