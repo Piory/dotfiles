@@ -48,6 +48,18 @@ hook_add = '''
 '''
 ###########################
 
+###### ファイル表示 ######
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+[[plugins]]
+repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+[[plugins]]
+repo = 'Xuyuanp/nerdtree-git-plugin'
 
 ###### syntax highlight ######
 [[plugins]]

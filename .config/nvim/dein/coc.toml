@@ -7,6 +7,9 @@ hook_add = '''
     \'coc-json',
     \'coc-tsserver',
     \'coc-java',
+    \'coc-sql',
+    \'coc-eslint',
+    \'coc-prettier',
   \]
 '''
 # hook_source = 'call config#init#coc#hook_source()'
