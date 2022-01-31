@@ -1,5 +1,6 @@
 #!/bin/zsh
 
+CONFIG_PATH="$HOME/.config"
 NEOVIM_CONFIG_PATH="$HOME/.config/nvim"
 DEIN_VIM_INSTALL_PATH="$HOME/.cache/dein"
 HOMEBREW_DEPENDENCIES=(nvim anyenv)
@@ -11,11 +12,7 @@ echo ''
 echo '#####################################'
 echo '##       Setup neovim config        ##'
 echo '######################################'
-echo "Make diresctory ${NEOVIM_CONFIG_PATH}"
-rm -fr $NEOVIM_CONFIG_PATH
-mkdir -p $NEOVIM_CONFIG_PATH
-echo 'Copy neovim config'
-cp -Rf init.vim coc-settings.json init dein colors $NEOVIM_CONFIG_PATH
+ln -fs $(pwd)/.config/nvim $CONFIG_PATH
 
 echo ''
 echo '######################################'
