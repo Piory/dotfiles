@@ -1,0 +1,21 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "tsserver.formatOnType": true,
+  "coc.preferences.formatOnType": true,
+  "javascript.suggest.autoImports": true, 
+  "typescript.suggest.autoImports": true,
+  "java.enabled": true,
+  "java.home":"/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home",
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-11",
+      "path": "/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home",
+      "default": true
+    }
+  ]
+}

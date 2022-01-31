@@ -1,0 +1,60 @@
+[[plugins]]
+repo = 'junegunn/zf'
+build_on = '''
+./install -all
+'''
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+
+###### ヘルプ日本語化 ######
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+
+###### Google 翻訳 ######
+[[plugins]]
+repo = 'skanehira/translate.vim'
+
+###### Color Theme ######
+[[plugins]]
+repo = 'ayu-theme/ayu-vim'
+hook_add = '''
+  let ayucolor = "dark"
+  colorscheme ayu
+'''
+
+###### ステータスライン/タブライン ######
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+###### 色の表示 ######
+[[plugins]]
+repo = 'lilydjwg/colorizer'
+
+###### ファイル検索 ######
+[[plugins]]
+repo = 'junegunn/fzf'
+build = './install --bin'
+merged = '0'
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = 'fzf'
+hook_add = '''
+  command! -bang -nargs=* Rg
+    \ call fzf#vim#grep(
+    \   'rg --line-number --no-heading '.shellescape(<q-args>), 0,
+    \   fzf#vim#with_preview({'options': '--exact --reverse'}, 'right:50%:wrap'))
+'''
+###########################
+
+
+###### syntax highlight ######
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+
+[[plugins]]
+repo = 'luochen1990/rainbow'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'

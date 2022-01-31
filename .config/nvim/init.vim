@@ -1,4 +1,6 @@
 runtime! init/*.vim
+runtime! dein/*.vim
+runtime! colors/*.vim
 
 "dein Scripts-----------------------------
 if &compatible
@@ -17,6 +19,7 @@ call dein#add("$HOME/.cache/dein/repos/github.com/Shougo/dein.vim")
 
 " 自分で追加したやつ
 call dein#load_toml('$HOME/.config/nvim/dein/plugins.toml', {'lazy': 0})
+call dein#load_toml('$HOME/.config/nvim/dein/coc.toml', {'lazy': 0})
 call dein#load_toml('$HOME/.config/nvim/dein/plugins_lazy.toml', {'lazy': 1})
 
 " Add or remove your plugins here like this:
@@ -35,4 +38,18 @@ if dein#check_install()
   call dein#install()
 endif
 
+call map(dein#check_clean(), "delete(v:val, 'rf')")
+
 "End dein Scripts-------------------------
+
+" lua <<EOF
+"  require'nvim-treesitter.configs'.setup {
+"    highlight = {
+"      enable = true,
+"    },
+"    indent = {
+"      enable = true,
+"    },
+"    ensure_installed = 'maintained'
+"  }
+"  EOF

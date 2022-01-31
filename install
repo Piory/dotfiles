@@ -15,7 +15,7 @@ echo "Make diresctory ${NEOVIM_CONFIG_PATH}"
 rm -fr $NEOVIM_CONFIG_PATH
 mkdir -p $NEOVIM_CONFIG_PATH
 echo 'Copy neovim config'
-cp -Rf init.vim init dein $NEOVIM_CONFIG_PATH
+cp -Rf init.vim coc-settings.json init dein colors $NEOVIM_CONFIG_PATH
 
 echo ''
 echo '######################################'
