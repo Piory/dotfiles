@@ -23,6 +23,8 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 ################### 自分で設定したやつ ###################
+export PATH="$HOME/.local/bin/:$PATH"
+export PATH=/opt/homebrew/bin:$PATH
 
 # peco
 ## コマンドの履歴をみるやつ ##
@@ -51,7 +53,6 @@ zle -N peco-src
 bindkey '^]' peco-src
 
 ## エイリアス
-alias vi='nvim'
 alias vim='nvim'
 
 eval "$(anyenv init -)"
