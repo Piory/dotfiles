@@ -49,3 +49,6 @@ lua <<EOF
    ensure_installed = 'maintained'
  }
 EOF
+
+colorscheme iceberg
+set bg=dark

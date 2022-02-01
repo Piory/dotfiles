@@ -17,11 +17,7 @@ repo = 'skanehira/translate.vim'
 
 ###### Color Theme ######
 [[plugins]]
-repo = 'ayu-theme/ayu-vim'
-hook_add = '''
-  let ayucolor = "dark"
-  colorscheme ayu
-'''
+repo = 'cocopon/iceberg.vim'
 
 ###### ステータスライン/タブライン ######
 [[plugins]]
