@@ -19,6 +19,9 @@ repo = 'skanehira/translate.vim'
 [[plugins]]
 repo = 'cocopon/iceberg.vim'
 
+[[plugins]]
+repo = 'bluz71/vim-nightfly-guicolors'
+
 ###### ステータスライン/タブライン ######
 [[plugins]]
 repo = 'itchyny/lightline.vim'

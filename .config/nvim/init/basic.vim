@@ -11,7 +11,10 @@ scriptencoding utf-8
 set number
 
 " 透過率の設定
-set pumblend=10
+" set pumblend=10
+
+" termguicolors を使えるようにする
+set termguicolors
 
 " ヤンクするとクリップボードに保存される
 set clipboard+=unnamed

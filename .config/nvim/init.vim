@@ -50,5 +50,6 @@ lua <<EOF
  }
 EOF
 
-colorscheme iceberg
-set bg=dark
+colorscheme nightfly
+
+let g:dein#auto_recache = 1
