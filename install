@@ -3,16 +3,34 @@
 CONFIG_PATH="$HOME/.config"
 NEOVIM_CONFIG_PATH="$HOME/.config/nvim"
 DEIN_VIM_INSTALL_PATH="$HOME/.cache/dein"
-HOMEBREW_DEPENDENCIES=(nvim anyenv)
 NODE_VERSION='16.13.2'
+CURRENT_DIRECTORY=$(pwd)
 
+# add submodule
+git submodule update --init --recursive
 echo 'Start install neovim!!!'
 
 echo ''
-echo '#####################################'
+echo '######################################'
 echo '##       Setup neovim config        ##'
 echo '######################################'
-ln -fs $(pwd)/.config/nvim $CONFIG_PATH
+# Prezto
+setopt EXTENDED_GLOB
+for rcfile in $CURRENT_DIRECTORY/.zprezto/runcoms/^README.md(.N); do
+  echo "Create symbolic link ["${ZDOTDIR:-$HOME}/.${rcfile:t}" -> $rcfile]]"
+  ln -fs "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
+
+echo "Create symbolic link [$CONFIG_PATH/nvim -> $CURRENT_DIRECTORY/.config/nvim]"
+ln -fs $CURRENT_DIRECTORY/.config/nvim $CONFIG_PATH
+dotfiles=(.zprezto .zshrc .zpreztorc .p10k.zsh)
+for file in $dotfiles; do
+  echo "Create symbolic link [${ZDOTDIR:-$HOME}/$file -> $CURRENT_DIRECTORY/$file]"
+  ln -fs $CURRENT_DIRECTORY/$file ${ZDOTDIR:-$HOME}
+done
+
+source $CURRENT_DIRECTORY/.zshrc
+source $CURRENT_DIRECTORY/.zpreztorc
 
 echo ''
 echo '######################################'
@@ -29,33 +47,6 @@ if [[ ! -e $DEIN_VIM_INSTALL_PATH/repos ]] then
 else
   echo 'Installed dein.vim'
 fi
-
-echo ''
-echo '######################################'
-echo '##       Install dependencies       ##'
-echo '######################################'
-for dependencie in "${HOMEBREW_DEPENDENCIES[@]}"
-do
-  if ! builtin command -v $dependencie > /dev/null; then
-    echo "Install $dependencie"
-    brew install $dependencie
-    brew cleanup $dependencie
-    if $dependencie == 'anyenv'; then
-      # コケたら以下を実行してみる
-      # zsh にパスを通す
-      # $ echo 'eval "$(anyenv init -)"' >> ~/.zshrc
-      # # anyenv の初期化
-      # $ annyenv init
-      # シェルを再起動
-      # $ exec $SHELL -l
-      echo "Initialize $dependncie"
-      yes | anyenv install --init
-      source ~/.zshrc
-    fi
-  else
-    echo "Installed $dependencie"
-  fi
-done
 
 echo ''
 echo '######################################'
