@@ -29,3 +29,5 @@ nnoremap sv :<C-u>vs<CR><C-w>l
 
 " ファイル検索
 nnoremap <Leader>f :FZF<CR>
+" ファインダー表示
+nnoremap <Space>f :NERDTree<CR>
