@@ -10,6 +10,7 @@ brew "nvim"
 brew "neovim"
 brew "peco"
 brew "tig"
+brew "tmux"
 
 cask "1password"
 cask "appcleaner"
