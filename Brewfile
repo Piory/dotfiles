@@ -10,6 +10,7 @@ brew "nvim"
 brew "neovim"
 brew "peco"
 brew "tig"
+brew "fzf"
 brew "tmux"
 brew "lazygit"
 
