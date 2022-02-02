@@ -28,10 +28,10 @@ module.exports = {
     // set to `true` (without backticks and without quotes) for blinking cursor
     cursorBlink: false,
     // color of the text
-    foregroundColor: "#fff",
+    foregroundColor: "#acb4c2",
     // terminal background color
     // opacity is only supported on macOS
-    backgroundColor: "#000",
+    backgroundColor: "#011627",
     // terminal selection color
     selectionColor: "rgba(248,28,229,0.3)",
     // border color (window, tabs)
@@ -55,22 +55,22 @@ module.exports = {
     // including the 6 x 6 color cubes and the grayscale map, just provide
     // an array here instead of a color map object
     colors: {
-      black: "#000000",
-      red: "#C51E14",
-      green: "#1DC121",
-      yellow: "#C7C329",
-      blue: "#0A2FC4",
-      magenta: "#C839C5",
-      cyan: "#20C5C6",
-      white: "#C7C7C7",
-      lightBlack: "#686868",
-      lightRed: "#FD6F6B",
-      lightGreen: "#67F86F",
-      lightYellow: "#FFFA72",
-      lightBlue: "#6A76FB",
-      lightMagenta: "#FD7CFC",
-      lightCyan: "#68FDFE",
-      lightWhite: "#FFFFFF",
+      black: "#1d3b53",
+      red: "#fc514e",
+      green: "#a1cd5e",
+      yellow: "#e3d18a",
+      blue: "#82aaff",
+      magenta: "#c792ea",
+      cyan: "#7fdbca",
+      white: "#a1aab8",
+      lightBlack: "#7c8f8f",
+      lightRed: "#ff5874",
+      lightGreen: "#21c7a8",
+      lightYellow: "#ecc48d",
+      lightBlue: "#82aaff",
+      lightMagenta: "#ae81ff",
+      lightCyan: "#7fdbca",
+      lightWhite: "#d6deeb",
       limeGreen: "#32CD32",
       lightCoral: "#F08080",
     },
