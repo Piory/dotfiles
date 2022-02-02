@@ -10,6 +10,7 @@ which brew >/dev/null 2>&1 && brew update
 
 echo "ok. run brew upgrade ..."
 brew upgrade
+brew upgrade --cask --greedy
 
 brew bundle
 
