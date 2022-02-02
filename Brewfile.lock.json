@@ -8,7 +8,7 @@
         "revision": "73fa651607bf2a3815de9faa836123c35eb17cae"
       },
       "homebrew/core": {
-        "revision": "6410c12ed2f6bdfee5830af5b44761a614ef155d"
+        "revision": "57c46c836fb8df3e1e882a7a547e1003b820dbb1"
       }
     },
     "brew": {
@@ -506,7 +506,7 @@
         }
       },
       "karabiner-elements": {
-        "version": "13.7.0",
+        "version": "14.3.0",
         "options": {
           "full_name": "karabiner-elements"
         }
@@ -522,6 +522,12 @@
         "options": {
           "full_name": "visual-studio-code"
         }
+      },
+      "hyper": {
+        "version": "3.1.5",
+        "options": {
+          "full_name": "hyper"
+        }
       }
     }
   },
@@ -534,6 +540,14 @@
         "CLT": "12.0.0.32.29",
         "Xcode": "12.4",
         "macOS": "10.15.7"
+      },
+      "monterey": {
+        "HOMEBREW_VERSION": "3.3.13",
+        "HOMEBREW_PREFIX": "/opt/homebrew",
+        "Homebrew/homebrew-core": "57c46c836fb8df3e1e882a7a547e1003b820dbb1",
+        "CLT": "13.2.0.0.1.1638488800",
+        "Xcode": "13.1",
+        "macOS": "12.1"
       }
     }
   }
