@@ -11,6 +11,7 @@ brew "neovim"
 brew "peco"
 brew "tig"
 brew "tmux"
+brew "lazygit"
 
 cask "1password"
 cask "appcleaner"
