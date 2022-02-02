@@ -10,6 +10,9 @@ scriptencoding utf-8
 " 行番号を表示
 set number
 
+" 画面端で折り返しを行わない
+set nowrap
+
 " 透過率の設定
 " set pumblend=10
 
