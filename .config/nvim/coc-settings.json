@@ -17,5 +17,10 @@
       "path": "/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home",
       "default": true
     }
+  ],
+  "java.imports.gradle.wrapper.checksums": [
+    {
+      "sha256": "96a2ece710bef2f8a4aaf57151d062e3150b724304c8436f681fcb0ccb59dbb4",                                                                   "allowed": true
+    }
   ]
 }
