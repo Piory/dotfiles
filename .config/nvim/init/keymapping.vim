@@ -28,6 +28,6 @@ nnoremap ss :<C-u>sp<CR><C-w>j
 nnoremap sv :<C-u>vs<CR><C-w>l
 
 " ファイル検索
-nnoremap <Leader>f :FZF<CR>
+nnoremap ff :FZF<CR>
 " ファインダー表示
-nnoremap <Space>f :NERDTree<CR>
+nnoremap <Space>f :NERDTreeToggle<CR>
