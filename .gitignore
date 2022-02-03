@@ -4,3 +4,6 @@
 # tpm 関連
 .tmux/plugins/*
 !.tmux/plugins/tpm
+
+# Brew
+Brewfile.lock.json
