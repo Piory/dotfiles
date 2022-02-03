@@ -47,6 +47,10 @@ hook_add = '''
 '''
 ###########################
 
+###### 自動保存 ######
+[[plugins]]
+repo = '907th/vim-auto-save'
+
 ###### ファイル表示 ######
 [[plugins]]
 repo = 'scrooloose/nerdtree'
