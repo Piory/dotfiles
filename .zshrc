@@ -59,7 +59,6 @@ eval "$(anyenv init -)"
 
 export PATH=$PATH:`npm bin -g`
 export TERM=xterm-256color
-##########################################################
 
 ## PC 毎の固有の設定
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
