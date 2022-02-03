@@ -20,9 +20,10 @@ module.exports = {
     // letter spacing as a relative unit
     letterSpacing: 0,
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
-    cursorColor: "rgba(248,28,229,0.8)",
+    // cursorColor: "rgba(248,28,229,0.8)",
+    cursorColor: "rgba(100,255,50,0.8)",
     // terminal text color under BLOCK cursor
-    cursorAccentColor: "#000",
+    cursorAccentColor: "#011627",
     // `'BEAM'` for |, `'UNDERLINE'` for _, `'BLOCK'` for █
     cursorShape: "BLOCK",
     // set to `true` (without backticks and without quotes) for blinking cursor
@@ -50,7 +51,7 @@ module.exports = {
     // default: `true` (without backticks and without quotes) on Windows and Linux, ignored on macOS
     showWindowControls: "",
     // custom padding (CSS format, i.e.: `top right bottom left`)
-    padding: "12px 14px",
+    padding: "0px 4px",
     // the full list. if you're going to provide the full color palette,
     // including the 6 x 6 color cubes and the grayscale map, just provide
     // an array here instead of a color map object
@@ -134,6 +135,7 @@ module.exports = {
     hyperBorder: {
       // borderColors: ["random", "random"],
       borderWidth: "2px",
+      borderRadiusInner: "4px",
       animate: true,
       duration: "9000",
       borderAngle: "180deg",
