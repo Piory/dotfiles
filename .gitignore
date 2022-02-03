@@ -1,2 +1,8 @@
 .DS_Store
+
+# tmux のセッションデータ
 .tmux/resurrect
+
+# tpm 関連
+.tmux/plugins/*
+!.tmux/plugins/tpm
