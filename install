@@ -23,10 +23,10 @@ done
 
 echo "Create symbolic link [$CONFIG_PATH/nvim -> $CURRENT_DIRECTORY/.config/nvim]"
 ln -fs $CURRENT_DIRECTORY/.config/nvim $CONFIG_PATH
-dotfiles=(.zprezto .zshrc .zpreztorc .p10k.zsh .tmux.conf .hyper.js .zprofile)
+dotfiles=(.zprezto .zshrc .zpreztorc .zprofile .p10k.zsh .tmux.conf .tmux .hyper.js)
 for file in $dotfiles; do
   echo "Create symbolic link [${ZDOTDIR:-$HOME}/$file -> $CURRENT_DIRECTORY/$file]"
-  ln -fs $CURRENT_DIRECTORY/$file ${ZDOTDIR:-$HOME}/$file
+  ln -fs $CURRENT_DIRECTORY/$file ${ZDOTDIR:-$HOME}
 done
 
 source $CURRENT_DIRECTORY/.zshrc
