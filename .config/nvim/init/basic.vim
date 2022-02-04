@@ -13,8 +13,8 @@ set number
 " 画面端で折り返しを行わない
 set nowrap
 
-" 透過率の設定
-" set pumblend=10
+" スワップファイルを作成しない
+set noswapfile
 
 " termguicolors を使えるようにする
 set termguicolors
