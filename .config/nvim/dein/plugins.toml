@@ -1,9 +1,3 @@
-[[plugins]]
-repo = 'junegunn/zf'
-build_on = '''
-./install -all
-'''
-
 ###### ヘルプ日本語化 ######
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'
