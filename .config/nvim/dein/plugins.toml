@@ -11,6 +11,10 @@ repo = 'junegunn/fzf.vim'
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'
 
+###### ウィンドウサイズ変更 ######
+[[plugins]]
+repo = 'simeji/winresizer'
+
 ###### Google 翻訳 ######
 [[plugins]]
 repo = 'skanehira/translate.vim'
@@ -47,6 +51,10 @@ hook_add = '''
 '''
 ###########################
 
+###### git の差分がある行を表示 ######
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
 ###### 自動保存 ######
 [[plugins]]
 repo = '907th/vim-auto-save'
@@ -70,6 +78,3 @@ repo = 'nvim-treesitter/nvim-treesitter'
 
 [[plugins]]
 repo = 'luochen1990/rainbow'
-
-[[plugins]]
-repo = 'airblade/vim-gitgutter'
