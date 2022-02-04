@@ -1,7 +1,3 @@
-runtime! init/*.vim
-runtime! dein/*.vim
-runtime! colors/*.vim
-
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
@@ -33,6 +29,10 @@ endif
 call map(dein#check_clean(), "delete(v:val, 'rf')")
 
 "End dein Scripts-------------------------
+
+runtime! init/*.vim
+runtime! dein/*.vim
+runtime! colors/*.vim
 
 lua <<EOF
  require'nvim-treesitter.configs'.setup {
