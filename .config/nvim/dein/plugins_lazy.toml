@@ -1,4 +1,4 @@
-# dein本体
+###### dein 本体 ######
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
@@ -6,5 +6,11 @@ repo = 'Shougo/dein.vim'
 repo = 'Shougo/vimproc.vim'
 build = 'make'
 
+###### カレンダー ######
 [[plugins]]
 repo = 'itchyny/calendar.vim'
+
+###### タブのアイコンを表示したりするやつ ######
+[[plugins]]
+repo = 'romgrk/barbar.nvim'
+
