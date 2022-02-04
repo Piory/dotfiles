@@ -1,6 +1,7 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
+tap "universal-ctags/universal-ctags"
 
 brew "anyenv"
 brew "bat"
@@ -8,6 +9,7 @@ brew "ghq"
 brew "git"
 brew "nvim"
 brew "neovim"
+brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
 brew "peco"
 brew "tig"
 brew "fd"

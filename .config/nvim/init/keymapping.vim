@@ -31,3 +31,17 @@ nnoremap sv :<C-u>vs<CR><C-w>l
 nnoremap ff :FZF<CR>
 " ファインダー表示
 nnoremap <Space>f :NERDTreeToggle<CR>
+
+" coc.nvim 関連
+" スペース2回 で CocList
+nmap <silent> <space><space> :<C-u>CocList<cr>
+" スペース + hで Hover
+nmap <silent> <space>h :<C-u>call CocAction('doHover')<cr>
+" Ctrl + ] で Definition
+nmap <silent> <C-]> <Plug>(coc-definition)
+" スペース + rf で Referknces
+nmap <silent> <space>rf <Plug>(coc-references)
+" スペース + rn で Rename
+nmap <silent> <space>rn <Plug>(coc-rename)
+" スペース + fmt でFormat
+nmap <silent> <space>fmt <Plug>(coc-format)

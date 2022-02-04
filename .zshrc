@@ -42,6 +42,7 @@ fi
 
 ## エイリアス
 alias vim='nvim'
+alias ctags="`brew --prefix`/bin/ctags"
 
 eval "$(anyenv init -)"
 
