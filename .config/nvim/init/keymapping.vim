@@ -28,9 +28,9 @@ nnoremap ss :<C-u>sp<CR><C-w>j
 nnoremap sv :<C-u>vs<CR><C-w>l
 
 " ファイル検索
-nnoremap ff :FZF<CR>
+nnoremap <silent> ff :FZF<CR>
 " ファインダー表示
-nnoremap <Space>f :NERDTreeToggle<CR>
+nnoremap <silent> <Space>f :NERDTreeToggle<CR>
 
 " coc.nvim 関連
 " スペース2回 で CocList
