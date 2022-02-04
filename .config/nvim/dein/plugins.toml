@@ -4,9 +4,6 @@ build_on = '''
 ./install -all
 '''
 
-[[plugins]]
-repo = 'junegunn/fzf.vim'
-
 ###### ヘルプ日本語化 ######
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'

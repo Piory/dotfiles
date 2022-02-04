@@ -13,10 +13,6 @@ set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
 " Required:
 call dein#begin("$HOME/.cache/dein")
 
-" Let dein manage dein
-" Required:
-call dein#add("$HOME/.cache/dein/repos/github.com/Shougo/dein.vim")
-
 " 自分で追加したやつ
 call dein#load_toml('$HOME/.config/nvim/dein/plugins.toml', {'lazy': 0})
 call dein#load_toml('$HOME/.config/nvim/dein/coc.toml', {'lazy': 0})

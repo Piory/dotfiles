@@ -1,6 +1,6 @@
 # dein本体
 [[plugins]]
-repo = 'hougo/dein.vim'
+repo = 'Shougo/dein.vim'
 
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
