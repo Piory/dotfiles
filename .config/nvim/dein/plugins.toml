@@ -81,3 +81,7 @@ repo = 'bronson/vim-trailing-whitespace'
 ###### タイポチェック ######
 [[plugins]]
 repo = 'kamykn/spelunker.vim'
+
+###### Twitter Client for vim ######
+[[plugins]]
+repo = 'twitvim/twitVim'
