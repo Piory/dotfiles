@@ -69,3 +69,7 @@ repo = 'nvim-treesitter/nvim-treesitter'
 
 [[plugins]]
 repo = 'luochen1990/rainbow'
+
+###### 行末のブランクを削除する ######
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
