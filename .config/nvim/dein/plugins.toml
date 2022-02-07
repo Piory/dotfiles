@@ -85,3 +85,10 @@ repo = 'kamykn/spelunker.vim'
 ###### Twitter Client for vim ######
 [[plugins]]
 repo = 'twitvim/twitVim'
+
+###### Ctags Generator ######
+[[plugins]]
+repo = 'szw/vim-tags'
+
+[[plugins]]
+repo = 'vim-scripts/ctags.vim'
