@@ -9,7 +9,3 @@ build = 'make'
 ###### カレンダー ######
 [[plugins]]
 repo = 'itchyny/calendar.vim'
-
-###### タブのアイコンを表示したりするやつ ######
-[[plugins]]
-repo = 'romgrk/barbar.nvim'

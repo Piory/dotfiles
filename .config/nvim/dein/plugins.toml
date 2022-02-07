@@ -25,6 +25,10 @@ repo = 'itchyny/lightline.vim'
 [[plugins]]
 repo = 'lilydjwg/colorizer'
 
+###### タブのアイコンを表示したりするやつ ######
+[[plugins]]
+repo = 'romgrk/barbar.nvim'
+
 ###### ファイル検索 ######
 [[plugins]]
 repo = 'junegunn/fzf'
