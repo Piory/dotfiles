@@ -73,3 +73,7 @@ repo = 'luochen1990/rainbow'
 ###### 行末のブランクを削除する ######
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
+
+###### タイポチェック ######
+[[plugins]]
+repo = 'kamykn/spelunker.vim'

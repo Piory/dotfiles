@@ -22,21 +22,24 @@ set termguicolors
 " ヤンクするとクリップボードに保存される
 set clipboard+=unnamed
 
-"カーソルがある行をハイライト表示
+" カーソルがある行をハイライト表示
 set cursorline
 
-"カーソル位置のカラムをハイライト表示しない
+" カーソル位置のカラムをハイライト表示しない
 set nocursorcolumn
 
-"高速ターミナル接続を行う
+" 高速ターミナル接続を行う
 set ttyfast
 
-"タブ、空白、改行の可視化
+" タブ、空白、改行の可視化
 set list
 set listchars=tab:>.,trail:_,eol:↲,extends:>,precedes:<,nbsp:%
 
-"検索したワードをハイライト
+" 検索したワードをハイライト
 set hlsearch
+
+" スペルチェック
+set nospell
 
 set expandtab
 set tabstop=2
