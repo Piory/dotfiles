@@ -46,6 +46,6 @@ lua <<EOF
  }
 EOF
 
-colorscheme nightfly
+colorscheme dracula
 
 let g:dein#auto_recache = 1

@@ -17,6 +17,9 @@ repo = 'cocopon/iceberg.vim'
 [[plugins]]
 repo = 'bluz71/vim-nightfly-guicolors'
 
+[[plugins]]
+repo = 'dracula/vim'
+
 ###### ステータスライン/タブライン ######
 [[plugins]]
 repo = 'itchyny/lightline.vim'
