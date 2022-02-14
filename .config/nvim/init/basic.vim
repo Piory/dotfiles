@@ -41,6 +41,13 @@ set hlsearch
 " スペルチェック
 set nospell
 
+" menuone -> 対象が1件しかなくても常に補完ウィンドウを表示
+" noinsert -> 補完ウィンドウを表示時に挿入しない
+set completeopt=menuone,noinsert
+
+" 補完表示時のEnterで改行をしない
+inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
+
 set expandtab
 set tabstop=2
 set shiftwidth=2

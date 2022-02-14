@@ -91,7 +91,4 @@ repo = 'twitvim/twitVim'
 
 ###### Ctags Generator ######
 [[plugins]]
-repo = 'szw/vim-tags'
-
-[[plugins]]
-repo = 'vim-scripts/ctags.vim'
+repo = 'soramugi/auto-ctags.vim'

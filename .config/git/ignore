@@ -6,4 +6,6 @@ init.vim.local
 .vim
 
 .tags
+tags
+tags.lock
 .ctags
