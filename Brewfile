@@ -17,6 +17,7 @@ brew "fd"
 brew "fzf"
 brew "tmux"
 brew "lazygit"
+brew "weechat"
 
 cask "1password"
 cask "appcleaner"
