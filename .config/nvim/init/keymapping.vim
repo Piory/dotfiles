@@ -66,8 +66,8 @@ nnoremap <silent>    gt8 :BufferGoto 8<CR>
 nnoremap <silent>    gt9 :BufferLast<CR>
 " Pin/unpin buffer
 nnoremap <silent>    <A-p> :BufferPin<CR>
-" Close buffer
-nnoremap <silent>    bc :BufferClose<CR>
+" Close buffek
+nnoremap <silent>    tc :BufferClose<CR>
 " Wipeout buffer
 "                          :BufferWipeout<CR>
 " Close commands
@@ -76,7 +76,7 @@ nnoremap <silent>    bc :BufferClose<CR>
 "                          :BufferCloseBuffersLeft<CR>
 "                          :BufferCloseBuffersRight<CR>
 " Magic buffer-picking mode
-nnoremap <silent> <C-s>    :BufferPick<CR>
+nnoremap <silent> <C-t><C-s>    :BufferPick<CR>
 " Sort automatically by...
 nnoremap <silent> <Space>bb :BufferOrderByBufferNumber<CR>
 nnoremap <silent> <Space>bd :BufferOrderByDirectory<CR>
