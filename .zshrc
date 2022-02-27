@@ -53,3 +53,4 @@ export TERM=xterm-256color
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 [[ -e "$HOME/bin/functions.zsh" ]] && source "$HOME/bin/functions.zsh"
+[[ -e "$HOME/bin/tmux-ide.zsh" ]] && source "$HOME/bin/tmux-ide.zsh"
