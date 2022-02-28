@@ -21,6 +21,8 @@ for rcfile in $CURRENT_DIRECTORY/.zprezto/runcoms/^README.md(.N); do
   ln -fs "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
 
+echo "Create symbolic link [$CONFIG_PATH/.ideavimrc -> $HOME]"
+ln -fs $CURRENT_DIRECTORY/.ideavimrc $HOME
 echo "Create symbolic link [$CONFIG_PATH/nvim -> $CURRENT_DIRECTORY/.config/nvim]"
 ln -fs $CURRENT_DIRECTORY/.config/git $CONFIG_PATH
 echo "Create symbolic link [$CONFIG_PATH/git -> $CURRENT_DIRECTORY/.config/git]"
