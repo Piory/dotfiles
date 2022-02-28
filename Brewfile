@@ -20,6 +20,7 @@ brew "lazygit"
 brew "weechat"
 
 cask "1password"
+cask "1password-cli"
 cask "appcleaner"
 cask "discord"
 cask "docker"
