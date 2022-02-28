@@ -49,25 +49,25 @@ nmap <silent> <space>fmt <Plug>(coc-format)
 
 " barbar.nvim 関連
 " Move to previous/next
-nnoremap <silent>    gT :BufferPrevious<CR>
-nnoremap <silent>    gt :BufferNext<CR>
+nnoremap <silent> gT :BufferPrevious<CR>
+nnoremap <silent> gt :BufferNext<CR>
 " Re-order to previous/next
-nnoremap <silent>    <A-<> :BufferMovePrevious<CR>
-nnoremap <silent>    <A->> :BufferMoveNext<CR>
+nnoremap <silent> <A-<> :BufferMovePrevious<CR>
+nnoremap <silent> <A->> :BufferMoveNext<CR>
 " Goto buffer in position...
-nnoremap <silent>    gt1 :BufferGoto 1<CR>
-nnoremap <silent>    gt2 :BufferGoto 2<CR>
-nnoremap <silent>    gt3 :BufferGoto 3<CR>
-nnoremap <silent>    gt4 :BufferGoto 4<CR>
-nnoremap <silent>    gt5 :BufferGoto 5<CR>
-nnoremap <silent>    gt6 :BufferGoto 6<CR>
-nnoremap <silent>    gt7 :BufferGoto 7<CR>
-nnoremap <silent>    gt8 :BufferGoto 8<CR>
-nnoremap <silent>    gt9 :BufferLast<CR>
+nnoremap <silent> gt1 :BufferGoto 1<CR>
+nnoremap <silent> gt2 :BufferGoto 2<CR>
+nnoremap <silent> gt3 :BufferGoto 3<CR>
+nnoremap <silent> gt4 :BufferGoto 4<CR>
+nnoremap <silent> gt5 :BufferGoto 5<CR>
+nnoremap <silent> gt6 :BufferGoto 6<CR>
+nnoremap <silent> gt7 :BufferGoto 7<CR>
+nnoremap <silent> gt8 :BufferGoto 8<CR>
+nnoremap <silent> gt9 :BufferLast<CR>
 " Pin/unpin buffer
-nnoremap <silent>    <A-p> :BufferPin<CR>
+nnoremap <silent> <A-p> :BufferPin<CR>
 " Close buffek
-nnoremap <silent>    tc :BufferClose<CR>
+nnoremap <silent> ct :BufferClose<CR>
 " Wipeout buffer
 "                          :BufferWipeout<CR>
 " Close commands
@@ -76,7 +76,7 @@ nnoremap <silent>    tc :BufferClose<CR>
 "                          :BufferCloseBuffersLeft<CR>
 "                          :BufferCloseBuffersRight<CR>
 " Magic buffer-picking mode
-nnoremap <silent> <C-t><C-s>    :BufferPick<CR>
+nnoremap <silent> st :BufferPick<CR>
 " Sort automatically by...
 nnoremap <silent> <Space>bb :BufferOrderByBufferNumber<CR>
 nnoremap <silent> <Space>bd :BufferOrderByDirectory<CR>
