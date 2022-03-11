@@ -55,15 +55,15 @@ nnoremap <silent> gt :BufferNext<CR>
 nnoremap <silent> <A-<> :BufferMovePrevious<CR>
 nnoremap <silent> <A->> :BufferMoveNext<CR>
 " Goto buffer in position...
-nnoremap <silent> gt1 :BufferGoto 1<CR>
-nnoremap <silent> gt2 :BufferGoto 2<CR>
-nnoremap <silent> gt3 :BufferGoto 3<CR>
-nnoremap <silent> gt4 :BufferGoto 4<CR>
-nnoremap <silent> gt5 :BufferGoto 5<CR>
-nnoremap <silent> gt6 :BufferGoto 6<CR>
-nnoremap <silent> gt7 :BufferGoto 7<CR>
-nnoremap <silent> gt8 :BufferGoto 8<CR>
-nnoremap <silent> gt9 :BufferLast<CR>
+nnoremap <silent> 1gt :BufferGoto 1<CR>
+nnoremap <silent> 2gt :BufferGoto 2<CR>
+nnoremap <silent> 3gt :BufferGoto 3<CR>
+nnoremap <silent> 4gt :BufferGoto 4<CR>
+nnoremap <silent> 5gt :BufferGoto 5<CR>
+nnoremap <silent> 6gt :BufferGoto 6<CR>
+nnoremap <silent> 7gt :BufferGoto 7<CR>
+nnoremap <silent> 8gt :BufferGoto 8<CR>
+nnoremap <silent> 9gt :BufferLast<CR>
 " Pin/unpin buffer
 nnoremap <silent> <A-p> :BufferPin<CR>
 " Close buffek
