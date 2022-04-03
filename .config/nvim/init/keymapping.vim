@@ -70,6 +70,9 @@ nnoremap <silent> <A-p> :BufferPin<CR>
 nnoremap <silent> ct :BufferClose<CR>
 " Wipeout buffer
 "                          :BufferWipeout<CR>
+
+" close-buffers.vim
+nnoremap <silent> <C-q> :Bdelete menu<CR>
 " Close commands
 "                          :BufferCloseAllButCurrent<CR>
 "                          :BufferCloseAllButPinned<CR>

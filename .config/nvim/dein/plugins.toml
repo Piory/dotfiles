@@ -92,3 +92,7 @@ repo = 'twitvim/twitVim'
 ###### Ctags Generator ######
 [[plugins]]
 repo = 'soramugi/auto-ctags.vim'
+
+###### バッファーを一度に閉じるプラフイン ######
+[[plugins]]
+repo = 'Asheq/close-buffers.vim'
