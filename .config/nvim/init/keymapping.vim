@@ -41,7 +41,7 @@ nmap <silent> <space>h :<C-u>call CocAction('doHover')<cr>
 nmap <silent> <C-]> <Plug>(coc-definition)
 " Ctrl + fu で References
 nmap <silent> <C-fu> <Plug>(coc-references)
-" スペース + rf で Referknces
+" スペース + rf で References
 nmap <silent> <space>rf <Plug>(coc-references)
 " スペース + rn で Rename
 nmap <silent> <space>rn <Plug>(coc-rename)
