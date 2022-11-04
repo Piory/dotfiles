@@ -23,6 +23,10 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 ################### 自分で設定したやつ ###################
+autoload -U compinit
+compinit
+
+export PATH="/opt/homebrew/sbin:$PATH"
 export PATH="$HOME/.local/bin/:$PATH"
 export PATH=/opt/homebrew/bin:$PATH
 
@@ -54,3 +58,4 @@ export TERM=xterm-256color
 
 [[ -e "$HOME/bin/functions.zsh" ]] && source "$HOME/bin/functions.zsh"
 [[ -e "$HOME/bin/tmux-ide.zsh" ]] && source "$HOME/bin/tmux-ide.zsh"
+
