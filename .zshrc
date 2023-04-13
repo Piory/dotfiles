@@ -26,9 +26,12 @@ fi
 autoload -U compinit
 compinit
 
-export PATH="/opt/homebrew/sbin:$PATH"
-export PATH="$HOME/.local/bin/:$PATH"
+export PATH=/opt/homebrew/sbin:$PATH
+export PATH=$HOME/.local/bin/:$PATH
 export PATH=/opt/homebrew/bin:$PATH
+export PATH=$HOME/.pub-cache/bin:$PATH
+export PATH=$HOME/.pub-cache/bin:$PATH
+export PATH=/Applications/Docker.app/Contents/Resources/bin:$PATH
 
 # peco
 ## コマンドの履歴をみるやつ ##
