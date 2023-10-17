@@ -29,6 +29,8 @@ compinit
 export PATH=/opt/homebrew/sbin:$PATH
 export PATH=$HOME/.local/bin/:$PATH
 export PATH=/opt/homebrew/bin:$PATH
+export PATH=$HOME/git/github.com/flutter/flutter/bin:$PATH
+export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
 export PATH=$HOME/.pub-cache/bin:$PATH
 export PATH=$HOME/.pub-cache/bin:$PATH
 export PATH=/Applications/Docker.app/Contents/Resources/bin:$PATH
