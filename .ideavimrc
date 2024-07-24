@@ -1,3 +1,6 @@
+" leaderをスペースへ設定
+let mapleader = "\<Space>"
+
 " ヘルプを日本語化
 set helplang=ja
 
@@ -55,9 +58,9 @@ set softtabstop=2
 set autoindent
 set sm
 
-nnoremap sj <C-w>j
-nnoremap sk <C-w>k
-nnoremap sl <C-w>l
-nnoremap sh <C-w>h
-nnoremap ss :<C-u>sp<CR><C-w>j
-nnoremap sv :<C-u>vs<CR><C-w>l
+nnoremap <C-l> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <leader>sh :<C-u>sp<CR><C-w>j
+nnoremap <leader>sv :<C-u>vs<CR><C-w>l
