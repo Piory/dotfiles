@@ -26,3 +26,6 @@ keymap.set('n', '<C-k>', '<C-w>k')
 -- 単語を' " どちらかで囲う
 keymap.set('n', '<leader>aw', 'ciw""<Esc>P')
 keymap.set('n', '<leader>aW', "ciw''<Esc>P")
+-- タブの移動
+keymap.set('n', 'gt', ':bnext<CR>')
+keymap.set('n', 'gT', ':bprev<CR>')
