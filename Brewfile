@@ -25,6 +25,7 @@ brew "grep"
 brew "gh"
 brew "volta"
 brew "supabase/tap/supabase"
+brew "watchman"
 
 cask "1password"
 cask "1password-cli"
