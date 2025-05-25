@@ -21,6 +21,7 @@ require('keymaps')
 require('plugins')
 
 -- 各種セットアップ（例：Tree-sitter, LSPなどh
+require('setup.gitsigns')
 require('setup.mason')
 require('setup.lspconfig')
 require('setup.flutter-tools')

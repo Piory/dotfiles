@@ -7,6 +7,7 @@ return require('lazy').setup({
   'onsails/lspkind.nvim',
   'gen740/SmoothCursor.nvim',
   'akinsho/bufferline.nvim',
+  'lewis6991/gitsigns.nvim',
   {
     "github/copilot.vim",
     lazy=false,
