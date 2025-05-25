@@ -1,6 +1,24 @@
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-require('telescope').load_extension('flutter')
+vim.keymap.set('n', '<leader>sf', builtin.find_files, {})
+vim.keymap.set('n', '<leader>sg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>sb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>sh', builtin.help_tags, {})
+local telescope = require('telescope')
+telescope.load_extension('flutter')
+telescope.setup({
+  defaults = {
+    file_ignore_patterns = { 'node_modules', '.git' },
+    mappings = {
+      i = {
+        ['<C-u>'] = false, -- Disable clearing the prompt
+        ['<C-d>'] = false, -- Disable deleting half of the prompt
+      },
+    },
+  },
+  pickers = {
+    find_files = {
+      hidden = true,
+    },
+  },
+})
+
