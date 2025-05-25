@@ -6,6 +6,7 @@ return require('lazy').setup({
   'nvim-treesitter/nvim-treesitter',
   'onsails/lspkind.nvim',
   'gen740/SmoothCursor.nvim',
+  'akinsho/bufferline.nvim',
   {
     "github/copilot.vim",
     lazy=false,
