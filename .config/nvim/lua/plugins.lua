@@ -2,6 +2,7 @@ return require('lazy').setup({
   'williamboman/mason.nvim',
   'williamboman/mason-lspconfig.nvim',
   'neovim/nvim-lspconfig',
+  'nvim-lua/lsp-status.nvim',
   'nvim-treesitter/nvim-treesitter',
   'onsails/lspkind.nvim',
   {
