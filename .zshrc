@@ -54,8 +54,6 @@ fi
 alias vim='nvim'
 alias ctags="`brew --prefix`/bin/ctags"
 
-eval "$(anyenv init -)"
-
 export PATH=$PATH:`npm bin -g`
 export TERM=xterm-256color
 
@@ -65,3 +63,16 @@ export TERM=xterm-256color
 [[ -e "$HOME/bin/functions.zsh" ]] && source "$HOME/bin/functions.zsh"
 [[ -e "$HOME/bin/tmux-ide.zsh" ]] && source "$HOME/bin/tmux-ide.zsh"
 
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/piory/.lmstudio/bin"
+
+
+# pnpm
+export PNPM_HOME="/Users/piory/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+export VOLTA_FEATURE_PNPM=1
+# pnpm end
