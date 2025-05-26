@@ -31,3 +31,5 @@ keymap.set('n', 'gt', ':bnext<CR>')
 keymap.set('n', 'gT', ':bprev<CR>')
 -- nvim-tree のトグル
 vim.api.nvim_set_keymap('n', '<leader>t', ':NvimTreeToggle<CR>', {silent=true})
+-- Toggleterm で lazygit を表示
+vim.api.nvim_set_keymap('n', '<leader>g', '<cmd>lua _lazygit_toggle()<CR>', { noremap = true, silent = true })
