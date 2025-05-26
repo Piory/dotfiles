@@ -9,6 +9,12 @@ return require('lazy').setup({
   'akinsho/bufferline.nvim',
   'lewis6991/gitsigns.nvim',
   {
+    'folke/tokyonight.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+  {
     "github/copilot.vim",
     lazy=false,
   },

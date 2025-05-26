@@ -20,6 +20,9 @@ require('keymaps')
 -- プラグインの設定
 require('plugins')
 
+-- カラースキームの設定
+vim.cmd.colorscheme('tokyonight-storm')
+
 -- 各種セットアップ（例：Tree-sitter, LSPなどh
 require('setup.gitsigns')
 require('setup.mason')
