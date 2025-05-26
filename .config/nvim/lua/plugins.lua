@@ -14,6 +14,7 @@ return require('lazy').setup({
   'windwp/nvim-ts-autotag',
   'brenoprata10/nvim-highlight-colors',
   'mvllow/modes.nvim',
+  'kevinhwang91/nvim-hlslens',
   {
     'goolord/alpha-nvim',
     -- dependencies = { 'echasnovski/mini.icons' },
