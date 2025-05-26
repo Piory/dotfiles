@@ -10,6 +10,7 @@ return require('lazy').setup({
   'lewis6991/gitsigns.nvim',
   'Mofiqul/dracula.nvim',
   'karb94/neoscroll.nvim',
+  'windwp/nvim-autopairs',
   {
     'folke/tokyonight.nvim',
     lazy = false,
