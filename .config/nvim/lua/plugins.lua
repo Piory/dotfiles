@@ -12,6 +12,17 @@ return require('lazy').setup({
   'karb94/neoscroll.nvim',
   'windwp/nvim-autopairs',
   {
+  	'lukas-reineke/indent-blankline.nvim',
+  	main = "ibl",
+  	opts = function(_, opts)
+  		-- Other blankline configuration here
+  		return require('indent-rainbowline').make_opts(opts)
+  	end,
+  	dependencies = {
+  		'TheGLander/indent-rainbowline.nvim',
+  	},
+  },
+  {
     'folke/tokyonight.nvim',
     lazy = false,
     priority = 1000,
