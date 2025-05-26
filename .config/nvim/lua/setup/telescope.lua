@@ -7,7 +7,14 @@ local telescope = require('telescope')
 telescope.load_extension('flutter')
 telescope.setup({
   defaults = {
-    file_ignore_patterns = { 'node_modules', '.git' },
+    file_ignore_patterns = { 
+      '.git',
+      '.tmux',
+      '.zprezto',
+      'node_modules',
+      'dist',
+      'build',
+    },
     mappings = {
       i = {
         ['<C-u>'] = false, -- Disable clearing the prompt
