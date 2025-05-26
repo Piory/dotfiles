@@ -15,6 +15,7 @@ return require('lazy').setup({
   'brenoprata10/nvim-highlight-colors',
   'mvllow/modes.nvim',
   'kevinhwang91/nvim-hlslens',
+  'kazhala/close-buffers.nvim',
   {
     'goolord/alpha-nvim',
     -- dependencies = { 'echasnovski/mini.icons' },
