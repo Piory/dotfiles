@@ -3,7 +3,6 @@ return require('lazy').setup({
   'williamboman/mason-lspconfig.nvim',
   'neovim/nvim-lspconfig',
   'nvim-lua/lsp-status.nvim',
-  'nvim-treesitter/nvim-treesitter',
   'onsails/lspkind.nvim',
   'gen740/SmoothCursor.nvim',
   'hrsh7th/cmp-cmdline',
@@ -30,6 +29,10 @@ return require('lazy').setup({
     lazy = false,
     priority = 1000,
     opts = {},
+  },
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate',
   },
   {
     "github/copilot.vim",
