@@ -1,4 +1,4 @@
-require('toggleterm').setup{
+require('toggleterm').setup({
   size = 100,
   open_mapping = [[<c-t>]],
   hide_numbers = true,
@@ -8,6 +8,24 @@ require('toggleterm').setup{
   start_in_insert = true,
   insert_mappings = true,
   persist_size = true,
-  direction = 'float',
   close_on_exit = true,
-}
+  float_opts = {
+    border = 'curved',
+    width = 180,
+    height = 100,
+  },
+})
+
+local Terminal = require('toggleterm.terminal').Terminal
+local lazygit = Terminal:new({
+	cmd = 'lazygit',
+	direction = 'float',
+	hidden = true
+})
+
+function _lazygit_toggle()
+	lazygit:toggle()
+end
+
+vim.api.nvim_set_keymap('n', '<leader>g', '<cmd>lua _lazygit_toggle()<CR>', { noremap = true, silent = true })
+
