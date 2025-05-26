@@ -11,6 +11,7 @@ return require('lazy').setup({
   'Mofiqul/dracula.nvim',
   'windwp/nvim-autopairs',
   'windwp/nvim-ts-autotag',
+  'brenoprata10/nvim-highlight-colors',
   {
   	'lukas-reineke/indent-blankline.nvim',
   	main = "ibl",

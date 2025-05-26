@@ -4,6 +4,9 @@ local luasnip = require("luasnip") -- LuaSnip のモジュールをロード
 require("luasnip/loaders/from_vscode").lazy_load() -- VSCode スタイルのスニペットをロード
 
 cmp.setup({
+     formatting = {
+        format = require("nvim-highlight-colors").format,
+     },
     snippet = {
         -- スニペット展開方法を定義
         expand = function(args)
