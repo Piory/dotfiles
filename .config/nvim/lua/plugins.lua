@@ -15,6 +15,11 @@ return require('lazy').setup({
   'brenoprata10/nvim-highlight-colors',
   'mvllow/modes.nvim',
   {
+    'goolord/alpha-nvim',
+    -- dependencies = { 'echasnovski/mini.icons' },
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+  },
+  {
     'rmagatti/auto-session',
     lazy = false,
     ---enables autocomplete for opts
