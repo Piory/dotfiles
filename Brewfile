@@ -27,6 +27,7 @@ brew "supabase/tap/supabase"
 brew "watchman"
 brew "gpg"
 brew "pinentry-mac"
+brew "font-sauce-code-pro-nerd-font"
 
 cask "1password"
 cask "1password-cli"
