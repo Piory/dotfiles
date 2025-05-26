@@ -13,6 +13,7 @@ return require('lazy').setup({
   'windwp/nvim-autopairs',
   'windwp/nvim-ts-autotag',
   'brenoprata10/nvim-highlight-colors',
+  'mvllow/modes.nvim',
   {
   	'lukas-reineke/indent-blankline.nvim',
   	main = "ibl",
