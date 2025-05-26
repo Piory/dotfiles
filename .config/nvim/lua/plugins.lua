@@ -8,6 +8,7 @@ return require('lazy').setup({
   'gen740/SmoothCursor.nvim',
   'akinsho/bufferline.nvim',
   'lewis6991/gitsigns.nvim',
+  'Mofiqul/dracula.nvim',
   {
     'folke/tokyonight.nvim',
     lazy = false,
