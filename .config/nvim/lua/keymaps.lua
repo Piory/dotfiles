@@ -29,3 +29,5 @@ keymap.set('n', '<leader>aW', "ciw''<Esc>P")
 -- タブの移動
 keymap.set('n', 'gt', ':bnext<CR>')
 keymap.set('n', 'gT', ':bprev<CR>')
+-- nvim-tree のトグル
+vim.api.nvim_set_keymap('n', '<leader>t', ':NvimTreeToggle<CR>', {silent=true})

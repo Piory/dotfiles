@@ -17,5 +17,3 @@ require('nvim-tree').setup({
 	},
 })
 
--- start neovim with open nvim-tree
-require('nvim-tree.api').tree.toggle(false, true)
