@@ -34,6 +34,13 @@ return require('lazy').setup({
     lazy=false,
   },
   {
+    'nvimdev/lspsaga.nvim',
+    dependencies = {
+      -- 'nvim-treesitter/nvim-treesitter',
+      'nvim-tree/nvim-web-devicons',
+    },
+  },
+  {
     'akinsho/flutter-tools.nvim',
     lazy = false,
     dependencies = {
