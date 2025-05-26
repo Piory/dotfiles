@@ -105,4 +105,9 @@ return require('lazy').setup({
        { "rafamadriz/friendly-snippets" }, -- 事前定義されたスニペットコレクション
      },
   },
+  {
+    'akinsho/toggleterm.nvim',
+    version = "*", 
+    config = true,
+  },
 })

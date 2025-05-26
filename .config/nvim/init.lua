@@ -24,6 +24,7 @@ require('plugins')
 vim.cmd.colorscheme('tokyonight-storm')
 
 -- 各種セットアップ（例：Tree-sitter, LSPなどh
+require('setup.toggleterm')
 require('setup.gitsigns')
 require('setup.mason')
 require('setup.lspconfig')
