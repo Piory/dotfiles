@@ -38,22 +38,6 @@ source $CURRENT_DIRECTORY/.zpreztorc
 
 echo ''
 echo '######################################'
-echo '##           Install dein           ##'
-echo '######################################'
-if [[ ! -e $DEIN_VIM_INSTALL_PATH/repos ]] then
-  installer_sh_path=./installer.sh
-  echo 'Download dein.vim'
-  curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > $installer_sh_path
-  echo 'Install dein.vim'
-  sh $installer_sh_path $DEIN_VIM_INSTALL_PATH
-  rm $installer_sh_path
-  echo 'Done'
-else
-  echo 'Installed dein.vim'
-fi
-
-echo ''
-echo '######################################'
 echo '##          Install nodenv          ##'
 echo '######################################'
 if ! builtin command -v nodenv > /dev/null; then
