@@ -10,6 +10,7 @@ return require('lazy').setup({
   'lewis6991/gitsigns.nvim',
   'Mofiqul/dracula.nvim',
   'windwp/nvim-autopairs',
+  'windwp/nvim-ts-autotag',
   {
   	'lukas-reineke/indent-blankline.nvim',
   	main = "ibl",
