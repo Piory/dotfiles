@@ -11,9 +11,11 @@ require('nvim-tree').setup({
   filters = {
     dotfiles = false,
   },
-	update_focused_file = {
-		enable = true,
-		update_cwd = true,
-	},
+  update_focused_file = {
+    enable = true,
+    update_cwd = true,
+  },
 })
 
+-- start neovim with open nvim-tree
+require("nvim-tree.api").tree.toggle(true, false)
