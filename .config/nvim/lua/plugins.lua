@@ -51,6 +51,10 @@ return require('lazy').setup({
     },
   },
   {
+    'shortcuts/no-neck-pain.nvim',
+    version = '*',
+  },
+  {
   	'lukas-reineke/indent-blankline.nvim',
   	main = "ibl",
   	opts = function(_, opts)
