@@ -9,7 +9,6 @@ return require('lazy').setup({
   'akinsho/bufferline.nvim',
   'lewis6991/gitsigns.nvim',
   'Mofiqul/dracula.nvim',
-  'karb94/neoscroll.nvim',
   'windwp/nvim-autopairs',
   {
   	'lukas-reineke/indent-blankline.nvim',
