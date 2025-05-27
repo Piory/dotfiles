@@ -43,6 +43,7 @@ require('mason').setup()
 -- masonを介してlanguage serverを自動インストールする
 local ensure_installed = {
   'lua_ls',
+  'sqls',
   'ts_ls',
   'gopls',
 }
