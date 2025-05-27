@@ -3,6 +3,7 @@ local opt = vim.opt
 -- 行番号の表示
 opt.number = true
 opt.relativenumber = true
+opt.wrap = false
 
 -- タブとインデントの設定
 opt.tabstop = 2
