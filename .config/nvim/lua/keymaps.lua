@@ -49,3 +49,10 @@ vim.keymap.set('n', '<leader>sh', builtin.help_tags, {})
 vim.api.nvim_set_keymap('n', '<leader>x', ':BDelete this<CR>', { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('n', '<leader>xo', ':BDelete other<CR>', { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('n', '<leader>xa', ':BDelete all<CR>', { noremap = true, silent = true })
+
+-- Oil (File Explorer)
+vim.keymap.set('n', '-', '<CMD>Oil --float<CR>', {
+  noremap = true,
+  silent = true,
+  desc = 'Open parent directory',
+})

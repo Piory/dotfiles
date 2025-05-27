@@ -1,4 +1,5 @@
 return require('lazy').setup({
+  { import = 'plugins' },
   'nvim-lua/lsp-status.nvim',
   'onsails/lspkind.nvim',
   'gen740/SmoothCursor.nvim',
