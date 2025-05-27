@@ -1,8 +1,30 @@
 return {
+  'hrsh7th/cmp-cmdline',
+  'hrsh7th/cmp-buffer',
+  {
+    -- 補完エンジン nvim-cmp の設定
+    'hrsh7th/nvim-cmp',
+    event = 'InsertEnter',                -- 挿入モードに入ったときにプラグインをロード
+    dependencies = {                      -- nvim-cmp に必要な依存プラグイン
+      { 'hrsh7th/cmp-buffer' },           -- 現在のバッファの内容を補完候補に含める
+      { 'saadparwaiz1/cmp_luasnip' },     -- LuaSnip と nvim-cmp を統合
+      { 'L3MON4D3/LuaSnip' },             -- スニペットエンジン LuaSnip
+      { 'rafamadriz/friendly-snippets' }, -- 事前定義されたスニペットコレクション
+    },
+  },
   'nvim-lua/lsp-status.nvim',
   'onsails/lspkind.nvim',
   'neovim/nvim-lspconfig',
   'arkav/lualine-lsp-progress',
+  {
+    'akinsho/flutter-tools.nvim',
+    lazy = false,
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'stevearc/dressing.nvim',
+    },
+    config = true,
+  },
   {
     'ray-x/lsp_signature.nvim',
     event = 'InsertEnter',
