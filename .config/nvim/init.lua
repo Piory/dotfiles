@@ -27,7 +27,7 @@ vim.cmd.colorscheme('tokyonight-storm')
 require('setup.alpha-nvim')
 require('setup.toggleterm')
 require('setup.gitsigns')
-require('setup.mason')
+require('setup.lsp')
 require('setup.lspconfig')
 require('setup.flutter-tools')
 require('setup.nvim-tree')
@@ -39,8 +39,17 @@ require('setup.nvim-autopairs')
 require('setup.nvim-highlight-colors')
 require('setup.noice')
 require('setup.no-neck-pain')
-require('setup.nvim-cmp')
 require('setup.lualine')
 require('setup.bufferline')
 require('setup.smooth-cursor')
 require('setup.modes')
+
+-- 背景透明化の設定
+-- vim.cmd([[
+--   highlight Normal guibg=none
+--   highlight NonText guibg=none
+--   highlight Normal ctermbg=none
+--   highlight NonText ctermbg=none
+--   highlight NormalNC guibg=none
+--   highlight NormalSB guibg=none
+-- ]])

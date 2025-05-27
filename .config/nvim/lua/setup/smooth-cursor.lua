@@ -3,7 +3,7 @@ require('smoothcursor').setup({
 	priority = 10,
 	fancy = {
 		enable = true,
-		head = { cursor = '', texthl = 'SmoothCursorCustom', linehl = nil },
+		head = { cursor = '', texthl = 'SmoothCursorCustom', linehl = nil },
 		body = {
 			{ cursor = '', texthl = 'SmoothCursorCustom' },
 			{ cursor = '', texthl = 'SmoothCursorCustom' },

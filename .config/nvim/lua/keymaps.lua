@@ -46,6 +46,6 @@ vim.keymap.set('n', '<leader>sg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>sb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>sh', builtin.help_tags, {})
 -- BDelete
--- vim.api.nvim_set_keymap('n', '<leader>x', ':BDelete this<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>x', ':BDelete this<CR>', { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('n', '<leader>xo', ':BDelete other<CR>', { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('n', '<leader>xa', ':BDelete all<CR>', { noremap = true, silent = true })
