@@ -45,11 +45,11 @@ require('setup.smooth-cursor')
 require('setup.modes')
 
 -- 背景透明化の設定
--- vim.cmd([[
---   highlight Normal guibg=none
---   highlight NonText guibg=none
---   highlight Normal ctermbg=none
---   highlight NonText ctermbg=none
---   highlight NormalNC guibg=none
---   highlight NormalSB guibg=none
--- ]])
+vim.cmd([[
+  highlight Normal guibg=none
+  highlight NonText guibg=none
+  highlight Normal ctermbg=none
+  highlight NonText ctermbg=none
+  highlight NormalNC guibg=none
+  highlight NormalSB guibg=none
+]])
