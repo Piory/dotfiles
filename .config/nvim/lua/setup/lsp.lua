@@ -32,6 +32,19 @@ lsp.config('*', {
   }),
 })
 
+lsp.config('sqls', {
+  settings = {
+    sqls = {
+      connections = {
+        {
+          driver = 'mysql',
+          dataSourceName = 'root@tcp(127.0.0.1:3306)/alpha',
+        },
+      },
+    },
+  },
+})
+
 lsp.config('lua_ls', {
   -- nvim-lspconfig が設定したコンフィグにsettingsを追加する
   settings = {
