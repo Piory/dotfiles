@@ -1,20 +1,85 @@
 return {
-  'hrsh7th/cmp-cmdline',
-  'hrsh7th/cmp-buffer',
   {
-    -- 補完エンジン nvim-cmp の設定
-    'hrsh7th/nvim-cmp',
-    event = 'InsertEnter',                -- 挿入モードに入ったときにプラグインをロード
-    dependencies = {                      -- nvim-cmp に必要な依存プラグイン
-      { 'hrsh7th/cmp-buffer' },           -- 現在のバッファの内容を補完候補に含める
-      { 'saadparwaiz1/cmp_luasnip' },     -- LuaSnip と nvim-cmp を統合
-      { 'L3MON4D3/LuaSnip' },             -- スニペットエンジン LuaSnip
-      { 'rafamadriz/friendly-snippets' }, -- 事前定義されたスニペットコレクション
+    'saghen/blink.cmp',
+    version = '1.*',
+    ---@module 'blink.cmp'
+    ---@type blink.cmp.Config
+    opts = {
+      keymap = { preset = 'enter' },
+      appearance = {
+        nerd_font_variant = 'mono',
+      },
+      completion = {
+        documentation = {
+          auto_show = true,
+          window = {
+            border = 'rounded',
+          },
+        },
+        menu = {
+          border = 'rounded',
+          draw = {
+            components = {
+              kind_icon = {
+                text = function(ctx)
+                  -- default kind icon
+                  local icon = ctx.kind_icon
+                  -- if LSP source, check for color derived from documentation
+                  if ctx.item.source_name == 'LSP' then
+                    local color_item = require('nvim-highlight-colors').format(ctx.item.documentation,
+                      { kind = ctx.kind })
+                    if color_item and color_item.abbr ~= '' then
+                      icon = color_item.abbr
+                    end
+                  end
+                  return icon .. ctx.icon_gap
+                end,
+                highlight = function(ctx)
+                  -- default highlight group
+                  local highlight = 'BlinkCmpKind' .. ctx.kind
+                  -- if LSP source, check for color derived from documentation
+                  if ctx.item.source_name == 'LSP' then
+                    local color_item = require('nvim-highlight-colors').format(ctx.item.documentation,
+                      { kind = ctx.kind })
+                    if color_item and color_item.abbr_hl_group then
+                      highlight = color_item.abbr_hl_group
+                    end
+                  end
+                  return highlight
+                end,
+              },
+            },
+          }
+        },
+      },
+      signature = {
+        window =
+        {
+          border = 'rounded',
+        },
+      },
+      sources = {
+        default = { 'lsp', 'path', 'snippets', 'buffer' },
+      },
+      fuzzy = {
+        -- versionを指定してないとバイナリが特定できずLuaにfallbackするwarningが表示される
+        implementation = 'prefer_rust_with_warning',
+      },
     },
+    opts_extend = { 'sources.default' },
+  },
+  {
+    'L3MON4D3/LuaSnip',
+    -- follow latest release.
+    version = 'v2.*', -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    -- install jsregexp (optional!).
+    build = 'make install_jsregexp'
+  },
+  {
+    'neovim/nvim-lspconfig',
+    dependencies = { 'saghen/blink.cmp' },
   },
   'nvim-lua/lsp-status.nvim',
-  'onsails/lspkind.nvim',
-  'neovim/nvim-lspconfig',
   'arkav/lualine-lsp-progress',
   {
     'akinsho/flutter-tools.nvim',

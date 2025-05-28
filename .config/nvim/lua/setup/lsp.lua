@@ -1,28 +1,22 @@
--- hover を表示したらドキュメントを表示
-vim.api.nvim_set_option('updatetime', 1000)
-vim.api.nvim_create_autocmd("LspAttach", {
-  callback = function(args)
-    -- ここに `textDocument/hover` で表示させたくないファイルタイプを指定する
-    if args.filetype == 'NvimTree' or args.filetype == 'NeogitCommitMessage' then
-      return
-    end
-    vim.cmd([[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]])
-    vim.cmd [[autocmd CursorHold,CursorHoldI * silent lua vim.lsp.buf.hover()]]
-  end,
-})
+-- -- hover を表示したらドキュメントを表示
+-- vim.api.nvim_set_option('updatetime', 1000)
+-- vim.api.nvim_create_autocmd('LspAttach', {
+--   callback = function(args)
+--     -- ここに `textDocument/hover` で表示させたくないファイルタイプを指定する
+--     if args.filetype == 'NvimTree' or args.filetype == 'NeogitCommitMessage' then
+--       return
+--     end
+--     vim.cmd([[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]])
+--     vim.cmd [[autocmd CursorHold,CursorHoldI * silent lua vim.lsp.buf.hover()]]
+--   end,
+-- })
 
-vim.api.nvim_create_autocmd("LspAttach", {
-  group = vim.api.nvim_create_augroup("my.lsp", {}),
+vim.api.nvim_create_autocmd('LspAttach', {
+  group = vim.api.nvim_create_augroup('my.lsp', {}),
   callback = function(args)
     local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
-    -- 補完の設定
-    if client:supports_method('textDocument/completion') then
-      -- 文字を入力する度に補完を表示（遅くなる可能性あり）
-      local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
-      client.server_capabilities.completionProvider.triggerCharacters = chars
-      -- 補完を有効化
-      vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
-    end
+    client.server_capabilities.semanticTokensProvider = nil
+    client.server_capabilities.documentHighlightProvider = false
     -- フォーマット
     if not client:supports_method('textDocument/willSaveWaitUntil')
         and client:supports_method('textDocument/formatting') then
@@ -53,6 +47,22 @@ require('mason-lspconfig').setup {
 }
 
 -- language serverの設定をする
+vim.lsp.config('*', {
+  capabilities = require('blink.cmp').get_lsp_capabilities({
+    textDocument = {
+      completion = {
+        completionItem = {
+          snippetSupport = true,
+        },
+      },
+      foldingRange = {
+        dynamicRegistration = false,
+        lineFoldingOnly = true,
+      },
+    },
+  })
+})
+
 vim.lsp.config('lua_ls', {
   -- nvim-lspconfig が設定したコンフィグにsettingsを追加する
   settings = {

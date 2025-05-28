@@ -35,7 +35,7 @@ opt.listchars = {
 
 -- 補完表示時に最初の候補を選択かつ、Enter で補完を確定する
 opt.completeopt = {
-  "popup",
-  "menuone",
-  "noinsert",
+  'popup',
+  'menuone',
+  'noinsert',
 }
