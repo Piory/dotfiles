@@ -1,11 +1,27 @@
 return {
   {
+    'saghen/blink.compat',
+    -- use the latest release, via version = '*', if you also use the latest release for blink.cmp
+    version = '*',
+    -- lazy.nvim will automatically load the plugin when it's required by blink.cmp
+    lazy = true,
+    -- make sure to set opts so that lazy.nvim calls blink.compat's setup
+    opts = {},
+  },
+  {
     'saghen/blink.cmp',
     version = '1.*',
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     dependencies = {
       'fang2hou/blink-copilot',
+      {
+        'MattiasMTS/cmp-dbee',
+        enabled = false,
+        ft = { 'sql' },
+        dev = true,
+        dependencies = { 'kndndrj/nvim-dbee' },
+      },
     },
     opts = {
       keymap = {
@@ -90,6 +106,7 @@ return {
           'snippets',
           'buffer',
           'copilot',
+          'dbee',
         },
         providers = {
           copilot = {
@@ -106,6 +123,10 @@ return {
               -- * max_attempts = 2
               -- * all other options are default
             },
+          },
+          dbee = {
+            name = 'DBee',
+            module = 'blink.compat.source',
           },
         },
       },
