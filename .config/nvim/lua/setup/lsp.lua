@@ -1,15 +1,4 @@
--- -- hover を表示したらドキュメントを表示
--- vim.api.nvim_set_option('updatetime', 1000)
--- vim.api.nvim_create_autocmd('LspAttach', {
---   callback = function(args)
---     -- ここに `textDocument/hover` で表示させたくないファイルタイプを指定する
---     if args.filetype == 'NvimTree' or args.filetype == 'NeogitCommitMessage' then
---       return
---     end
---     vim.cmd([[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]])
---     vim.cmd [[autocmd CursorHold,CursorHoldI * silent lua vim.lsp.buf.hover()]]
---   end,
--- })
+local lsp = vim.lsp
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('my.lsp', {}),
@@ -47,7 +36,7 @@ require('mason-lspconfig').setup {
 }
 
 -- language serverの設定をする
-vim.lsp.config('*', {
+lsp.config('*', {
   capabilities = require('blink.cmp').get_lsp_capabilities({
     textDocument = {
       completion = {
@@ -63,7 +52,7 @@ vim.lsp.config('*', {
   })
 })
 
-vim.lsp.config('lua_ls', {
+lsp.config('lua_ls', {
   -- nvim-lspconfig が設定したコンフィグにsettingsを追加する
   settings = {
     Lua = {
@@ -73,4 +62,4 @@ vim.lsp.config('lua_ls', {
     }
   },
 })
-vim.lsp.enable(ensure_installed)
+lsp.enable(ensure_installed)

@@ -56,3 +56,5 @@ vim.keymap.set('n', '-', '<CMD>Oil --float<CR>', {
   silent = true,
   desc = 'Open parent directory',
 })
+-- ドキュメントを表示
+vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<CR>')
