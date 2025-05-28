@@ -13,6 +13,17 @@ return {
     'goolord/alpha-nvim',
     -- dependencies = { 'echasnovski/mini.icons' },
     dependencies = { 'nvim-tree/nvim-web-devicons' },
+    opts = function()
+      local dashboard = require('alpha.themes.dashboard')
+      dashboard.section.header.val = require('ascii').art.text.neovim.sharp
+      return dashboard.opts
+    end,
+  },
+  {
+    'MaximilianLloyd/ascii.nvim',
+    dependencies = {
+      'MunifTanjim/nui.nvim',
+    },
   },
   {
     'rmagatti/auto-session',
