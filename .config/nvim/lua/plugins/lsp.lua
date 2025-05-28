@@ -35,8 +35,10 @@ return {
                   local icon = ctx.kind_icon
                   -- if LSP source, check for color derived from documentation
                   if ctx.item.source_name == 'LSP' then
-                    local color_item = require('nvim-highlight-colors').format(ctx.item.documentation,
-                      { kind = ctx.kind })
+                    local color_item = require('nvim-highlight-colors').format(
+                      ctx.item.documentation,
+                      { kind = ctx.kind }
+                    )
                     if color_item and color_item.abbr ~= '' then
                       icon = color_item.abbr
                     end
@@ -48,8 +50,10 @@ return {
                   local highlight = 'BlinkCmpKind' .. ctx.kind
                   -- if LSP source, check for color derived from documentation
                   if ctx.item.source_name == 'LSP' then
-                    local color_item = require('nvim-highlight-colors').format(ctx.item.documentation,
-                      { kind = ctx.kind })
+                    local color_item = require('nvim-highlight-colors').format(
+                      ctx.item.documentation,
+                      { kind = ctx.kind }
+                    )
                     if color_item and color_item.abbr_hl_group then
                       highlight = color_item.abbr_hl_group
                     end
@@ -58,12 +62,11 @@ return {
                 end,
               },
             },
-          }
+          },
         },
       },
       signature = {
-        window =
-        {
+        window = {
           border = 'rounded',
         },
       },
@@ -89,7 +92,7 @@ return {
               -- * max_completions = 3
               -- * max_attempts = 2
               -- * all other options are default
-            }
+            },
           },
         },
       },
@@ -105,7 +108,7 @@ return {
     -- follow latest release.
     version = 'v2.*', -- Replace <CurrentMajor> by the latest released major (first number of latest release)
     -- install jsregexp (optional!).
-    build = 'make install_jsregexp'
+    build = 'make install_jsregexp',
   },
   {
     'neovim/nvim-lspconfig',
@@ -146,7 +149,7 @@ return {
     end,
     event = { 'CmdlineEnter' },
     ft = { 'go', 'gomod' },
-    build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
+    build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
   },
   {
     'ray-x/lsp_signature.nvim',
@@ -154,14 +157,21 @@ return {
     opts = {
       bind = true,
       handler_opts = {
-        border = 'rounded'
+        border = 'rounded',
       },
     },
   },
   {
     'mason-org/mason.nvim',
     build = ':MasonUpdate',
-    cmd = { 'Mason', 'MasonUpdate', 'MasonLog', 'MasonInstall', 'MasonUninstall', 'MasonUninstallAll' },
+    cmd = {
+      'Mason',
+      'MasonUpdate',
+      'MasonLog',
+      'MasonInstall',
+      'MasonUninstall',
+      'MasonUninstallAll',
+    },
     config = true,
   },
   {
@@ -197,11 +207,16 @@ return {
           },
           methods = {
             tyd = 'textDocument/typeDefinition',
-          }
-        }
+          },
+        },
       })
 
-      vim.keymap.set('n', '<leader>,', '<Cmd>Lspsaga finder<CR>', { desc = 'Telescope: live grep args', })
+      vim.keymap.set(
+        'n',
+        '<leader>,',
+        '<Cmd>Lspsaga finder<CR>',
+        { desc = 'Telescope: live grep args' }
+      )
     end,
     dependencies = {
       'nvim-treesitter/nvim-treesitter',
