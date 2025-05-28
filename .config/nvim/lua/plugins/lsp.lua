@@ -4,6 +4,9 @@ return {
     version = '1.*',
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
+    dependencies = {
+      'fang2hou/blink-copilot',
+    },
     opts = {
       keymap = { preset = 'enter' },
       appearance = {
@@ -19,6 +22,12 @@ return {
         menu = {
           border = 'rounded',
           draw = {
+            columns = {
+              { 'kind_icon' },
+              { 'kind' },
+              { 'label',      'label_description', gap = 1 },
+              { 'source_name' },
+            },
             components = {
               kind_icon = {
                 text = function(ctx)
@@ -59,7 +68,30 @@ return {
         },
       },
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'buffer' },
+        default = {
+          'lsp',
+          'path',
+          'snippets',
+          'buffer',
+          'copilot',
+        },
+        providers = {
+          copilot = {
+            name = 'Copilot',
+            module = 'blink-copilot',
+            score_offset = 100,
+            async = true,
+            opts = {
+              -- Local options override global ones
+              max_completions = 3, -- Override global max_completions
+
+              -- Final settings:
+              -- * max_completions = 3
+              -- * max_attempts = 2
+              -- * all other options are default
+            }
+          },
+        },
       },
       fuzzy = {
         -- versionを指定してないとバイナリが特定できずLuaにfallbackするwarningが表示される
@@ -89,6 +121,32 @@ return {
       'stevearc/dressing.nvim',
     },
     config = true,
+  },
+  {
+    'ray-x/go.nvim',
+    dependencies = { -- optional packages
+      'ray-x/guihua.lua',
+      'neovim/nvim-lspconfig',
+      'nvim-treesitter/nvim-treesitter',
+    },
+    opts = {
+      -- lsp_keymaps = false,
+      -- other options
+    },
+    config = function(lp, opts)
+      require('go').setup(opts)
+      local format_sync_grp = vim.api.nvim_create_augroup('GoFormat', {})
+      vim.api.nvim_create_autocmd('BufWritePre', {
+        pattern = '*.go',
+        callback = function()
+          require('go.format').goimports()
+        end,
+        group = format_sync_grp,
+      })
+    end,
+    event = { 'CmdlineEnter' },
+    ft = { 'go', 'gomod' },
+    build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
   },
   {
     'ray-x/lsp_signature.nvim',

@@ -4,8 +4,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('my.lsp', {}),
   callback = function(args)
     local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
-    client.server_capabilities.semanticTokensProvider = nil
-    client.server_capabilities.documentHighlightProvider = false
     -- フォーマット
     if not client:supports_method('textDocument/willSaveWaitUntil')
         and client:supports_method('textDocument/formatting') then
