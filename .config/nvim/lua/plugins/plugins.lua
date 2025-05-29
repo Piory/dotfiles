@@ -11,6 +11,18 @@ return {
   'kazhala/close-buffers.nvim',
   'RRethy/vim-illuminate',
   {
+    'fei6409/log-highlight.nvim',
+    config = function()
+      require('log-highlight').setup({
+        patterns = {
+          '/var/log/.*',
+          'messages%..*',
+          '__FLUTTER_DEV_LOG__',
+        },
+      })
+    end,
+  },
+  {
     'kdheepak/lazygit.nvim',
     lazy = true,
     cmd = {
