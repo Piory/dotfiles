@@ -138,6 +138,22 @@ return {
     opts_extend = { 'sources.default' },
   },
   {
+    'rachartier/tiny-inline-diagnostic.nvim',
+    event = 'VeryLazy', -- Or `LspAttach`
+    priority = 1000,    -- needs to be loaded in first
+    config = function()
+      require('tiny-inline-diagnostic').setup({
+        options = {
+          show_source = true,
+          multilines = {
+            enabled = true,
+            always_show = false,
+          },
+        },
+      })
+    end,
+  },
+  {
     'folke/trouble.nvim',
     opts = {}, -- for default options, refer to the configuration section for custom setup.
     cmd = 'Trouble',
