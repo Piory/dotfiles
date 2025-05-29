@@ -23,7 +23,7 @@ return {
     end,
     keys = {
       {
-        '<C-o>d',
+        '<leader>od',
         function()
           local dbee = require('dbee')
           if dbee.is_open() then
