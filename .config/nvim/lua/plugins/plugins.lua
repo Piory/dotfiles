@@ -9,6 +9,7 @@ return {
   'mvllow/modes.nvim',
   'kevinhwang91/nvim-hlslens',
   'kazhala/close-buffers.nvim',
+  'RRethy/vim-illuminate',
   {
     'goolord/alpha-nvim',
     -- dependencies = { 'echasnovski/mini.icons' },
