@@ -11,6 +11,10 @@ return {
   'kazhala/close-buffers.nvim',
   'RRethy/vim-illuminate',
   {
+    'voldikss/vim-translator',
+    event = 'VeryLazy',
+  },
+  {
     'goolord/alpha-nvim',
     -- dependencies = { 'echasnovski/mini.icons' },
     dependencies = { 'nvim-tree/nvim-web-devicons' },
