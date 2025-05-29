@@ -5,6 +5,7 @@ require('mason').setup()
 
 -- masonを介してlanguage serverを自動インストールする
 local ensure_installed = {
+  'typos_lsp',
   'lua_ls',
   'sqls',
   'ts_ls',
@@ -30,6 +31,12 @@ lsp.config('*', {
       },
     },
   }),
+})
+
+lsp.config('typos_lsp', {
+  init_options = {
+    config = '~/.config/nvim/spell/.typos.toml',
+  },
 })
 
 lsp.config('sqls', {
