@@ -253,12 +253,6 @@ return {
     },
     event = { 'BufReadPre', 'BufNewFile' },
     config = true,
-    keys = {
-      { '<C-space>', '<cmd>lua vim.lsp.completion.get()  <CR>', mode = 'i' },
-      { 'gh',        '<cmd>lua vim.lsp.buf.hover()       <CR>' },
-      { 'gd',        '<cmd>lua vim.lsp.buf.definition()  <CR>' },
-      { 'gD',        '<cmd>lua vim.lsp.buf.declaration() <CR>' },
-    },
   },
   {
     'nvimdev/lspsaga.nvim',
