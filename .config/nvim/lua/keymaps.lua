@@ -39,20 +39,22 @@ keymap.set('n', 'gT', ':bprev<CR>')
 vim.api.nvim_set_keymap('n', '<leader>s', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 -- Toggleterm
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>sf', builtin.find_files, {})
-vim.keymap.set('n', '<leader>sg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>sb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>sh', builtin.help_tags, {})
+keymap.set('n', '<leader>sf', builtin.find_files, {})
+keymap.set('n', '<leader>sg', builtin.live_grep, {})
+keymap.set('n', '<leader>sb', builtin.buffers, {})
+keymap.set('n', '<leader>sh', builtin.help_tags, {})
 -- BDelete
 vim.api.nvim_set_keymap('n', '<leader>x', ':BDelete this<CR>', { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('n', '<leader>xo', ':BDelete other<CR>', { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('n', '<leader>xa', ':BDelete all<CR>', { noremap = true, silent = true })
 
 -- Oil (File Explorer)
-vim.keymap.set('n', '-', '<CMD>Oil --float<CR>', {
+keymap.set('n', '-', '<CMD>Oil --float<CR>', {
   noremap = true,
   silent = true,
   desc = 'Open parent directory',
 })
--- ドキュメントを表示
-vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<CR>')
+-- Lspsaga の設定
+keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<CR>')
+keymap.set('n', '<C-r>', '<cmd>Lspsaga rename<CR>')
+keymap.set('n', 'ga', '<cmd>Lspsaga code_action<CR>')
