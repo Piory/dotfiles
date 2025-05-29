@@ -11,6 +11,13 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- .arb ファイルのファイルタイプを JSON に設定
+vim.filetype.add({
+  extension = {
+    arb = 'json',
+  },
+})
+
 -- 翻訳の言語設定
 vim.g.translator_target_lang = 'ja'
 
