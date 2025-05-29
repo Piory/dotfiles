@@ -37,8 +37,6 @@ keymap.set('n', 'gt', ':bnext<CR>')
 keymap.set('n', 'gT', ':bprev<CR>')
 -- nvim-tree のトグル
 vim.api.nvim_set_keymap('n', '<leader>s', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
--- Toggleterm で lazygit を表示
-vim.api.nvim_set_keymap('n', '<leader>g', '<cmd>lua _lazygit_toggle()<CR>', { noremap = true, silent = true })
 -- Toggleterm
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>sf', builtin.find_files, {})
