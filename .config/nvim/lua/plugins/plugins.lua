@@ -235,6 +235,12 @@ return {
     },
   },
   {
+    'aznhe21/actions-preview.nvim',
+    config = function()
+      vim.keymap.set('n', 'ga', require('actions-preview').code_actions)
+    end,
+  },
+  {
     'shellRaining/hlchunk.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
   },

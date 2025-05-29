@@ -57,4 +57,3 @@ keymap.set('n', '-', '<CMD>Oil --float<CR>', {
 -- Lspsaga の設定
 keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<CR>')
 keymap.set('n', '<C-r>', '<cmd>Lspsaga rename<CR>')
-keymap.set('n', 'ga', '<cmd>Lspsaga code_action<CR>')
