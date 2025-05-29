@@ -15,6 +15,10 @@ return {
     event = 'VeryLazy',
   },
   {
+    'wakatime/vim-wakatime',
+    lazy = false,
+  },
+  {
     'goolord/alpha-nvim',
     -- dependencies = { 'echasnovski/mini.icons' },
     dependencies = { 'nvim-tree/nvim-web-devicons' },
