@@ -1,4 +1,5 @@
 return {
+  'LudoPinelli/comment-box.nvim',
   {
     'numToStr/Comment.nvim',
     opts = {
