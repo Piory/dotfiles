@@ -1,4 +1,17 @@
 return {
+  {
+    'vyfor/cord.nvim',
+    event = 'VeryLazy',
+    build = ':Cord update',
+    opts = {
+      -- text = {
+      --   workspace = 'In Piory',
+      --   editing = 'Editing ${filetype}',
+      --   viewing = 'Viewing ${filetype}',
+      -- },
+      -- variables = true, -- Enable string templates
+    },
+  },
   'gen740/SmoothCursor.nvim',
   {
     'sphamba/smear-cursor.nvim',
