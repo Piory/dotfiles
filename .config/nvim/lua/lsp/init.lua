@@ -25,6 +25,7 @@ local ensure_installed = {
   'typos_lsp',
   'lua_ls',
   'sqls',
+  'jsonls',
   'ts_ls',
   'gopls',
 }
