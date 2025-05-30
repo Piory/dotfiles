@@ -28,6 +28,16 @@ return {
         preset = 'enter',
         ['<Tab>'] = {
           function(cmp)
+            local has_words_before = function()
+              unpack = unpack or table.unpack
+              local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+              return col ~= 0
+                  and vim.api
+                  .nvim_buf_get_lines(0, line - 1, line, true)[1]
+                  :sub(col, col)
+                  :match('%s')
+                  == nil
+            end
             if cmp.is_visible() then
               return cmp.select_next()
             elseif has_words_before() then
@@ -188,6 +198,12 @@ return {
         '<cmd>Trouble qflist toggle<cr>',
         desc = 'Quickfix List (Trouble)',
       },
+    },
+  },
+  {
+    'j-hui/fidget.nvim',
+    opts = {
+      -- options
     },
   },
   {
