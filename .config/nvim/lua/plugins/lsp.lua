@@ -203,6 +203,7 @@ return {
   },
   'nvim-lua/lsp-status.nvim',
   'arkav/lualine-lsp-progress',
+  'nanotee/sqls.nvim',
   {
     'akinsho/flutter-tools.nvim',
     lazy = false,
