@@ -32,11 +32,6 @@ keymap.set(
   '<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><'
 ) -- ウィンドウの幅を大きく狭める
 
--- タブを作成、削除
-keymap.set('n', '<leader>to', ':tabnew<CR>')
-keymap.set('n', '<leader>tx', ':tabclose<CR>')
-keymap.set('n', '<leader>tn', ':tabn<CR>')
-keymap.set('n', '<leader>tp', ':tabp<CR>')
 -- ウィンドウを移動する
 keymap.set('n', '<C-l>', '<C-w>l')
 keymap.set('n', '<C-h>', '<C-w>h')
