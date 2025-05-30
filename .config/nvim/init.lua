@@ -30,6 +30,9 @@ require('keymaps')
 -- プラグインの設定
 require('plugins')
 
+-- LSP の設定
+require('lsp')
+
 -- カラースキームの設定
 vim.cmd.colorscheme('tokyonight-storm')
 
@@ -37,9 +40,8 @@ vim.cmd.colorscheme('tokyonight-storm')
 require('setup.alpha-nvim')
 require('setup.toggleterm')
 require('setup.gitsigns')
-require('setup.lsp')
-require('setup.lspconfig')
 require('setup.flutter-tools')
+require('setup.go')
 require('setup.nvim-tree')
 require('setup.nvim-treesitter')
 require('setup.telescope')
