@@ -4,12 +4,14 @@ return {
     event = 'VeryLazy',
     build = ':Cord update',
     opts = {
-      -- text = {
-      --   workspace = 'In Piory',
-      --   editing = 'Editing ${filetype}',
-      --   viewing = 'Viewing ${filetype}',
-      -- },
-      -- variables = true, -- Enable string templates
+      editor = {
+        icon = 'https://styles.redditmedia.com/t5_30kix/styles/communityIcon_n2hvyn96zwk81.png',
+      },
+      text = {
+        editing = 'Editing [${name}] ${filename} (${cursor_line}:${cursor_char})',
+        viewing = 'Viewing [${name}] ${filename} (${cursor_line}:${cursor_char})',
+      },
+      variables = true, -- Enable string templates
     },
   },
   'gen740/SmoothCursor.nvim',
