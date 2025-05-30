@@ -34,7 +34,8 @@ require('plugins')
 require('lsp')
 
 -- カラースキームの設定
-vim.cmd.colorscheme('tokyonight-storm')
+vim.cmd.colorscheme('tokyonight')
+-- require('themes.rainbow-drops').setup()
 
 -- 各種セットアップ（例：Tree-sitter, LSPなどh
 require('setup.alpha-nvim')
@@ -59,11 +60,11 @@ require('setup.smooth-cursor')
 require('setup.modes')
 
 -- 背景透明化の設定
-vim.cmd([[
-  highlight Normal guibg=none
-  highlight NonText guibg=none
-  highlight Normal ctermbg=none
-  highlight NonText ctermbg=none
-  highlight NormalNC guibg=none
-  highlight NormalSB guibg=none
-]])
+-- vim.cmd([[
+--   highlight Normal guibg=none
+--   highlight NonText guibg=none
+--   highlight Normal ctermbg=none
+--   highlight NonText ctermbg=none
+--   highlight NormalNC guibg=none
+--   highlight NormalSB guibg=none
+-- ]])
