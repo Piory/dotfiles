@@ -1,5 +1,9 @@
 local flutter_tools = require('flutter-tools')
-flutter_tools.setup({})
+flutter_tools.setup({
+  debugger = {
+    enabled = true,
+  },
+})
 flutter_tools.setup_project({
   {
     name = 'Localhost',
