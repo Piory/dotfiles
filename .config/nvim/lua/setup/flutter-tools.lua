@@ -1,7 +1,7 @@
 local flutter_tools = require('flutter-tools')
 flutter_tools.setup({
   debugger = {
-    enabled = true,
+    enabled = false,
   },
 })
 flutter_tools.setup_project({
