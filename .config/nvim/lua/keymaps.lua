@@ -68,9 +68,13 @@ end)
 keymap.set('n', '<leader>sb', function()
   builtin.buffers()
 end)
-keymap.set('n', '<leader>sh', function()
-  builtin.help_tags()
+keymap.set('n', '<leader>sc', function()
+  builtin.command_history()
 end)
+-- keymap.set('n', '<leader>sh', function()
+--   builtin.help_tags()
+-- end)
+
 -- BDelete
 vim.api.nvim_set_keymap(
   'n',
