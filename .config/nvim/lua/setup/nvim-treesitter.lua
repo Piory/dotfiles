@@ -1,18 +1,20 @@
 require('nvim-treesitter.configs').setup({
-  ensure_installed = { 
-    'c', 
-    'lua', 
-    'vim', 
-    'vimdoc', 
-    'javascript', 
-    'typescript', 
+  ensure_installed = {
+    'c',
+    'lua',
+    'vim',
+    'vimdoc',
+    'javascript',
+    'typescript',
+    'markdown',
     'html',
     'css',
     'json',
+    'sql',
     'dart',
+    'go',
   },
   sync_install = false,
   highlight = { enable = true },
-  indent = { enable = true },  
+  indent = { enable = true },
 })
-
