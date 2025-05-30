@@ -7,6 +7,7 @@ require('lazy').setup({
     { import = 'plugins/flash' },
     { import = 'plugins/formatter' },
     { import = 'plugins/lsp' },
+    { import = 'plugins/test' },
     { import = 'plugins/plugins' },
   },
 })
