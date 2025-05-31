@@ -4,6 +4,26 @@ return {
     event = 'VeryLazy',
   },
   {
+    'mistricky/codesnap.nvim',
+    build = 'make',
+    keys = {
+      {
+        '<leader>cs',
+        '<cmd>CodeSnapSave<cr>',
+        mode = 'v',
+        desc = 'Save selected code snapshot in ~/Desktop',
+      },
+    },
+    opts = {
+      code_font_family = 'Hack Nerd Font',
+      watermark_font_family = 'Hack Nerd Font',
+      watermark = '',
+      save_path = '~/Desktop',
+      has_breadcrumbs = true,
+      bg_theme = 'grape',
+    },
+  },
+  {
     'vyfor/cord.nvim',
     event = 'VeryLazy',
     build = ':Cord update',
