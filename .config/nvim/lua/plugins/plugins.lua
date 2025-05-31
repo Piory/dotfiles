@@ -1,5 +1,9 @@
 return {
   {
+    'dstein64/vim-startuptime',
+    event = 'VeryLazy',
+  },
+  {
     'vyfor/cord.nvim',
     event = 'VeryLazy',
     build = ':Cord update',
