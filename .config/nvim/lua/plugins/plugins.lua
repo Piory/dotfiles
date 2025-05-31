@@ -39,6 +39,17 @@ return {
   'kazhala/close-buffers.nvim',
   'RRethy/vim-illuminate',
   {
+    'lucamot/chrome-dev-console.nvim',
+    dependencies = { 'lucamot/chrome-remote.nvim' },
+    keys = {
+      {
+        '<leader>cc',
+        '<cmd>ChromeDevConsole<cr>',
+        desc = 'Chrome Dev Console',
+      },
+    },
+  },
+  {
     'fei6409/log-highlight.nvim',
     config = function()
       require('log-highlight').setup({
