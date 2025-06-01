@@ -1,5 +1,6 @@
 require('lazy').setup({
   spec = {
+    { import = 'plugins/colorscheme' },
     { import = 'plugins/ai' },
     { import = 'plugins/comment' },
     { import = 'plugins/db-client' },
