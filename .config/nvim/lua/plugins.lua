@@ -9,6 +9,7 @@ require('lazy').setup({
     { import = 'plugins/formatter' },
     { import = 'plugins/lsp' },
     { import = 'plugins/test' },
+    { import = 'plugins/telescope' },
     { import = 'plugins/plugins' },
   },
 })
