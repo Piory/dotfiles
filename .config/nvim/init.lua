@@ -49,7 +49,6 @@ vim.api.nvim_create_autocmd('User', {
   callback = function()
     require('setup.toggleterm')
     require('setup.gitsigns')
-    require('setup.flutter-tools')
     require('setup.nvim-tree')
     require('setup.nvim-treesitter')
     require('setup.neotest')
