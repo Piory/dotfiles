@@ -10,6 +10,7 @@ return {
   },
   {
     'saghen/blink.cmp',
+    event = 'InsertEnter',
     version = '1.*',
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
@@ -202,12 +203,14 @@ return {
   },
   {
     'j-hui/fidget.nvim',
+    event = 'LspAttach',
     opts = {
       -- options
     },
   },
   {
     'L3MON4D3/LuaSnip',
+    event = 'InsertEnter',
     -- follow latest release.
     version = 'v2.*', -- Replace <CurrentMajor> by the latest released major (first number of latest release)
     -- install jsregexp (optional!).
@@ -215,14 +218,24 @@ return {
   },
   {
     'neovim/nvim-lspconfig',
+    event = { 'BufReadPre', 'BufNewFile' },
     dependencies = { 'saghen/blink.cmp' },
   },
-  'nvim-lua/lsp-status.nvim',
-  'arkav/lualine-lsp-progress',
-  'nanotee/sqls.nvim',
+  {
+    'nvim-lua/lsp-status.nvim',
+    event = 'LspAttach',
+  },
+  {
+    'arkav/lualine-lsp-progress',
+    event = 'LspAttach',
+  },
+  {
+    'nanotee/sqls.nvim',
+    ft = 'sql',
+  },
   {
     'akinsho/flutter-tools.nvim',
-    lazy = false,
+    ft = 'dart',
     dependencies = {
       'nvim-lua/plenary.nvim',
       'stevearc/dressing.nvim',
@@ -289,6 +302,10 @@ return {
   },
   {
     'nvimdev/lspsaga.nvim',
+    cmd = 'Lspsaga',
+    keys = {
+      { '<leader>,', '<Cmd>Lspsaga finder<CR>', desc = 'Lspsaga finder' },
+    },
     config = function()
       require('lspsaga').setup({
         finder = {

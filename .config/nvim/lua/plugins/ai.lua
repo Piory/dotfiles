@@ -13,14 +13,17 @@ return {
         desc = 'Run Claude Code',
       },
     },
+    opts = {},
     config = function()
-      require('claude-code').setup()
+      require('claude-code').setup({
+        command = 'claude --dangerously-skip-permissions',
+      })
     end,
   },
   {
     'github/copilot.vim',
-    event = 'VeryLazy',
     lazy = false,
+    priority = 1000,
   },
   {
     'yetone/avante.nvim',

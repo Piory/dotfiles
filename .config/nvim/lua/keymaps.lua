@@ -78,12 +78,22 @@ end)
 -- BDelete
 vim.api.nvim_set_keymap(
   'n',
-  '<C-x>',
+  '<leader>bx',
   ':BDelete this<CR>',
   { noremap = true, silent = true }
 )
--- vim.api.nvim_set_keymap('n', '<leader>xo', ':BDelete other<CR>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', '<leader>xa', ':BDelete all<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap(
+--   'n',
+--   '<leader>bxo',
+--   ':BDelete other<CR>',
+--   { noremap = true, silent = true }
+-- )
+-- vim.api.nvim_set_keymap(
+--   'n',
+--   '<leader>bxa',
+--   ':BDelete all<CR>',
+--   { noremap = true, silent = true }
+-- )
 
 -- Oil (File Explorer)
 keymap.set('n', '-', '<CMD>Oil --float<CR>', {

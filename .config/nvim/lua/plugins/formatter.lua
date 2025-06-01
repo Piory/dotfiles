@@ -21,13 +21,21 @@ return {
       null_ls.setup({
         sources = {
           -- go
-          null_ls.formatting.gofmt,
-          null_ls.formatting.goimports_reviser,
-          null_ls.formatting.golines,
-          null_ls.builtins.formatting.gofumpt,
+          null_ls.builtins.formatting.gofmt.with({
+            filetypes = { 'go' }, -- Go ファイルに適用
+          }),
+          null_ls.builtins.formatting.goimports_reviser.with({
+            filetypes = { 'go' }, -- Go ファイルに適用
+          }),
+          null_ls.builtins.formatting.golines.with({
+            filetypes = { 'go' }, -- Go ファイルに適用
+          }),
+          null_ls.builtins.formatting.gofumpt.with({
+            filetypes = { 'go' }, -- Go ファイルに適用
+          }),
           -- JavaScript/TypeScript
           null_ls.builtins.formatting.prettier.with({
-            filetypes = { 'javascriptreact' },
+            filetypes = { 'javascriptreact' }, -- React JavaScript ファイルに適用
           }),
           -- Lua
           null_ls.builtins.formatting.stylua.with({

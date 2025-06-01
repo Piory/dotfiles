@@ -46,8 +46,12 @@ return {
       variables = true, -- Enable string templates
     },
   },
-  'gen740/SmoothCursor.nvim',
   {
+    'gen740/SmoothCursor.nvim',
+    event = 'VeryLazy',
+  },
+  {
+    event = 'VeryLazy',
     'sphamba/smear-cursor.nvim',
     opts = {                                -- Default  Range
       stiffness = 0.8,                      -- 0.6      [0, 1]
@@ -60,22 +64,58 @@ return {
       require('smear_cursor').setup()
     end,
   },
-  'akinsho/bufferline.nvim',
-  'lewis6991/gitsigns.nvim',
-  'Mofiqul/dracula.nvim',
-  'windwp/nvim-autopairs',
-  'windwp/nvim-ts-autotag',
+  {
+    'akinsho/bufferline.nvim',
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    'lewis6991/gitsigns.nvim',
+    event = { 'BufReadPre', 'BufNewFile' },
+  },
+  {
+    'windwp/nvim-autopairs',
+    event = 'InsertEnter',
+  },
+  {
+    'windwp/nvim-ts-autotag',
+    event = 'InsertEnter',
+    ft = {
+      'html',
+      'javascript',
+      'typescript',
+      'javascriptreact',
+      'typescriptreact',
+      'vue',
+      'svelte',
+      'astro',
+      'markdown',
+    },
+  },
   'brenoprata10/nvim-highlight-colors',
   'mvllow/modes.nvim',
-  'kevinhwang91/nvim-hlslens',
-  'kazhala/close-buffers.nvim',
-  'RRethy/vim-illuminate',
+  {
+    'kevinhwang91/nvim-hlslens',
+    event = 'VeryLazy',
+  },
+  {
+    'RRethy/vim-illuminate',
+    event = 'VeryLazy',
+  },
+  {
+    'kazhala/close-buffers.nvim',
+    cmd = {
+      'BDelete',
+      'BWipeout',
+    },
+  },
+
   {
     'lucamot/chrome-dev-console.nvim',
     dependencies = { 'lucamot/chrome-remote.nvim' },
     keys = {
       {
-        '<leader>cc',
+        '<leader>dc',
         '<cmd>ChromeDevConsole<cr>',
         desc = 'Chrome Dev Console',
       },
@@ -83,6 +123,7 @@ return {
   },
   {
     'fei6409/log-highlight.nvim',
+    event = 'VeryLazy',
     config = function()
       require('log-highlight').setup({
         patterns = {
@@ -115,11 +156,18 @@ return {
   },
   {
     'voldikss/vim-translator',
-    event = 'VeryLazy',
+    cmd = {
+      'Translate',
+      'TranslateW',
+      'TranslateR',
+      'TranslateX',
+      'TranslateH',
+      'TranslateL',
+    },
   },
   {
     'wakatime/vim-wakatime',
-    lazy = false,
+    event = 'VeryLazy',
   },
   {
     'b0o/incline.nvim',
@@ -226,6 +274,7 @@ return {
   },
   {
     'Pocco81/auto-save.nvim',
+    event = 'VeryLazy',
     config = function()
       require('auto-save').setup({
         -- your config goes here
@@ -254,10 +303,13 @@ return {
   },
   {
     'shortcuts/no-neck-pain.nvim',
+    -- 今使っていないから一旦 lazy = true にしておく
+    lazy = true,
     version = '*',
   },
   {
     'lukas-reineke/indent-blankline.nvim',
+    event = { 'BufReadPost', 'BufNewFile' },
     main = 'ibl',
     opts = function(_, opts)
       -- Other blankline configuration here
@@ -268,13 +320,8 @@ return {
     },
   },
   {
-    'folke/tokyonight.nvim',
-    lazy = false,
-    priority = 1000,
-    opts = {},
-  },
-  {
     'nvim-treesitter/nvim-treesitter',
+    event = { 'BufReadPost', 'BufNewFile' },
     build = ':TSUpdate',
   },
   {
@@ -285,27 +332,10 @@ return {
   },
   {
     'nvim-lualine/lualine.nvim',
+    lazy = false,
+    priority = 1000,
     dependencies = {
       'nvim-tree/nvim-web-devicons',
-    },
-  },
-  {
-    'nvim-telescope/telescope.nvim',
-    tag = '0.1.8',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-    },
-  },
-  {
-    'prochri/telescope-all-recent.nvim',
-    dependencies = {
-      'nvim-telescope/telescope.nvim',
-      'kkharji/sqlite.lua',
-      -- optional, if using telescope for vim.ui.select
-      'stevearc/dressing.nvim',
-    },
-    opts = {
-      -- your config goes here
     },
   },
   {
@@ -335,6 +365,7 @@ return {
   },
   {
     'akinsho/toggleterm.nvim',
+    event = 'VeryLazy',
     version = '*',
     config = true,
   },
