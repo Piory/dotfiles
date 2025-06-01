@@ -37,33 +37,24 @@ require('lsp')
 vim.cmd.colorscheme('tokyonight')
 -- require('themes.rainbow-drops').setup()
 
--- 各種セットアップ（例：Tree-sitter, LSPなどh
--- 起動時に必要なものだけを読み込む
 require('setup.alpha-nvim')
 require('setup.lualine')
 require('setup.bufferline')
-
--- 遅延読み込みできるセットアップ
-vim.api.nvim_create_autocmd('User', {
-  pattern = 'VeryLazy',
-  callback = function()
-    require('setup.toggleterm')
-    require('setup.gitsigns')
-    require('setup.nvim-tree')
-    require('setup.nvim-treesitter')
-    require('setup.neotest')
-    require('setup.dap')
-    require('setup.telescope')
-    require('setup.hlchunk')
-    require('setup.lsp-status')
-    require('setup.nvim-autopairs')
-    require('setup.nvim-highlight-colors')
-    require('setup.noice')
-    require('setup.no-neck-pain')
-    require('setup.smooth-cursor')
-    require('setup.modes')
-  end,
-})
+require('setup.toggleterm')
+require('setup.gitsigns')
+require('setup.nvim-tree')
+require('setup.nvim-treesitter')
+require('setup.neotest')
+require('setup.dap')
+require('setup.telescope')
+require('setup.hlchunk')
+require('setup.lsp-status')
+require('setup.nvim-autopairs')
+require('setup.nvim-highlight-colors')
+require('setup.noice')
+require('setup.no-neck-pain')
+require('setup.smooth-cursor')
+require('setup.modes')
 
 -- 背景透明化の設定
 -- vim.cmd([[
