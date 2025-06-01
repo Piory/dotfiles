@@ -9,3 +9,6 @@ init.vim.local
 tags
 tags.lock
 .ctags
+
+**/.claude/settings.local.json
+CLAUDE.md
