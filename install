@@ -62,16 +62,9 @@ fi
 
 echo ''
 echo '######################################'
-echo '##           Install yarn           ##'
+echo '##        Install ClaudeCode        ##'
 echo '######################################'
-if ! builtin command -v yarn > /dev/null; then
-  echo "Install yarn"
-  npm install -g yarn
-  echo 'export PATH=$PATH:`npm bin -g`' >> ~/.zshrc
-  source ~/.zshrc >> /dev/null
-else
-  echo 'Installed yarn'
-fi
 
+npm install -g @anthropic-ai/claude-code
 
 echo 'Neovim install completed!!!'
