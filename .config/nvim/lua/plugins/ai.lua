@@ -17,6 +17,12 @@ return {
     config = function()
       require('claude-code').setup({
         command = 'claude --dangerously-skip-permissions',
+        keymaps = {
+          toggle = {
+            normal = '<C-l>',   -- Normal mode keymap for toggling Claude Code, false to disable
+            terminal = '<C-l>', -- Terminal mode keymap for toggling Claude Code, false to disable
+          },
+        },
       })
     end,
   },
