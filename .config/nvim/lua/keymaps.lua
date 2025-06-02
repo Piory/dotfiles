@@ -32,6 +32,10 @@ keymap.set(
   '<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><'
 ) -- ウィンドウの幅を大きく狭める
 
+-- ターミナルモードのキーマップ
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+vim.keymap.set('t', '<C-]>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+
 -- ウィンドウを移動する
 keymap.set('n', '<C-l>', '<C-w>l')
 keymap.set('n', '<C-h>', '<C-w>h')
