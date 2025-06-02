@@ -19,8 +19,8 @@ return {
         command = 'claude --dangerously-skip-permissions',
         keymaps = {
           toggle = {
-            normal = '<C-l>',   -- Normal mode keymap for toggling Claude Code, false to disable
-            terminal = '<C-l>', -- Terminal mode keymap for toggling Claude Code, false to disable
+            normal = '<C-i>',   -- Normal mode keymap for toggling Claude Code, false to disable
+            terminal = '<C-i>', -- Terminal mode keymap for toggling Claude Code, false to disable
           },
         },
       })
