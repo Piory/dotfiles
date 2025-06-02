@@ -44,6 +44,7 @@ local ensure_installed = {
   'jsonls',
   'ts_ls',
   'gopls',
+  'protols',
 }
 require('mason-lspconfig').setup({
   automatic_installation = true,

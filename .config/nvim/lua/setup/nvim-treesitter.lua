@@ -13,6 +13,7 @@ require('nvim-treesitter.configs').setup({
     'sql',
     'dart',
     'go',
+    'proto',
   },
   sync_install = false,
   highlight = { enable = true },
