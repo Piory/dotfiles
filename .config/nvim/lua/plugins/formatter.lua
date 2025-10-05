@@ -13,6 +13,7 @@ return {
           'prettier',
           'stylua',
           'sqls',
+          'biome',
         },
         automatic_installation = true,
       })
@@ -37,7 +38,20 @@ return {
           }),
           -- JavaScript/TypeScript
           null_ls.builtins.formatting.prettier.with({
-            filetypes = { 'javascriptreact' }, -- React JavaScript ファイルに適用
+            filetypes = {
+              'javascript',
+              'typescript',
+              'javascriptreact',
+              'typescriptreact',
+            }, -- React JavaScript ファイルに適用
+          }),
+          null_ls.builtins.formatting.biome.with({
+            filetypes = {
+              'javascript',
+              'typescript',
+              'javascriptreact',
+              'typescriptreact',
+            }, -- React TypeScript ファイルに適用
           }),
           -- Lua
           null_ls.builtins.formatting.stylua.with({
