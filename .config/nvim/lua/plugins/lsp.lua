@@ -32,12 +32,7 @@ return {
             local has_words_before = function()
               unpack = unpack or table.unpack
               local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-              return col ~= 0
-                  and vim.api
-                  .nvim_buf_get_lines(0, line - 1, line, true)[1]
-                  :sub(col, col)
-                  :match('%s')
-                  == nil
+              return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
             end
             if cmp.is_visible() then
               return cmp.select_next()
@@ -75,10 +70,8 @@ return {
                   local icon = ctx.kind_icon
                   -- if LSP source, check for color derived from documentation
                   if ctx.item.source_name == 'LSP' then
-                    local color_item = require('nvim-highlight-colors').format(
-                      ctx.item.documentation,
-                      { kind = ctx.kind }
-                    )
+                    local color_item = require('nvim-highlight-colors').format(ctx.item.documentation,
+                      { kind = ctx.kind })
                     if color_item and color_item.abbr ~= '' then
                       icon = color_item.abbr
                     end
@@ -90,10 +83,8 @@ return {
                   local highlight = 'BlinkCmpKind' .. ctx.kind
                   -- if LSP source, check for color derived from documentation
                   if ctx.item.source_name == 'LSP' then
-                    local color_item = require('nvim-highlight-colors').format(
-                      ctx.item.documentation,
-                      { kind = ctx.kind }
-                    )
+                    local color_item = require('nvim-highlight-colors').format(ctx.item.documentation,
+                      { kind = ctx.kind })
                     if color_item and color_item.abbr_hl_group then
                       highlight = color_item.abbr_hl_group
                     end
@@ -331,7 +322,9 @@ return {
     'nvimdev/lspsaga.nvim',
     cmd = 'Lspsaga',
     keys = {
-      { '<leader>,', '<Cmd>Lspsaga finder<CR>', desc = 'Lspsaga finder' },
+      { '<leader>,',  '<Cmd>Lspsaga finder<CR>',      desc = 'Lspsaga finder' },
+      { '<leader>dc', '<Cmd>Lspsaga hover_doc<CR>',   desc = 'Lspsaga hover_doc' },
+      { '<leader>ca', '<Cmd>Lspsaga code_action<CR>', desc = 'Lspsaga code_action' },
     },
     config = function()
       require('lspsaga').setup({
@@ -353,12 +346,7 @@ return {
         },
       })
 
-      vim.keymap.set(
-        'n',
-        '<leader>,',
-        '<Cmd>Lspsaga finder<CR>',
-        { desc = 'Telescope: live grep args' }
-      )
+      vim.keymap.set('n', '<leader>,', '<Cmd>Lspsaga finder<CR>', { desc = 'Telescope: live grep args' })
     end,
     dependencies = {
       'nvim-treesitter/nvim-treesitter',

@@ -20,7 +20,7 @@ opt.smartcase = true
 opt.cursorline = true
 
 -- ヤンクするとクリップボードに保存される
-opt.clipboard:append { 'unnamedplus' }
+opt.clipboard:append({ 'unnamedplus' })
 
 -- タブ、空白、改行の可視化
 opt.list = true
@@ -30,7 +30,7 @@ opt.listchars = {
   eol = '↲',
   extends = '»',
   precedes = '«',
-  nbsp = '%'
+  nbsp = '%',
 }
 
 -- 補完表示時に最初の候補を選択かつ、Enter で補完を確定する
@@ -39,3 +39,14 @@ opt.completeopt = {
   'menuone',
   'noinsert',
 }
+
+--          ╭─────────────────────────────────────────────────────────╮
+--          │                    自動リロード設定                     │
+--          ╰─────────────────────────────────────────────────────────╯
+-- 自動リロードを有効化
+opt.autoread = true
+-- バッファに戻ったり、フォーカスを取ったときに checktime を実行
+vim.api.nvim_create_autocmd({ 'BufEnter', 'CursorHold', 'CursorHoldI', 'FocusGained' }, {
+  pattern = { '*' },
+  command = "if mode() != 'c' | checktime | endif",
+})

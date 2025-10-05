@@ -12,7 +12,7 @@ return {
         ensure_installed = {
           'prettier',
           'stylua',
-          'sqls'
+          'sqls',
         },
         automatic_installation = true,
       })
@@ -27,9 +27,11 @@ return {
           null_ls.builtins.formatting.goimports_reviser.with({
             filetypes = { 'go' }, -- Go ファイルに適用
           }),
-          null_ls.builtins.formatting.golines.with({
-            filetypes = { 'go' }, -- Go ファイルに適用
-          }),
+          -- TODO: 差分が大きいので一旦コメントアウト
+          -- 一行のコードを整形するための設定
+          -- null_ls.builtins.formatting.golines.with({
+          --   filetypes = { 'go' }, -- Go ファイルに適用
+          -- }),
           null_ls.builtins.formatting.gofumpt.with({
             filetypes = { 'go' }, -- Go ファイルに適用
           }),

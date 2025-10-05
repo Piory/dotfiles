@@ -175,8 +175,7 @@ return {
       local devicons = require('nvim-web-devicons')
       require('incline').setup({
         render = function(props)
-          local filename =
-              vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ':t')
+          local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ':t')
           if filename == '' then
             filename = '[No Name]'
           end
@@ -191,10 +190,7 @@ return {
             end
             for name, icon in pairs(icons) do
               if tonumber(signs[name]) and signs[name] > 0 then
-                table.insert(
-                  labels,
-                  { icon .. signs[name] .. ' ', group = 'Diff' .. name }
-                )
+                table.insert(labels, { icon .. signs[name] .. ' ', group = 'Diff' .. name })
               end
             end
             if #labels > 0 then
@@ -204,20 +200,13 @@ return {
           end
 
           local function get_diagnostic_label()
-            local icons =
-            { error = '', warn = '', info = '', hint = '' }
+            local icons = { error = '', warn = '', info = '', hint = '' }
             local label = {}
 
             for severity, icon in pairs(icons) do
-              local n = #vim.diagnostic.get(
-                props.buf,
-                { severity = vim.diagnostic.severity[string.upper(severity)] }
-              )
+              local n = #vim.diagnostic.get(props.buf, { severity = vim.diagnostic.severity[string.upper(severity)] })
               if n > 0 then
-                table.insert(
-                  label,
-                  { icon .. n .. ' ', group = 'DiagnosticSign' .. severity }
-                )
+                table.insert(label, { icon .. n .. ' ', group = 'DiagnosticSign' .. severity })
               end
             end
             if #label > 0 then
@@ -312,12 +301,11 @@ return {
     event = { 'BufReadPost', 'BufNewFile' },
     main = 'ibl',
     opts = function(_, opts)
-      -- Other blankline configuration here
-      return require('indent-rainbowline').make_opts(opts)
+      return require('indent-rainbowline').make_opts(opts, {
+        color_transparency = 0.15,
+      })
     end,
-    dependencies = {
-      'TheGLander/indent-rainbowline.nvim',
-    },
+    dependencies = { 'TheGLander/indent-rainbowline.nvim' },
   },
   {
     'nvim-treesitter/nvim-treesitter',
