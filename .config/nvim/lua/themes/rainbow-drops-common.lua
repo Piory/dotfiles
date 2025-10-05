@@ -279,6 +279,13 @@ local function setup_language_specific(hl, c)
   hl(0, 'goType', { fg = c.crystalBlue, bold = true })
 end
 
+local function setup_search_highlights(hl, c)
+  hl(0, 'Search', { fg = c.eerieBlack, bg = c.goldenrod, bold = true })
+  hl(0, 'CurSearch', { fg = c.eerieBlack, bg = c.yellowGreen, bold = true })
+  hl(0, 'IncSearch', { fg = c.eerieBlack, bg = c.brightCyan, italic = true })
+  hl(0, 'Substitute', { fg = c.aliceBlue, bg = c.mediumVioletRed, underline = true })
+end
+
 function M.setup(colors, theme_name, lualine_theme_name)
   -- クリア & 基本設定
   vim.cmd('highlight clear')
@@ -293,6 +300,7 @@ function M.setup(colors, theme_name, lualine_theme_name)
   setup_treesitter_highlights(hl, colors)
   setup_lsp_highlights(hl, colors)
   setup_language_specific(hl, colors)
+  setup_search_highlights(hl, colors)
 
   -- lualine テーマ設定
   if package.loaded['lualine'] and lualine_theme_name then
