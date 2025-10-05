@@ -1,7 +1,8 @@
 local colors = {}
 
-colors.white = '#FFFFFF'
-colors.eerieBlack = '#202020'
+colors.lightGrayBlue = '#A9B7C6'
+colors.eerieBlack = '#141a1f'
+colors.cursorLine = '#2B2B2B'
 colors.aliceBlue = '#D9E8F7'
 colors.charcoal = '#363636'
 colors.dimGray = '#626262'

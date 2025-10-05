@@ -34,8 +34,7 @@ require('plugins')
 require('lsp')
 
 -- カラースキームの設定
-vim.cmd.colorscheme('tokyonight')
--- require('themes.rainbow-drops').setup()
+vim.cmd.colorscheme('rainbow-drops')
 
 require('setup.alpha-nvim')
 require('setup.lualine')

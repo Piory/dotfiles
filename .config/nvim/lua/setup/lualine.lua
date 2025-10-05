@@ -1,9 +1,12 @@
+-- Rainbow Drops テーマを読み込み
+local rainbow_drops_theme = require('themes.lualine-rainbow-drops')
+
 require('lualine').setup({
   options = {
     icons_enabled = true,
-    theme = 'auto',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
+    theme = rainbow_drops_theme,
+    component_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
     disabled_filetypes = {
       statusline = {},
       winbar = {},
@@ -16,11 +19,11 @@ require('lualine').setup({
       statusline = 100,
       tabline = 100,
       winbar = 100,
-    }
+    },
   },
   sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff', 'diagnostics'},
+    lualine_a = { 'mode' },
+    lualine_b = { 'branch', 'diff', 'diagnostics' },
     lualine_c = {
       'filename',
       {
@@ -28,7 +31,18 @@ require('lualine').setup({
         icon = '', -- f013
         symbols = {
           -- Standard unicode symbols to cycle through for LSP progress:
-          spinner = { '⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏' },
+          spinner = {
+            '⠋',
+            '⠙',
+            '⠹',
+            '⠸',
+            '⠼',
+            '⠴',
+            '⠦',
+            '⠧',
+            '⠇',
+            '⠏',
+          },
           -- Standard unicode symbol for when LSP is done:
           done = '✓',
           -- Delimiter inserted between LSP names:
@@ -39,21 +53,20 @@ require('lualine').setup({
       },
       'lsp_progress',
     },
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
+    lualine_x = { 'encoding', 'fileformat', 'filetype' },
+    lualine_y = { 'progress' },
+    lualine_z = { 'location' },
   },
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
-    lualine_c = {'filename'},
-    lualine_x = {'location'},
+    lualine_c = { 'filename' },
+    lualine_x = { 'location' },
     lualine_y = {},
-    lualine_z = {}
+    lualine_z = {},
   },
   tabline = {},
   winbar = {},
   inactive_winbar = {},
-  extensions = {}
+  extensions = {},
 })
-
