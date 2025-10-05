@@ -12,3 +12,8 @@ tags.lock
 
 **/.claude/settings.local.json
 CLAUDE.md
+AGENTS.md
+WARP.md
+
+.claude
+.serena
