@@ -4,33 +4,25 @@ vim.g.mapleader = ' '                             -- <leader> を半角スペー
 keymap.set('i', 'jj', '<ESC>', { silent = true }) -- インサートモードを抜ける
 keymap.set('n', ';', ':', { silent = true })      -- シフトを押すことなく、;を入力する。割と便利
 
-keymap.set('n', '<leader>w', ':w<CR>')            -- 保存
-keymap.set('n', '<leader>q', ':q<CR>')            -- 終了
-keymap.set('n', '<leader>c', ':nohlsearch<CR>')   -- 検索のハイライトを消す
-keymap.set('n', '<leader>sv', '<C-w>v')           -- ウィンドウを垂直方向に分割する
-keymap.set('n', '<leader>sh', '<C-w>s')           -- ウィンドウを水平に分割する
-keymap.set('n', '<leader>se', '<C-w>=')           -- ウィンドウの幅を等分にする
-keymap.set('n', '<leader>sx', ':close<CR>')       -- 現在、カーソルがいるウィンドウを閉じる
-keymap.set(
-  'n',
-  '<leader>sw',
-  '<C-w>><C-w>><C-w>><C-w>><C-w>><C-w>><C-w>><C-w>>'
-) -- ウィンドウの幅を少し広げる
-keymap.set(
-  'n',
-  '<leader>sww',
-  '<C-w>><C-w>><C-w>><C-w>><C-w>><C-w>><C-w>><C-w>><C-w>><C-w>><C-w>><C-w>><C-w>><C-w>><C-w>><C-w>>'
-) -- ウィンドウの幅を大きく広げる
-keymap.set(
-  'n',
-  '<leader>st',
-  '<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><'
-) -- ウィンドウの幅を少し狭める
-keymap.set(
-  'n',
-  '<leader>stt',
-  '<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><'
-) -- ウィンドウの幅を大きく狭める
+-- 検索ハイライトをすぐ消す（Esc×2で消える）
+vim.keymap.set('n', '<Esc><Esc>', function()
+  vim.cmd('nohlsearch')
+  vim.fn.setreg('/', '') -- 検索パターン自体も空にしたい場合は有効化
+end, { silent = true })
+
+keymap.set('n', '<leader>w', ':w<CR>')                                                                                             -- 保存
+keymap.set('n', '<leader>q', ':q<CR>')                                                                                             -- 終了
+keymap.set('n', '<leader>c', ':nohlsearch<CR>')                                                                                    -- 検索のハイライトを消す
+keymap.set('n', '<leader>sv', '<C-w>v')                                                                                            -- ウィンドウを垂直方向に分割する
+keymap.set('n', '<leader>sh', '<C-w>s')                                                                                            -- ウィンドウを水平に分割する
+keymap.set('n', '<leader>se', '<C-w>=')                                                                                            -- ウィンドウの幅を等分にする
+keymap.set('n', '<leader>sx', ':close<CR>')                                                                                        -- 現在、カーソルがいるウィンドウを閉じる
+keymap.set('n', '<leader>sw', '<C-w>><C-w>><C-w>><C-w>><C-w>><C-w>><C-w>><C-w>>')                                                  -- ウィンドウの幅を少し広げる
+keymap.set('n', '<leader>sww',
+  '<C-w>><C-w>><C-w>><C-w>><C-w>><C-w>><C-w>><C-w>><C-w>><C-w>><C-w>><C-w>><C-w>><C-w>><C-w>><C-w>>')                              -- ウィンドウの幅を大きく広げる
+keymap.set('n', '<leader>st', '<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><')                                                  -- ウィンドウの幅を少し狭める
+keymap.set('n', '<leader>stt',
+  '<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><<C-w><')                              -- ウィンドウの幅を大きく狭める
 
 -- ターミナルモードのキーマップ
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
@@ -49,18 +41,11 @@ keymap.set('n', 'gt', ':bnext<CR>')
 keymap.set('n', 'gT', ':bprev<CR>')
 
 -- LSP handlers
-vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics,
-  { virtual_text = true }
-)
+vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics,
+  { virtual_text = true })
 
 -- nvim-tree のトグル
-vim.api.nvim_set_keymap(
-  'n',
-  '<leader>s',
-  ':NvimTreeToggle<CR>',
-  { noremap = true, silent = true }
-)
+vim.api.nvim_set_keymap('n', '<leader>s', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 -- Toggleterm
 local builtin = require('telescope.builtin')
 keymap.set('n', '<leader>sf', function()
@@ -80,12 +65,7 @@ end)
 -- end)
 
 -- BDelete
-vim.api.nvim_set_keymap(
-  'n',
-  '<leader>bx',
-  ':BDelete this<CR>',
-  { noremap = true, silent = true }
-)
+vim.api.nvim_set_keymap('n', '<leader>bx', ':BDelete this<CR>', { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap(
 --   'n',
 --   '<leader>bxo',
