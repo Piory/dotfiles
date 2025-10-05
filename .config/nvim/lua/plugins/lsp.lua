@@ -345,8 +345,6 @@ return {
           },
         },
       })
-
-      vim.keymap.set('n', '<leader>,', '<Cmd>Lspsaga finder<CR>', { desc = 'Telescope: live grep args' })
     end,
     dependencies = {
       'nvim-treesitter/nvim-treesitter',
