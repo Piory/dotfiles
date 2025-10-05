@@ -85,6 +85,3 @@ keymap.set('n', '-', '<CMD>Oil --float<CR>', {
   silent = true,
   desc = 'Open parent directory',
 })
--- Lspsaga の設定
-keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<CR>')
-keymap.set('n', '<C-r>', '<cmd>Lspsaga rename<CR>')
