@@ -38,6 +38,10 @@ return {
           }),
           -- JavaScript/TypeScript
           null_ls.builtins.formatting.prettier.with({
+            only_local = 'node_modules/.bin',
+            condition = function(utils)
+              return utils.root_has_file({ '.prettierrc' })
+            end,
             filetypes = {
               'javascript',
               'typescript',
@@ -46,6 +50,10 @@ return {
             }, -- React JavaScript ファイルに適用
           }),
           null_ls.builtins.formatting.biome.with({
+            only_local = 'node_modules/.bin',
+            condition = function(utils)
+              return utils.root_has_file({ 'biome.json' })
+            end,
             filetypes = {
               'javascript',
               'typescript',
