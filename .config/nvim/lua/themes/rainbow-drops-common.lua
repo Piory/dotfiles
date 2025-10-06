@@ -61,7 +61,7 @@ local function setup_base_highlights(hl, c)
   hl(0, 'BlinkCmpKindSnippet', { fg = c.corare })
 
   -- ドキュメンテーション
-  hl(0, 'BlinkCmpDoc', { bg = c.darkSlateGray })
+  hl(0, 'BlinkCmpDoc', { bg = c.eerieBlack })
   hl(0, 'BlinkCmpDocBorder', { fg = c.crystalBlue })
 
   -- シグネチャヘルプ
@@ -224,7 +224,7 @@ end
 
 local function setup_lsp_highlights(hl, c)
   -- LSP ハイライト
-  hl(0, '@lsp.type.namespace', { fg = c.lightGrayBlue })
+  hl(0, '@lsp.type.namespace', { fg = c.sliver })
   hl(0, '@lsp.type.parameter', { fg = c.lightSkyBlue2 })
   hl(0, '@lsp.type.enum', { fg = c.plum })
   hl(0, '@lsp.type.method', { fg = c.limeGreen })
@@ -248,7 +248,6 @@ local function setup_language_specific(hl, c)
   hl(0, '@constructor.lua', { fg = c.lightGrayBlue })
 
   -- TypeScript
-  hl(0, '@lsp.type.namespace.typescriptreact', { fg = c.silver })
   hl(0, '@lsp.typemod.interface.declaration.typescriptreact', { fg = c.lightCyan })
   hl(0, '@constructor.typescript', { fg = c.mediumVioletRed, bold = true })
   hl(0, 'typescriptTypeReference', { fg = c.silver })
