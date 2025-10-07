@@ -132,6 +132,12 @@ return {
     end,
   },
   {
+    'rachartier/tiny-glimmer.nvim',
+    event = 'VeryLazy',
+    priority = 10,
+    opts = {},
+  },
+  {
     'akinsho/bufferline.nvim',
     lazy = false,
     priority = 1000,
