@@ -46,23 +46,6 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagn
 
 -- nvim-tree のトグル
 vim.api.nvim_set_keymap('n', '<leader>s', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
--- Toggleterm
-local builtin = require('telescope.builtin')
-keymap.set('n', '<leader>sf', function()
-  builtin.find_files()
-end)
-keymap.set('n', '<leader>sg', function()
-  builtin.live_grep()
-end)
-keymap.set('n', '<leader>sb', function()
-  builtin.buffers()
-end)
-keymap.set('n', '<leader>sc', function()
-  builtin.command_history()
-end)
--- keymap.set('n', '<leader>sh', function()
---   builtin.help_tags()
--- end)
 
 -- Oil (File Explorer)
 keymap.set('n', '-', '<CMD>Oil --float<CR>', {
