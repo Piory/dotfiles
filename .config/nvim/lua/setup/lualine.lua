@@ -1,10 +1,7 @@
--- Rainbow Drops テーマを読み込み
-local rainbow_drops_theme = require('themes.lualine-rainbow-drops')
-
 require('lualine').setup({
   options = {
     icons_enabled = true,
-    theme = rainbow_drops_theme,
+    theme = 'auto',
     component_separators = { left = '', right = '' },
     section_separators = { left = '', right = '' },
     disabled_filetypes = {
