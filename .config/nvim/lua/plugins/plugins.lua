@@ -1,5 +1,72 @@
 return {
   {
+    'folke/lazydev.nvim',
+    ft = 'lua',
+    opts = {
+      library = {
+        { path = 'luvit-meta/library', words = { 'vim%.uv' } },
+        { path = 'snacks.nvim/lua/snacks' },
+      },
+    },
+  },
+  {
+    'folke/snacks.nvim',
+    priority = 1000,
+    lazy = false,
+    ---@type snacks.Config
+    keys = {
+      {
+        '<leader>p',
+        function()
+          Snacks.picker()
+        end,
+        desc = 'Show Picker',
+      },
+      {
+        '<leader>dd',
+        function()
+          Snacks.bufdelete.delete()
+        end,
+        desc = 'Delete Buffer',
+      },
+      {
+        '<leader>do',
+        function()
+          Snacks.bufdelete.other()
+        end,
+        desc = 'Delete Other Buffers',
+      },
+      {
+        '<leader>.',
+        function()
+          Snacks.scratch()
+        end,
+        desc = 'Toggle Scratch Buffer',
+      },
+      {
+        '<leader>S',
+        function()
+          Snacks.scratch.select()
+        end,
+        desc = 'Select Scratch Buffer',
+      },
+      {
+        '<leader>lg',
+        function()
+          Snacks.lazygit()
+        end,
+        desc = 'Show Lazygit',
+      },
+    },
+    opts = {
+      picker = { enabled = true },
+      bufdelete = { enabled = true },
+      lazygit = { enabled = true },
+      dashboard = { enabled = true },
+      scratch = { enabled = true },
+    },
+  },
+  {
     'dstein64/vim-startuptime',
     event = 'VeryLazy',
   },
@@ -103,14 +170,6 @@ return {
     event = 'VeryLazy',
   },
   {
-    'kazhala/close-buffers.nvim',
-    cmd = {
-      'BDelete',
-      'BWipeout',
-    },
-  },
-
-  {
     'lucamot/chrome-dev-console.nvim',
     dependencies = { 'lucamot/chrome-remote.nvim' },
     keys = {
@@ -133,26 +192,6 @@ return {
         },
       })
     end,
-  },
-  {
-    'kdheepak/lazygit.nvim',
-    lazy = true,
-    cmd = {
-      'LazyGit',
-      'LazyGitConfig',
-      'LazyGitCurrentFile',
-      'LazyGitFilter',
-      'LazyGitFilterCurrentFile',
-    },
-    -- optional for floating window border decoration
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-    },
-    -- setting the keybinding for LazyGit with 'keys' is recommended in
-    -- order to load the plugin when the command is run for the first time
-    keys = {
-      { '<leader>lg', '<cmd>LazyGit<cr>', desc = 'LazyGit' },
-    },
   },
   {
     'voldikss/vim-translator',
