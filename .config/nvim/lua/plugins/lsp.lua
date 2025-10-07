@@ -297,6 +297,12 @@ return {
     },
   },
   {
+    'VidocqH/lsp-lens.nvim',
+    config = function()
+      require('lsp-lens').setup({})
+    end,
+  },
+  {
     'mason-org/mason.nvim',
     build = ':MasonUpdate',
     cmd = {
