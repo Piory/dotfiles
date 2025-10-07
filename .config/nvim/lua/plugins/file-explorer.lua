@@ -1,5 +1,17 @@
 return {
   {
+    'Bekaboo/dropbar.nvim',
+    keys = {
+      {
+        '<leader>m',
+        function()
+          require('dropbar.api').pick()
+        end,
+        desc = 'Dropbar Pick',
+      },
+    },
+  },
+  {
     'nvim-tree/nvim-tree.lua',
     cmd = { 'NvimTreeToggle', 'NvimTreeOpen', 'NvimTreeFocus' },
     keys = {
