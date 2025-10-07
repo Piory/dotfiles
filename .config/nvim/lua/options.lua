@@ -1,5 +1,8 @@
 local opt = vim.opt
 
+-- マウスの有効化
+opt.mouse = ''
+
 -- 行番号の表示
 opt.number = true
 opt.relativenumber = true
