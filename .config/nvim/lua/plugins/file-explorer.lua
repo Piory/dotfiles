@@ -1,25 +1,11 @@
 return {
   {
     'Bekaboo/dropbar.nvim',
-    keys = {
-      {
-        '<leader>m',
-        function()
-          require('dropbar.api').pick()
-        end,
-        desc = 'Dropbar Pick',
-      },
-    },
-  },
-  {
-    'nvim-tree/nvim-tree.lua',
-    cmd = { 'NvimTreeToggle', 'NvimTreeOpen', 'NvimTreeFocus' },
-    keys = {
-      { '<leader>e', '<cmd>NvimTreeToggle<cr>', desc = 'Toggle NvimTree' },
-    },
-    dependencies = {
-      'nvim-tree/nvim-web-devicons',
-    },
+    config = function()
+      vim.keymap.set('n', '<leader>m', function()
+        require('dropbar.api').pick()
+      end, { desc = 'Dropbar Pick' })
+    end,
   },
   {
     'stevearc/oil.nvim',

@@ -43,9 +43,6 @@ keymap.set('n', 'gT', ':bprev<CR>', { silent = true, desc = '前のタブへ移�
 vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics,
   { virtual_text = true })
 
--- nvim-tree のトグル
-vim.api.nvim_set_keymap('n', '<leader>s', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
-
 -- Oil (File Explorer)
 keymap.set('n', '-', '<CMD>Oil --float<CR>', {
   noremap = true,
