@@ -85,6 +85,13 @@ return {
         end,
         desc = 'Show Lazygit',
       },
+      {
+        '<leader>z',
+        function()
+          Snacks.zen.zen()
+        end,
+        desc = 'Zen Mode',
+      },
     },
     opts = {
       picker = { enabled = true },
@@ -93,6 +100,7 @@ return {
       dashboard = { enabled = true },
       scratch = { enabled = true },
       toggle = { enabled = true },
+      zen = { enabled = true },
     },
   },
   {
