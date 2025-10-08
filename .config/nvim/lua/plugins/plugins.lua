@@ -143,6 +143,12 @@ return {
     },
   },
   {
+    'petertriho/nvim-scrollbar',
+    config = function()
+      require('scrollbar').setup()
+    end,
+  },
+  {
     'nvzone/showkeys',
     dependencies = { 'folke/snacks.nvim' },
     opts = {
