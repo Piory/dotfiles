@@ -53,3 +53,18 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'CursorHold', 'CursorHoldI', 'FocusGai
   pattern = { '*' },
   command = "if mode() != 'c' | checktime | endif",
 })
+
+--          ╭─────────────────────────────────────────────────────────╮
+--          │                    読み取り専用設定                     │
+--          ╰─────────────────────────────────────────────────────────╯
+vim.api.nvim_create_autocmd('BufRead', {
+  pattern = {
+    '*/node_modules/*',
+    '*/.venv/*',
+    '*/dist/*',
+  },
+  callback = function()
+    vim.bo.readonly = true
+    vim.bo.modifiable = false
+  end,
+})
