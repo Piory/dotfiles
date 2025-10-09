@@ -209,7 +209,7 @@ return {
   },
   {
     'neovim/nvim-lspconfig',
-    event = { 'BufReadPre', 'BufNewFile' },
+    event = { 'BufReadPost', 'BufNewFile' },
     dependencies = { 'saghen/blink.cmp' },
   },
   {
@@ -320,7 +320,7 @@ return {
       { 'mason-org/mason.nvim' },
       { 'neovim/nvim-lspconfig' },
     },
-    event = { 'BufReadPre', 'BufNewFile' },
+    event = { 'BufReadPost', 'BufNewFile' },
     config = true,
   },
   {
