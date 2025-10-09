@@ -541,12 +541,21 @@ return {
     },
   },
   {
+    'linrongbin16/lsp-progress.nvim',
+    event = { 'BufReadPost', 'BufNewFile' },
+    dependencies = {
+      'j-hui/fidget.nvim',
+    },
+    config = function()
+      require('lsp-progress').setup()
+    end,
+  },
+  {
     'nvim-lualine/lualine.nvim',
     event = { 'BufReadPost', 'BufNewFile' },
     priority = 1000,
     dependencies = {
       'nvim-tree/nvim-web-devicons',
-      'arkav/lualine-lsp-progress',
     },
     config = function()
       local lsp_names = function()
@@ -593,10 +602,7 @@ return {
         sections = {
           lualine_a = { 'mode' },
           lualine_b = { 'branch', 'diff', 'diagnostics' },
-          lualine_c = {
-            'filename',
-            'lsp_progress',
-          },
+          lualine_c = { 'filename' },
           lualine_x = { lsp_names, 'filetype', 'encoding' },
           lualine_y = { 'progress' },
           lualine_z = { 'location' },

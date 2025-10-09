@@ -189,13 +189,6 @@ return {
     },
   },
   {
-    'j-hui/fidget.nvim',
-    event = 'LspAttach',
-    opts = {
-      -- options
-    },
-  },
-  {
     'L3MON4D3/LuaSnip',
     event = 'InsertEnter',
     -- follow latest release.
@@ -207,12 +200,6 @@ return {
     'neovim/nvim-lspconfig',
     event = { 'BufReadPost', 'BufNewFile' },
     dependencies = { 'saghen/blink.cmp' },
-  },
-  {
-    'nvim-lua/lsp-status.nvim',
-    config = function()
-      require('lsp-status').register_progress()
-    end,
   },
   {
     'nanotee/sqls.nvim',
