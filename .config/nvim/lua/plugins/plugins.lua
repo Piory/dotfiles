@@ -210,7 +210,7 @@ return {
   },
   {
     'akinsho/bufferline.nvim',
-    lazy = false,
+    event = { 'BufReadPost', 'BufNewFile' },
     priority = 1000,
   },
   {
