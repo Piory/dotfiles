@@ -37,7 +37,6 @@ require('lsp')
 vim.cmd.colorscheme('tokyonight')
 
 require('setup.alpha-nvim')
-require('setup.lualine')
 require('setup.bufferline')
 require('setup.toggleterm')
 require('setup.gitsigns')
