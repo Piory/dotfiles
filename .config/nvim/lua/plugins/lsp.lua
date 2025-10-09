@@ -320,8 +320,10 @@ return {
       { 'mason-org/mason.nvim' },
       { 'neovim/nvim-lspconfig' },
     },
-    event = { 'BufReadPost', 'BufNewFile' },
-    config = true,
+    event = { 'VeryLazy' },
+    config = function()
+      require('lsp')
+    end,
   },
   {
     'nvimdev/lspsaga.nvim',

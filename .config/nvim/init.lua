@@ -30,9 +30,6 @@ require('keymaps')
 -- プラグインの設定
 require('plugins')
 
--- LSP の設定
-require('lsp')
-
 -- カラースキームの設定
 vim.cmd.colorscheme('tokyonight')
 
