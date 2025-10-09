@@ -95,6 +95,7 @@ return {
     },
     opts = {
       picker = { enabled = true },
+      bigfile = { enabled = true },
       bufdelete = { enabled = true },
       lazygit = { enabled = true },
       dashboard = { enabled = true },
