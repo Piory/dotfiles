@@ -1,4 +1,7 @@
 require('lazy').setup({
+  defaults = {
+    lazy = true,
+  },
   spec = {
     { import = 'plugins/colorscheme' },
     { import = 'plugins/ai' },

@@ -1,7 +1,6 @@
 return {
   {
     'nvim-neotest/neotest',
-    lazy = true,
     dependencies = {
       'nvim-neotest/nvim-nio',
       'nvim-lua/plenary.nvim',
@@ -77,7 +76,6 @@ return {
   },
   {
     'mfussenegger/nvim-dap',
-    lazy = true,
     dependencies = {
       'nvim-neotest/nvim-nio',
       {

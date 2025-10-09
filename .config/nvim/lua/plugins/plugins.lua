@@ -408,12 +408,6 @@ return {
     },
   },
   {
-    'shortcuts/no-neck-pain.nvim',
-    -- 今使っていないから一旦 lazy = true にしておく
-    lazy = true,
-    version = '*',
-  },
-  {
     'lukas-reineke/indent-blankline.nvim',
     event = { 'BufReadPost', 'BufNewFile' },
     main = 'ibl',

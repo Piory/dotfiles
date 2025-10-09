@@ -51,7 +51,6 @@
   "neotest-dart": { "branch": "main", "commit": "5ee074c9593639b60ebc452102d951438c815aac" },
   "neotest-golang": { "branch": "main", "commit": "a1811854245b599737a7dfc9978ab74040f40e62" },
   "neotest-jest": { "branch": "main", "commit": "2f657403aabab7d68eaa2cb9181dc4bb7fdd8a08" },
-  "no-neck-pain.nvim": { "branch": "main", "commit": "c3d96b648501554c9a87530b2ff86c721cddd5c1" },
   "noice.nvim": { "branch": "main", "commit": "0427460c2d7f673ad60eb02b35f5e9926cf67c59" },
   "none-ls.nvim": { "branch": "main", "commit": "5cf63841461b49989972d35bf886e076a1ab3649" },
   "nui.nvim": { "branch": "main", "commit": "de740991c12411b663994b2860f1a4fd0937c130" },
