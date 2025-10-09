@@ -549,6 +549,27 @@ return {
       'arkav/lualine-lsp-progress',
     },
     config = function()
+      local lsp_names = function()
+        local clients = vim
+            .iter(vim.lsp.get_active_clients { bufnr = 0 })
+            :map(function(client)
+              if client.name == 'null-ls' then
+                return ('null-ls(%s)'):format(table.concat(
+                  vim
+                  .iter(require('null-ls.sources').get_available(vim.bo.filetype))
+                  :map(function(source)
+                    return source.name
+                  end)
+                  :totable(),
+                  ', '
+                ))
+              else
+                return client.name
+              end
+            end)
+            :totable()
+        return ' ' .. table.concat(clients, ', ')
+      end
       require('lualine').setup({
         options = {
           icons_enabled = true,
@@ -574,34 +595,9 @@ return {
           lualine_b = { 'branch', 'diff', 'diagnostics' },
           lualine_c = {
             'filename',
-            {
-              'lsp_status',
-              icon = '', -- f013
-              symbols = {
-                -- Standard unicode symbols to cycle through for LSP progress:
-                spinner = {
-                  '⠋',
-                  '⠙',
-                  '⠹',
-                  '⠸',
-                  '⠼',
-                  '⠴',
-                  '⠦',
-                  '⠧',
-                  '⠇',
-                  '⠏',
-                },
-                -- Standard unicode symbol for when LSP is done:
-                done = '✓',
-                -- Delimiter inserted between LSP names:
-                separator = ' ',
-              },
-              -- List of LSP names to ignore (e.g., `null-ls`):
-              ignore_lsp = {},
-            },
             'lsp_progress',
           },
-          lualine_x = { 'encoding', 'fileformat', 'filetype' },
+          lualine_x = { lsp_names, 'filetype', 'encoding' },
           lualine_y = { 'progress' },
           lualine_z = { 'location' },
         },
