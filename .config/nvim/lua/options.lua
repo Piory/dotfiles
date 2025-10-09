@@ -1,5 +1,8 @@
 local opt = vim.opt
 
+-- カラースキームで 24bit カラーを使用
+opt.termguicolors = true
+
 -- マウスの有効化
 opt.mouse = ''
 

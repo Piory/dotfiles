@@ -33,7 +33,6 @@ require('plugins')
 -- カラースキームの設定
 vim.cmd.colorscheme('tokyonight')
 
-require('setup.bufferline')
 require('setup.toggleterm')
 require('setup.gitsigns')
 require('setup.nvim-treesitter')
