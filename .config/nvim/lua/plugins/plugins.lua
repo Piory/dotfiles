@@ -187,6 +187,39 @@ return {
   {
     'gen740/SmoothCursor.nvim',
     event = 'VeryLazy',
+    config = function ()
+      vim.api.nvim_set_hl(
+      0,
+      'SmoothCursorCustom',
+      { bg = nil, fg = '#42F57E', default = true }
+    )
+    require('smoothcursor').setup({
+      priority = 10,
+      fancy = {
+        enable = true,
+        head = { cursor = '▷', texthl = 'SmoothCursorCustom', linehl = nil },
+        body = {
+          { cursor = '󰝥', texthl = 'SmoothCursorCustom' },
+          { cursor = '󰝥', texthl = 'SmoothCursorCustom' },
+          { cursor = '●', texthl = 'SmoothCursorCustom' },
+          { cursor = '●', texthl = 'SmoothCursorCustom' },
+          { cursor = '•', texthl = 'SmoothCursorCustom' },
+          { cursor = '.', texthl = 'SmoothCursorCustom' },
+          { cursor = '.', texthl = 'SmoothCursorCustom' },
+        },
+        tail = { cursor = nil, texthl = 'SmoothCursorCustom' },
+      },
+      disabled_filetypes = {
+        'TelescopePrompt',
+        'TelescopeResults',
+        'gitblame',
+        'css',
+        'noice',
+        'LspsagaHover',
+        'lazy',
+      },
+    })
+    end
   },
   {
     event = 'VeryLazy',
@@ -234,10 +267,16 @@ return {
   {
     'lewis6991/gitsigns.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
+    config = function ()
+      require('gitsigns').setup{}
+    end
   },
   {
     'windwp/nvim-autopairs',
     event = 'InsertEnter',
+    config = function()
+      require('nvim-autopairs').setup({})
+    end,
   },
   {
     'windwp/nvim-ts-autotag',
@@ -254,8 +293,52 @@ return {
       'markdown',
     },
   },
-  'brenoprata10/nvim-highlight-colors',
-  'mvllow/modes.nvim',
+  {
+    'brenoprata10/nvim-highlight-colors',
+    event = 'VeryLazy',
+    config = function()
+      require('nvim-highlight-colors').setup({
+        render = 'virtual',
+        virtual_symbol = '●',
+        virtual_symbol_position = 'eol',
+      })
+    end,
+  },
+  {
+    'mvllow/modes.nvim',
+    event = 'VeryLazy',
+    config = function()
+      require('modes').setup({
+    	colors = {
+    		bg = "", -- Optional bg param, defaults to Normal hl group
+    		copy = '#FFEE55',
+    		delete = "#c75c6a",
+    		insert = '#55AAEE',
+    		visual = '#009944',
+    	},
+
+    	-- Set opacity for cursorline and number background
+    	line_opacity = 0.4,
+
+    	-- Enable cursor highlights
+    	set_cursor = true,
+
+    	-- Enable cursorline initially, and disable cursorline for inactive windows
+    	-- or ignored filetypes
+    	set_cursorline = true,
+
+    	-- Enable line number highlights to match cursorline
+    	set_number = true,
+
+    	-- Enable sign column highlights to match cursorline
+    	set_signcolumn = true,
+
+    	-- Disable modes highlights in specified filetypes
+    	-- Please PR commonly ignored filetypes
+    	ignore_filetypes = { 'NvimTree', 'TelescopePrompt' }
+    })
+    end,
+  },
   {
     'kevinhwang91/nvim-hlslens',
     event = 'VeryLazy',
@@ -429,6 +512,30 @@ return {
     'nvim-treesitter/nvim-treesitter',
     event = { 'BufReadPost', 'BufNewFile' },
     build = ':TSUpdate',
+    config = function()
+      require('nvim-treesitter.configs').setup({
+        ensure_installed = {
+          'c',
+          'lua',
+          'vim',
+          'vimdoc',
+          'javascript',
+          'typescript',
+          'tsx',
+          'markdown',
+          'html',
+          'css',
+          'json',
+          'sql',
+          'dart',
+          'go',
+          'proto',
+        },
+        sync_install = false,
+        highlight = { enable = true },
+        indent = { enable = true },
+      })
+    end,
   },
   {
     'nvim-treesitter/nvim-treesitter-context',
@@ -531,6 +638,21 @@ return {
   {
     'shellRaining/hlchunk.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
+    config = function ()
+      require('hlchunk').setup({
+        chunk = {
+          enable = true,
+          style = '#1abc9c',
+        },
+        line_num = {
+          enable = true,
+          style = '#1abc9c',
+        },
+        indent = {
+          enable = true
+        },
+      })
+    end
   },
   {
     'folke/noice.nvim',
@@ -549,8 +671,34 @@ return {
   },
   {
     'akinsho/toggleterm.nvim',
-    event = 'VeryLazy',
+    keys = {
+      {
+        '<C-t>',
+        function()
+          require('toggleterm').toggle()
+        end,
+        desc = 'Toggle Terminal',
+      },
+    },
     version = '*',
-    config = true,
+    config = function()
+      require('toggleterm').setup({
+        size = 100,
+        open_mapping = [[<c-t>]],
+        hide_numbers = true,
+        shade_filetypes = {},
+        shade_terminals = true,
+        shading_factor = 2,
+        start_in_insert = true,
+        insert_mappings = true,
+        persist_size = true,
+        close_on_exit = true,
+        float_opts = {
+          border = 'curved',
+          width = 180,
+          height = 100,
+        },
+      })
+    end,
   },
 }

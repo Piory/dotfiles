@@ -213,6 +213,9 @@ return {
   {
     'nvim-lua/lsp-status.nvim',
     event = 'LspAttach',
+    config = function()
+      require('lsp-status').register_progress()
+    end,
   },
   {
     'arkav/lualine-lsp-progress',

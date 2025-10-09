@@ -33,19 +33,6 @@ require('plugins')
 -- カラースキームの設定
 vim.cmd.colorscheme('tokyonight')
 
-require('setup.toggleterm')
-require('setup.gitsigns')
-require('setup.nvim-treesitter')
-require('setup.telescope')
-require('setup.hlchunk')
-require('setup.lsp-status')
-require('setup.nvim-autopairs')
-require('setup.nvim-highlight-colors')
-require('setup.noice')
-require('setup.no-neck-pain')
-require('setup.smooth-cursor')
-require('setup.modes')
-
 -- 背景透明化の設定
 -- vim.cmd([[
 --   highlight Normal guibg=none
