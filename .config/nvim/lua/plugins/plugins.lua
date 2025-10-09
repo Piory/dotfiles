@@ -153,6 +153,16 @@ return {
   },
   {
     'petertriho/nvim-scrollbar',
+    event = {
+      'BufWinEnter',
+      'CmdwinLeave',
+      'TabEnter',
+      'TermEnter',
+      'TextChanged',
+      'VimResized',
+      'WinEnter',
+      'WinScrolled',
+    },
     config = function()
       require('scrollbar').setup()
     end,
@@ -160,22 +170,19 @@ return {
   {
     'nvzone/showkeys',
     dependencies = { 'folke/snacks.nvim' },
+    keys = {
+      {
+        '<leader>uk',
+        function()
+          require('showkeys').toggle()
+        end,
+        desc = 'Toggle Showkeys',
+      },
+    },
     opts = {
       timeout = 3,
       maxkeys = 5,
     },
-    init = function()
-      local showkeys = require('showkeys')
-      Snacks.toggle({
-        name = 'Showkeys',
-        get = function()
-          return require('showkeys.state').visible
-        end,
-        set = function()
-          showkeys.toggle()
-        end,
-      }):map('<leader>uk')
-    end,
   },
   {
     'gen740/SmoothCursor.nvim',
@@ -280,6 +287,7 @@ return {
   },
   {
     'b0o/incline.nvim',
+    event = { 'FocusLost', 'CursorHold' },
     config = function()
       local devicons = require('nvim-web-devicons')
       require('incline').setup({
@@ -340,8 +348,6 @@ return {
         end,
       })
     end,
-    -- Optional: Lazy load Incline
-    event = 'VeryLazy',
   },
   {
     'goolord/alpha-nvim',
