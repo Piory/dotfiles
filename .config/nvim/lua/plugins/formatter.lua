@@ -1,6 +1,7 @@
 return {
   {
     'nvimtools/none-ls.nvim',
+    event = 'BufReadPre',
     dependencies = {
       'nvim-lua/plenary.nvim',       -- none-ls の依存関係
       'mason-org/mason.nvim',        -- Mason と統合するために必要

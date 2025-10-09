@@ -11,8 +11,8 @@ return {
   },
   {
     'folke/snacks.nvim',
+    event = 'VeryLazy',
     priority = 1000,
-    lazy = false,
     ---@type snacks.Config
     keys = {
       {
@@ -351,6 +351,7 @@ return {
   },
   {
     'goolord/alpha-nvim',
+    event = 'VimEnter',
     -- dependencies = { 'echasnovski/mini.icons' },
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     opts = function()
@@ -361,6 +362,7 @@ return {
   },
   {
     'MaximilianLloyd/ascii.nvim',
+    event = 'VeryLazy',
     dependencies = {
       'MunifTanjim/nui.nvim',
     },
@@ -515,9 +517,15 @@ return {
   },
   {
     'aznhe21/actions-preview.nvim',
-    config = function()
-      vim.keymap.set('n', 'ga', require('actions-preview').code_actions)
-    end,
+    keys = {
+      {
+        'ga',
+        function()
+          require('actions-preview').code_actions()
+        end,
+        desc = 'Code Actions (actions-preview)',
+      },
+    },
   },
   {
     'shellRaining/hlchunk.nvim',

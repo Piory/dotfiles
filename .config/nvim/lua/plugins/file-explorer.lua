@@ -1,6 +1,7 @@
 return {
   {
     'Bekaboo/dropbar.nvim',
+    event = { 'BufReadPost', 'BufNewFile' },
     config = function()
       vim.keymap.set('n', '<leader>m', function()
         require('dropbar.api').pick()
@@ -9,6 +10,7 @@ return {
   },
   {
     'stevearc/oil.nvim',
+    event = { 'VeryLazy' },
     ---@module 'oil'
     ---@type oil.SetupOpts
     opts = {
@@ -29,8 +31,6 @@ return {
       },
     },
     -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
-    -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
-    lazy = false,
     config = function()
       require('oil').setup()
     end,
