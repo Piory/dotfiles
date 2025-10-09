@@ -1,5 +1,4 @@
 local telescope = require('telescope')
-telescope.load_extension('flutter')
 telescope.setup({
   defaults = {
     -- メモリ使用量を抑制
@@ -48,4 +47,11 @@ telescope.setup({
       end,
     },
   },
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'dart',
+  callback = function()
+    pcall(telescope.load_extension, 'flutter')
+  end,
 })
