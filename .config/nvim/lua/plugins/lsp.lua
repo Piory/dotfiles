@@ -58,7 +58,7 @@ return {
             columns = {
               { 'kind_icon' },
               { 'kind' },
-              { 'label',      'label_description', gap = 1 },
+              { 'label', 'label_description', gap = 1 },
               { 'source_name' },
             },
             components = {
@@ -68,8 +68,7 @@ return {
                   local icon = ctx.kind_icon
                   -- if LSP source, check for color derived from documentation
                   if ctx.item.source_name == 'LSP' then
-                    local color_item = require('nvim-highlight-colors').format(ctx.item.documentation,
-                      { kind = ctx.kind })
+                    local color_item = require('nvim-highlight-colors').format(ctx.item.documentation, { kind = ctx.kind })
                     if color_item and color_item.abbr ~= '' then
                       icon = color_item.abbr
                     end
@@ -81,8 +80,7 @@ return {
                   local highlight = 'BlinkCmpKind' .. ctx.kind
                   -- if LSP source, check for color derived from documentation
                   if ctx.item.source_name == 'LSP' then
-                    local color_item = require('nvim-highlight-colors').format(ctx.item.documentation,
-                      { kind = ctx.kind })
+                    local color_item = require('nvim-highlight-colors').format(ctx.item.documentation, { kind = ctx.kind })
                     if color_item and color_item.abbr_hl_group then
                       highlight = color_item.abbr_hl_group
                     end
@@ -140,7 +138,7 @@ return {
   {
     'rachartier/tiny-inline-diagnostic.nvim',
     event = 'LspAttach',
-    priority = 1000,    -- needs to be loaded in first
+    priority = 1000, -- needs to be loaded in first
     config = function()
       require('tiny-inline-diagnostic').setup({
         options = {
@@ -212,14 +210,9 @@ return {
   },
   {
     'nvim-lua/lsp-status.nvim',
-    event = 'LspAttach',
     config = function()
       require('lsp-status').register_progress()
     end,
-  },
-  {
-    'arkav/lualine-lsp-progress',
-    event = 'LspAttach',
   },
   {
     'nanotee/sqls.nvim',

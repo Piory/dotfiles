@@ -187,39 +187,35 @@ return {
   {
     'gen740/SmoothCursor.nvim',
     event = 'VeryLazy',
-    config = function ()
-      vim.api.nvim_set_hl(
-      0,
-      'SmoothCursorCustom',
-      { bg = nil, fg = '#42F57E', default = true }
-    )
-    require('smoothcursor').setup({
-      priority = 10,
-      fancy = {
-        enable = true,
-        head = { cursor = '▷', texthl = 'SmoothCursorCustom', linehl = nil },
-        body = {
-          { cursor = '󰝥', texthl = 'SmoothCursorCustom' },
-          { cursor = '󰝥', texthl = 'SmoothCursorCustom' },
-          { cursor = '●', texthl = 'SmoothCursorCustom' },
-          { cursor = '●', texthl = 'SmoothCursorCustom' },
-          { cursor = '•', texthl = 'SmoothCursorCustom' },
-          { cursor = '.', texthl = 'SmoothCursorCustom' },
-          { cursor = '.', texthl = 'SmoothCursorCustom' },
+    config = function()
+      vim.api.nvim_set_hl(0, 'SmoothCursorCustom', { bg = nil, fg = '#42F57E', default = true })
+      require('smoothcursor').setup({
+        priority = 10,
+        fancy = {
+          enable = true,
+          head = { cursor = '▷', texthl = 'SmoothCursorCustom', linehl = nil },
+          body = {
+            { cursor = '󰝥', texthl = 'SmoothCursorCustom' },
+            { cursor = '󰝥', texthl = 'SmoothCursorCustom' },
+            { cursor = '●', texthl = 'SmoothCursorCustom' },
+            { cursor = '●', texthl = 'SmoothCursorCustom' },
+            { cursor = '•', texthl = 'SmoothCursorCustom' },
+            { cursor = '.', texthl = 'SmoothCursorCustom' },
+            { cursor = '.', texthl = 'SmoothCursorCustom' },
+          },
+          tail = { cursor = nil, texthl = 'SmoothCursorCustom' },
         },
-        tail = { cursor = nil, texthl = 'SmoothCursorCustom' },
-      },
-      disabled_filetypes = {
-        'TelescopePrompt',
-        'TelescopeResults',
-        'gitblame',
-        'css',
-        'noice',
-        'LspsagaHover',
-        'lazy',
-      },
-    })
-    end
+        disabled_filetypes = {
+          'TelescopePrompt',
+          'TelescopeResults',
+          'gitblame',
+          'css',
+          'noice',
+          'LspsagaHover',
+          'lazy',
+        },
+      })
+    end,
   },
   {
     event = 'VeryLazy',
@@ -267,9 +263,9 @@ return {
   {
     'lewis6991/gitsigns.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
-    config = function ()
-      require('gitsigns').setup{}
-    end
+    config = function()
+      require('gitsigns').setup({})
+    end,
   },
   {
     'windwp/nvim-autopairs',
@@ -309,34 +305,34 @@ return {
     event = 'VeryLazy',
     config = function()
       require('modes').setup({
-    	colors = {
-    		bg = "", -- Optional bg param, defaults to Normal hl group
-    		copy = '#FFEE55',
-    		delete = "#c75c6a",
-    		insert = '#55AAEE',
-    		visual = '#009944',
-    	},
+        colors = {
+          bg = '', -- Optional bg param, defaults to Normal hl group
+          copy = '#FFEE55',
+          delete = '#c75c6a',
+          insert = '#55AAEE',
+          visual = '#009944',
+        },
 
-    	-- Set opacity for cursorline and number background
-    	line_opacity = 0.4,
+        -- Set opacity for cursorline and number background
+        line_opacity = 0.4,
 
-    	-- Enable cursor highlights
-    	set_cursor = true,
+        -- Enable cursor highlights
+        set_cursor = true,
 
-    	-- Enable cursorline initially, and disable cursorline for inactive windows
-    	-- or ignored filetypes
-    	set_cursorline = true,
+        -- Enable cursorline initially, and disable cursorline for inactive windows
+        -- or ignored filetypes
+        set_cursorline = true,
 
-    	-- Enable line number highlights to match cursorline
-    	set_number = true,
+        -- Enable line number highlights to match cursorline
+        set_number = true,
 
-    	-- Enable sign column highlights to match cursorline
-    	set_signcolumn = true,
+        -- Enable sign column highlights to match cursorline
+        set_signcolumn = true,
 
-    	-- Disable modes highlights in specified filetypes
-    	-- Please PR commonly ignored filetypes
-    	ignore_filetypes = { 'NvimTree', 'TelescopePrompt' }
-    })
+        -- Disable modes highlights in specified filetypes
+        -- Please PR commonly ignored filetypes
+        ignore_filetypes = { 'NvimTree', 'TelescopePrompt' },
+      })
     end,
   },
   {
@@ -418,7 +414,7 @@ return {
           end
 
           local function get_diagnostic_label()
-            local icons = { error = ' ', warn = ' ', info = ' ', hint = ' ' }
+            local icons = { error = ' ', warn = ' ', info = ' ', hint = '󰌶 ' }
             local label = {}
 
             for severity, icon in pairs(icons) do
@@ -550,6 +546,7 @@ return {
     priority = 1000,
     dependencies = {
       'nvim-tree/nvim-web-devicons',
+      'arkav/lualine-lsp-progress',
     },
     config = function()
       require('lualine').setup({
@@ -638,7 +635,7 @@ return {
   {
     'shellRaining/hlchunk.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
-    config = function ()
+    config = function()
       require('hlchunk').setup({
         chunk = {
           enable = true,
@@ -649,10 +646,10 @@ return {
           style = '#1abc9c',
         },
         indent = {
-          enable = true
+          enable = true,
         },
       })
-    end
+    end,
   },
   {
     'folke/noice.nvim',
