@@ -5,22 +5,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
       virtual_lines = false,
       virtual_text = false,
     })
-    vim.fn.sign_define(
-      'DapBreakpoint',
-      { text = '', texthl = '', linehl = '', numhl = '' }
-    )
-    vim.fn.sign_define(
-      'DapBreakpointRejected',
-      { text = '󰉥', texthl = '', linehl = '', numhl = '' }
-    )
-    vim.fn.sign_define(
-      'DapLogPoint',
-      { text = '', texthl = '', linehl = '', numhl = '' }
-    )
-    vim.fn.sign_define(
-      'DapStopped',
-      { text = '', texthl = '', linehl = '', numhl = '' }
-    )
+    vim.fn.sign_define('DapBreakpoint', { text = '', texthl = '', linehl = '', numhl = '' })
+    vim.fn.sign_define('DapBreakpointRejected', { text = '󰉥', texthl = '', linehl = '', numhl = '' })
+    vim.fn.sign_define('DapLogPoint', { text = '', texthl = '', linehl = '', numhl = '' })
+    vim.fn.sign_define('DapStopped', { text = '', texthl = '', linehl = '', numhl = '' })
     vim.diagnostic.config({
       signs = {
         text = {
@@ -42,7 +30,7 @@ local ensure_installed = {
   'lua_ls',
   'sqls',
   'jsonls',
-  'ts_ls',
+  'vtsls',
   'gopls',
   'protols',
 }
