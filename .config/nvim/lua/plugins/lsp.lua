@@ -308,9 +308,9 @@ return {
     'nvimdev/lspsaga.nvim',
     cmd = 'Lspsaga',
     keys = {
-      { '<C-r>',  '<Cmd>Lspsaga rename<CR>',      desc = 'Lspsaga rename' },
-      { '<leader>,',  '<Cmd>Lspsaga finder<CR>',      desc = 'Lspsaga finder' },
-      { 'K', '<Cmd>Lspsaga hover_doc<CR>',   desc = 'Lspsaga hover_doc' },
+      { '<C-r>', '<Cmd>Lspsaga rename<CR>', desc = 'Lspsaga rename' },
+      { '<leader>,', '<Cmd>Lspsaga finder<CR>', desc = 'Lspsaga finder' },
+      { 'K', '<Cmd>Lspsaga hover_doc<CR>', desc = 'Lspsaga hover_doc' },
       { '<leader>la', '<Cmd>Lspsaga code_action<CR>', desc = 'Lspsaga code_action' },
     },
     config = function()
