@@ -3,6 +3,10 @@ local M = {}
 
 local function setup_base_highlights(hl, c)
   -- 基本ハイライトグループ
+  hl(0, 'Whitespace', { fg = c.dimGray })
+  hl(0, 'NonText', { fg = c.dimGray })
+  hl(0, 'SpecialKey', { fg = c.dimGray })
+  hl(0, 'EndOfBuffer', { fg = c.dimGray })
   hl(0, 'Normal', { fg = c.lightGrayBlue })
   hl(0, 'CursorLine', { bg = c.cursorLine })
   hl(0, 'LineNr', { fg = c.dimGray })
