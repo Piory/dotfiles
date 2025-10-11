@@ -338,6 +338,9 @@ return {
   {
     'kevinhwang91/nvim-hlslens',
     event = 'VeryLazy',
+    config = function()
+      require('scrollbar.handlers.search').setup()
+    end,
   },
   {
     'RRethy/vim-illuminate',
