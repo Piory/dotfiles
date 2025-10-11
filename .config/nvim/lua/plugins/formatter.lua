@@ -1,5 +1,74 @@
 return {
   {
+    'esmuellert/nvim-eslint',
+    event = {
+      'BufReadPre',
+      'BufNewFile',
+    },
+    ft = {
+      'javascript',
+      'javascriptreact',
+      'typescript',
+      'typescriptreact',
+      'vue',
+      'svelte',
+      'astro',
+    },
+    cond = function()
+      local buf = vim.api.nvim_get_current_buf()
+      local fname = vim.api.nvim_buf_get_name(buf)
+      local found = vim.fs.find({
+        'eslint.config.js',
+        'eslint.config.cjs',
+        '.eslintrc.js',
+        '.eslintrc.cjs',
+        '.eslintrc.json',
+        '.eslintrc.yaml',
+        '.eslintrc.yml',
+      }, { upward = true, path = fname })[1]
+      return found ~= nil
+    end,
+    opts = function(_, opts)
+      local opts = vim.tbl_deep_extend('force', opts or {}, {
+        settings = {
+          -- enable formatting
+          format = true,
+          -- had to force for my setup
+          useFlatConfig = true,
+          -- was having issues in a monorepo finding the config without this
+          workingDirectory = function(bufnr)
+            return {
+              directory = vim.fs.root(bufnr, {
+                'eslint.config.js',
+                'eslint.config.cjs',
+                '.eslintrc.js',
+                '.eslintrc.cjs',
+                '.eslintrc.json',
+                '.eslintrc.yaml',
+                '.eslintrc.yml',
+              }),
+            }
+          end,
+          options = {
+            -- enable caching
+            cache = true,
+            -- enable using .ts configs
+            flags = { 'unstable_ts_config' },
+          },
+          codeActionOnSave = {
+            ['source.organizeImports'] = 'explicit',
+            ['source.fixAll'] = 'explicit',
+            ['source.fixAll.eslint'] = 'explicit',
+          },
+        },
+      })
+      return opts
+    end,
+    config = function(_, opts)
+      require('nvim-eslint').setup(opts)
+    end,
+  },
+  {
     'nvimtools/none-ls.nvim',
     event = 'BufReadPre',
     dependencies = {
@@ -56,6 +125,23 @@ return {
       end
       return {
         formatters = {
+          eslint = {
+            require_cwd = true,
+            condition = function()
+              local buf = vim.api.nvim_get_current_buf()
+              local fname = vim.api.nvim_buf_get_name(buf)
+              local found = vim.fs.find({
+                'eslint.config.js',
+                'eslint.config.cjs',
+                '.eslintrc.js',
+                '.eslintrc.cjs',
+                '.eslintrc.json',
+                '.eslintrc.yaml',
+                '.eslintrc.yml',
+              }, { upward = true, path = fname })[1]
+              return found ~= nil
+            end,
+          },
           prettier = {
             require_cwd = true,
             condition = prettier_condition,
