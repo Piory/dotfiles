@@ -250,8 +250,7 @@ return {
           diagnostics_indicator = function(count, level, diagnostics_dict, context)
             local s = ' '
             for e, n in pairs(diagnostics_dict) do
-              local sym = e == 'error' and ' '
-                  or (e == 'warning' and ' ' or ' ')
+              local sym = e == 'error' and ' ' or (e == 'warning' and ' ' or ' ')
               s = s .. n .. sym
             end
             return s
@@ -265,6 +264,7 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       require('gitsigns').setup({})
+      require('scrollbar.handlers.gitsigns').setup()
     end,
   },
   {
@@ -560,23 +560,23 @@ return {
     config = function()
       local lsp_names = function()
         local clients = vim
-            .iter(vim.lsp.get_active_clients { bufnr = 0 })
-            :map(function(client)
-              if client.name == 'null-ls' then
-                return ('null-ls(%s)'):format(table.concat(
-                  vim
+          .iter(vim.lsp.get_active_clients({ bufnr = 0 }))
+          :map(function(client)
+            if client.name == 'null-ls' then
+              return ('null-ls(%s)'):format(table.concat(
+                vim
                   .iter(require('null-ls.sources').get_available(vim.bo.filetype))
                   :map(function(source)
                     return source.name
                   end)
                   :totable(),
-                  ', '
-                ))
-              else
-                return client.name
-              end
-            end)
-            :totable()
+                ', '
+              ))
+            else
+              return client.name
+            end
+          end)
+          :totable()
         return ' ' .. table.concat(clients, ', ')
       end
       require('lualine').setup({
