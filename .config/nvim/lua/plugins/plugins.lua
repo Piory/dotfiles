@@ -547,7 +547,7 @@ return {
       'j-hui/fidget.nvim',
     },
     config = function()
-      require('lsp-progress').setup()
+      require('lsp-progress').progress()
     end,
   },
   {

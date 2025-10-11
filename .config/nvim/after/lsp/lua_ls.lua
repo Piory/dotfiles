@@ -2,7 +2,7 @@ return {
   settings = {
     Lua = {
       diagnostics = {
-        globals = { 'vim', 'require' },
+        globals = { 'vim' },
         unusedLocalExclude = { '_*' },
       },
     },
