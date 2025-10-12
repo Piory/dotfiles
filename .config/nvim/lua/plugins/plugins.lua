@@ -529,6 +529,7 @@ return {
           'dart',
           'go',
           'proto',
+          'terraform',
         },
         sync_install = false,
         highlight = { enable = true },
