@@ -94,7 +94,11 @@ return {
       },
     },
     opts = {
-      picker = { enabled = true },
+      picker = {
+        enabled = true,
+        hidden = true,
+        ignored = true,
+      },
       bigfile = { enabled = true },
       bufdelete = { enabled = true },
       lazygit = { enabled = true },
