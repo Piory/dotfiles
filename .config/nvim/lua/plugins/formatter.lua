@@ -82,6 +82,8 @@ return {
         'stylua',
         'sqls',
         'biome',
+        'tflint',
+        'trivy',
       },
       automatic_installation = true,
     },
@@ -124,6 +126,19 @@ return {
         return found ~= nil
       end
       return {
+        format_on_save = {
+          timeout_ms = 1000,
+          lsp_fallback = true,
+        },
+        formatters_by_ft = {
+          lua = { 'stylua' },
+          go = { 'gofmt', 'goimports_reviser', 'gofumpt' },
+          javascript = js_formatters,
+          typescript = js_formatters,
+          javascriptreact = js_formatters,
+          typescriptreact = js_formatters,
+          terraform = { 'terraform_fmt' },
+        },
         formatters = {
           eslint = {
             require_cwd = true,
@@ -163,19 +178,11 @@ return {
           gofumpt = {
             require_cwd = true,
           },
-        },
-
-        formatters_by_ft = {
-          lua = { 'stylua' },
-          go = { 'gofmt', 'goimports_reviser', 'gofumpt' },
-          javascript = js_formatters,
-          typescript = js_formatters,
-          javascriptreact = js_formatters,
-          typescriptreact = js_formatters,
-        },
-        format_on_save = {
-          timeout_ms = 1000,
-          lsp_fallback = true,
+          terraform_fmt = {
+            command = 'terraform',
+            args = { 'fmt', '-no-color', '-list=false', '$FILENAME' },
+            stdin = false,
+          },
         },
       }
     end,
