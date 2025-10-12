@@ -84,6 +84,7 @@ return {
         'biome',
         'tflint',
         'trivy',
+        'eslint_d',
       },
       automatic_installation = true,
     },
@@ -98,7 +99,7 @@ return {
       'BufNewFile',
     },
     opts = function()
-      local js_formatters = { 'prettierd', 'prettier', 'biome-check', stop_after_first = true }
+      local js_formatters = { 'prettierd', 'prettier', 'eslint_d', 'biome-check' }
       local biome_condition = function()
         local buf = vim.api.nvim_get_current_buf()
         local fname = vim.api.nvim_buf_get_name(buf)
@@ -140,7 +141,7 @@ return {
           terraform = { 'terraform_fmt' },
         },
         formatters = {
-          eslint = {
+          eslint_d = {
             require_cwd = true,
             condition = function()
               local buf = vim.api.nvim_get_current_buf()
@@ -156,6 +157,7 @@ return {
               }, { upward = true, path = fname })[1]
               return found ~= nil
             end,
+            args = '--stdin --fix-to-stdout --stdin-filename $FILENAME',
           },
           prettier = {
             require_cwd = true,
