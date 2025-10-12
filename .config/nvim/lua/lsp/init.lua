@@ -34,6 +34,7 @@ local ensure_installed = {
   'vtsls',
   'gopls',
   'protols',
+  'terraformls',
 }
 require('mason-lspconfig').setup({
   automatic_installation = true,
