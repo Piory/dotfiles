@@ -1,0 +1,41 @@
+model = "gpt-5-codex"
+hide_agent_reasoning = true
+network_access = true
+
+notify = ["bash", "-lc", "afplay /System/Library/Sounds/Ping.aiff"]
+
+[tools]
+web_search = true
+
+[mcp_servers.serena]
+command = "uvx"
+args = ["--from", "git+https://github.com/oraios/serena", "serena", "start-mcp-server", "--context", "codex", "--project", "$(pwd)"]
+[mcp_servers.context7]
+args = ["-y", "@upstash/context7-mcp"]
+command = "npx"
+[mcp_servers.playwright]
+args = ["@playwright/mcp@latest"]
+command = "npx"
+[mcp_servers.chrome-devtools]
+type = "stdio"
+command = "npx"
+args = ["chrome-devtools-mcp@latest"]
+description = "Chrome DevTools MCP: run performance traces, inspect the DOM, and perform real-time debugging of your web pages — useful for browser automation, end-to-end testing, and capturing page artifacts."
+
+[projects."/Users/piory/git/github.com/Piory/postrix"]
+trust_level = "trusted"
+
+[projects."/Users/piory/git/github.com/ROOT4-BEAUTY/r4-beauty"]
+trust_level = "trusted"
+
+[projects."/Users/piory/git/github.com/keita-keita-keita/mobic-buy"]
+trust_level = "trusted"
+
+[projects."/Users/piory/git/github.com/ROOT4-BEAUTY/alpha-server"]
+trust_level = "trusted"
+
+[projects."/Users/piory/git/github.com/Piory/dotfiles"]
+trust_level = "trusted"
+
+[projects."/Users/piory/git/github.com/keita-keita-keita/yuipoke"]
+trust_level = "trusted"

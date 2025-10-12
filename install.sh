@@ -29,30 +29,60 @@ echo "Create symbolic link [$CONFIG_PATH/git -> $CURRENT_DIRECTORY/.config/git]"
 ln -fs $CURRENT_DIRECTORY/.config/nvim $CONFIG_PATH
 dotfiles=(bin .zprezto .zshrc .zpreztorc .zprofile .p10k.zsh .tmux.conf .tmux .hyper.js .Brewfile .claude)
 for file in $dotfiles; do
-  echo "Create symbolic link [${ZDOTDIR:-$HOME}/$file -> $CURRENT_DIRECTORY/$file]"
-  ln -fs $CURRENT_DIRECTORY/$file ${ZDOTDIR:-$HOME}
+  echo "Create symbolic link [$HOME/$file -> $CURRENT_DIRECTORY/$file]"
+  ln -fs $CURRENT_DIRECTORY/$file $HOME
 done
 
+
+echo '╭──────────────────────────────────────────────────────────╮'
+echo '│                       Claude Code                        │'
+echo '╰──────────────────────────────────────────────────────────╯'
 # .claudeディレクトリの処理（存在する場合のみ）
 if [[ -d ".claude" ]]; then
   # .claude内の各ファイルをシンボリックリンク
   for file in .claude/*; do
     if [[ -f "$file" ]]; then
       filename=$(basename "$file")
-      echo "Creating symbolic link [${ZDOTDIR:-$HOME}/.claude/$filename -> $CURRENT_DIRECTORY/.claude/$filename]"
-      ln -fs $CURRENT_DIRECTORY/.claude/$file ${ZDOTDIR:-$HOME}/.claude/$filename
+      echo "Creating symbolic link [$HOME/.claude/$filename -> $CURRENT_DIRECTORY/.claude/$filename]"
+      ln -fs $CURRENT_DIRECTORY/.claude/$file $HOME/.claude/$filename
     fi
   done
   
   # .claude/commandsディレクトリの処理（ディレクトリ自体をシンボリックリンク）
   if [[ -d ".claude/commands" ]]; then
-    # 既存の ~/.claude/commands を削除（ディレクトリまたはシンボリックリンク）
-    if [[ -e ~/.claude/commands ]]; then
-      echo "Removing existing: ~/.claude/commands"
-      rm -rf ~/.claude/commands
+    # 既存の $HOME/.claude/commands を $HOME/.claude/commands.bk にリネーム
+    if [[ -e $HOME/.claude/commands ]]; then
+      echo "Backing up existing: $HOME/.claude/commands to $HOME/.claude/commands.bk"
+      mv ~/.claude/commands ~/.claude/commands.bk
     fi
-    echo "Creating symlink: .claude/commands -> ~/.claude/commands"
-    ln -sf "$DIR/.claude/commands" ~/.claude/commands
+    echo "Creating symbolic link [$CURRENT_DIRECTORY/.claude/commands -> $HOME/.claude/commands]"
+    ln -sf "$CURRENT_DIRECTORY/.claude/commands" $HOME/.claude/commands
+  fi
+fi
+
+echo '╭──────────────────────────────────────────────────────────╮'
+echo '│                          Codex                           │'
+echo '╰──────────────────────────────────────────────────────────╯'
+# .codexディレクトリの処理（存在する場合のみ）
+if [[ -d ".codex" ]]; then
+  # .codex内の各ファイルをシンボリックリンク
+  for file in .codex/*; do
+    if [[ -f "$file" ]]; then
+      filename=$(basename "$file")
+      echo "Creating symbolic link [$HOME/.codex/$filename -> $CURRENT_DIRECTORY/.codex/$filename]"
+      ln -fs $CURRENT_DIRECTORY/.codex/$file ${ZDOTDIR:-$HOME}/.codex/$filename
+    fi
+  done
+
+  # .codex/prompts ディレクトリの処理（ディレクトリ自体をシンボリックリンク）
+  if [[ -d ".codex/prompts" ]]; then
+    # 既存の $HOME/.codex/prompts を $HOME/.codex/prompts.bk にリネーム
+    if [[ -e $HOME/.codex/prompts ]]; then
+      echo "Backing up existing: $HOME/.codex/prompts to $HOME/.codex/prompts.bk"
+      mv $HOME/.codex/prompts $HOME/.codex/prompts.bk
+    fi
+    echo "Creating symbolic link [$CURRENT_DIRECTORY/.codex/prompts -> $HOME/.codex/prompts]"
+    ln -sf "$CURRENT_DIRECTORY/.codex/commands" $HOME/.codex/commands
   fi
 fi
 
