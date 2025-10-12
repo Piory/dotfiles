@@ -138,7 +138,7 @@ return {
           typescript = js_formatters,
           javascriptreact = js_formatters,
           typescriptreact = js_formatters,
-          terraform = { 'terraform_fmt' },
+          terraform = { 'terraform_fmt', 'tflint' },
         },
         formatters = {
           eslint_d = {
@@ -181,8 +181,15 @@ return {
             require_cwd = true,
           },
           terraform_fmt = {
+            require_cwd = true,
             command = 'terraform',
             args = { 'fmt', '-no-color', '-list=false', '$FILENAME' },
+            stdin = false,
+          },
+          tflint = {
+            require_cwd = true,
+            command = 'tflint',
+            args = { '--chdir', '$DIRNAME' },
             stdin = false,
           },
         },
