@@ -95,7 +95,7 @@ if [[ -d ".codex" ]]; then
       mv $HOME/.codex/prompts $HOME/.codex/prompts.bk
     fi
     echo "Creating symbolic link [$CURRENT_DIRECTORY/.codex/prompts -> $HOME/.codex/prompts]"
-    ln -sf "$CURRENT_DIRECTORY/.codex/commands" $HOME/.codex/commands
+    ln -sf "$CURRENT_DIRECTORY/.codex/prompts" $HOME/.codex/prompts
   fi
 fi
 
