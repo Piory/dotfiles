@@ -241,6 +241,16 @@ return {
     end,
   },
   {
+    'akinsho/pubspec-assist.nvim',
+    event = { 'BufReadPre pubspec.yaml' },
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+    config = function()
+      require('pubspec-assist').setup({})
+    end,
+  },
+  {
     'ray-x/go.nvim',
     dependencies = { -- optional packages
       'ray-x/guihua.lua',
