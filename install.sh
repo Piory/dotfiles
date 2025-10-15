@@ -57,7 +57,7 @@ if [[ -d ".claude" ]]; then
     if [[ -f "$file" ]]; then
       filename=$(basename "$file")
       echo "Creating symbolic link [$HOME/.claude/$filename -> $CURRENT_DIRECTORY/.claude/$filename]"
-      ln -fs $CURRENT_DIRECTORY/.claude/$file $HOME/.claude/$filename
+      ln -fs "$CURRENT_DIRECTORY/$file" "$HOME/.claude/$filename"
     fi
   done
   
@@ -83,7 +83,7 @@ if [[ -d ".codex" ]]; then
     if [[ -f "$file" ]]; then
       filename=$(basename "$file")
       echo "Creating symbolic link [$HOME/.codex/$filename -> $CURRENT_DIRECTORY/.codex/$filename]"
-      ln -fs $CURRENT_DIRECTORY/.codex/$file ${ZDOTDIR:-$HOME}/.codex/$filename
+      ln -fs "$CURRENT_DIRECTORY/$file" "$HOME/.codex/$filename"
     fi
   done
 
