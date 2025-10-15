@@ -35,6 +35,8 @@ local ensure_installed = {
   'gopls',
   'protols',
   'terraformls',
+  'yamlls',
+  'gh_actions_ls',
 }
 require('mason-lspconfig').setup({
   automatic_installation = true,
