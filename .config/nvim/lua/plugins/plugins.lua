@@ -149,10 +149,19 @@ return {
         icon = 'https://styles.redditmedia.com/t5_30kix/styles/communityIcon_n2hvyn96zwk81.png',
       },
       text = {
-        editing = 'Editing [${name}] ${filename} (${cursor_line}:${cursor_char})',
-        viewing = 'Viewing [${name}] ${filename} (${cursor_line}:${cursor_char})',
+        editing = 'Editing in ${name}',
+        viewing = 'Viewing in ${name}',
+        workspace = 'in workspace',
       },
       variables = true, -- Enable string templates
+      assets = {
+        ['.proto'] = {
+          icon = 'https://downloads.marketplace.jetbrains.com/files/14004/874525/icon/default.png',
+          tooltip = 'Protocol Buffers',
+          name = 'Protocol Buffers',
+          text = 'Writing in Protocol Buffers',
+        },
+      },
     },
   },
   {
