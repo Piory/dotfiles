@@ -37,6 +37,7 @@ local ensure_installed = {
   'terraformls',
   'yamlls',
   'gh_actions_ls',
+  'markdown_oxide',
 }
 require('mason-lspconfig').setup({
   automatic_installation = true,
