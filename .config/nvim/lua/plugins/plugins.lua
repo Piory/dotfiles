@@ -201,7 +201,6 @@ return {
     'gen740/SmoothCursor.nvim',
     event = 'VeryLazy',
     config = function()
-      vim.api.nvim_set_hl(0, 'SmoothCursorCustom', { bg = nil, fg = '#42F57E', default = true })
       require('smoothcursor').setup({
         priority = 10,
         fancy = {
@@ -621,8 +620,8 @@ return {
           lualine_a = { 'mode' },
           lualine_b = { 'branch', 'diff', 'diagnostics' },
           lualine_c = { 'filename' },
-          lualine_x = { lsp_names, 'filetype', 'encoding' },
-          lualine_y = { 'progress' },
+          lualine_x = { lsp_names, 'filetype' },
+          lualine_y = { 'encoding', 'progress' },
           lualine_z = { 'location' },
         },
         inactive_sections = {

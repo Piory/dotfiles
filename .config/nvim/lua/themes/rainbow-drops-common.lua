@@ -94,6 +94,9 @@ local function setup_base_highlights(hl, c)
   hl(0, 'TelescopeMatching', { fg = c.crystalBlue, bold = true })
   hl(0, 'TelescopePromptPrefix', { fg = c.mediumVioletRed, bold = true })
 
+  -- SmoothCursor
+  hl(0, 'SmoothCursorCustom', { bg = nil, fg = c.limeGreen, default = true })
+
   -- LSP診断
   hl(0, 'DiagnosticError', { fg = c.error })
   hl(0, 'DiagnosticWarn', { fg = c.warning })
