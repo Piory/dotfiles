@@ -119,6 +119,10 @@ local function setup_base_highlights(hl, c)
   hl(0, 'DiagnosticWarn', { fg = c.warning })
   hl(0, 'DiagnosticInfo', { fg = c.info })
   hl(0, 'DiagnosticHint', { fg = c.hint })
+  hl(0, 'DiagnosticUnderlineError', { underline = true, sp = c.error })
+  hl(0, 'DiagnosticUnderlineWarn', { undercurl = true, sp = c.warning })
+  hl(0, 'DiagnosticUnderlineInfo', { undercurl = true, sp = c.info })
+  hl(0, 'DiagnosticUnderlineHint', { undercurl = true, sp = c.hint })
 
   --- WinBar
   hl(0, 'WinBar', { bg = c.eerieBlack, fg = c.sliver })
