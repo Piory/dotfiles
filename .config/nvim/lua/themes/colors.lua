@@ -1,11 +1,12 @@
 local colors = {}
 
 colors.lightGrayBlue = '#A9B7C6'
-colors.eerieBlack = '#141a1f'
+colors.eerieBlack = '#23252A'
 colors.cursorLine = '#2B2B2B'
 colors.aliceBlue = '#D9E8F7'
 colors.charcoal = '#363636'
 colors.dimGray = '#626262'
+colors.mutedGray = '#4A4F56'
 colors.slateGray = '#3E515D'
 colors.skyBlue = '#94CEEF'
 colors.lightGray = '#D8D8D8'
