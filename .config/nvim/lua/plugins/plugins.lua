@@ -596,7 +596,8 @@ return {
           :totable()
         return ' ' .. table.concat(clients, ', ')
       end
-      require('lualine').setup({
+
+      local base_config = {
         options = {
           icons_enabled = true,
           theme = 'auto',
@@ -636,6 +637,60 @@ return {
         winbar = {},
         inactive_winbar = {},
         extensions = {},
+      }
+
+      local function safe_require(module)
+        local ok, result = pcall(require, module)
+        if ok then
+          return result
+        end
+      end
+
+      local theme_map = {
+        ['rainbow-drops'] = 'themes.lualine-rainbow-drops',
+        ['rainbow-drops-soft'] = 'themes.lualine-rainbow-drops-soft',
+      }
+
+      local function resolve_theme()
+        local target = vim.g.rainbow_drops_lualine_theme
+        if type(target) == 'string' then
+          local applied = safe_require(target)
+          if applied then
+            return applied
+          end
+        end
+
+        local colors_name = vim.g.colors_name
+        if type(colors_name) == 'string' then
+          local module = theme_map[colors_name]
+          if module then
+            local applied = safe_require(module)
+            if applied then
+              return applied
+            end
+          end
+        end
+
+        return 'auto'
+      end
+
+      local function apply()
+        local config = vim.deepcopy(base_config)
+        config.options.theme = resolve_theme()
+        require('lualine').setup(config)
+      end
+
+      apply()
+
+      local group = vim.api.nvim_create_augroup('RainbowDropsLualine', { clear = true })
+      vim.api.nvim_create_autocmd('ColorScheme', {
+        group = group,
+        callback = apply,
+      })
+      vim.api.nvim_create_autocmd('User', {
+        group = group,
+        pattern = 'RainbowDropsLualineUpdate',
+        callback = apply,
       })
     end,
   },
