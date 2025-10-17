@@ -712,11 +712,11 @@ return {
       require('hlchunk').setup({
         chunk = {
           enable = true,
-          style = '#1abc9c',
+          style = '#9AE66E',
         },
         line_num = {
           enable = true,
-          style = '#1abc9c',
+          style = '#9AE66E',
         },
         indent = {
           enable = true,

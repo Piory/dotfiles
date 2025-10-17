@@ -112,7 +112,7 @@ local function setup_base_highlights(hl, c)
   hl(0, 'TelescopePromptPrefix', { fg = c.mediumVioletRed, bold = true })
 
   -- SmoothCursor
-  hl(0, 'SmoothCursorCustom', { bg = nil, fg = c.limeGreen, default = true })
+  hl(0, 'SmoothCursorCustom', { bg = nil, fg = c.hint, default = true })
 
   -- LSP診断
   hl(0, 'DiagnosticError', { fg = c.error })
