@@ -38,6 +38,7 @@ local ensure_installed = {
   'yamlls',
   'gh_actions_ls',
   'markdown_oxide',
+  'docker_language_server',
 }
 require('mason-lspconfig').setup({
   automatic_installation = true,
