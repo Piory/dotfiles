@@ -514,7 +514,7 @@ return {
     main = 'ibl',
     opts = function(_, opts)
       return require('indent-rainbowline').make_opts(opts, {
-        color_transparency = 0.05,
+        color_transparency = 0.06,
       })
     end,
     dependencies = { 'TheGLander/indent-rainbowline.nvim' },
