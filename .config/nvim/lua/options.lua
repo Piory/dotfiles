@@ -1,5 +1,7 @@
 local opt = vim.opt
 
+opt.undofile = true
+
 -- カラースキームで 24bit カラーを使用
 opt.termguicolors = true
 

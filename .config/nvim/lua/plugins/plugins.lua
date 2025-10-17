@@ -23,6 +23,13 @@ return {
         desc = 'Show Picker',
       },
       {
+        '<leader>e',
+        function()
+          Snacks.picker.explorer()
+        end,
+        desc = 'File Explorer',
+      },
+      {
         '<leader>sf',
         function()
           Snacks.picker.files()
@@ -185,7 +192,7 @@ return {
     dependencies = { 'folke/snacks.nvim' },
     keys = {
       {
-        '<leader>uk',
+        '<leader>k',
         function()
           require('showkeys').toggle()
         end,
@@ -780,5 +787,15 @@ return {
         },
       })
     end,
+  },
+  {
+    'mbbill/undotree',
+    keys = {
+      {
+        '<leader>u',
+        '<cmd>UndotreeToggle<cr>',
+        desc = 'Toggle Undotree',
+      },
+    },
   },
 }
