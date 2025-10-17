@@ -236,22 +236,6 @@ local function setup_search_highlights(hl, c)
   hl(0, 'Substitute', { fg = c.aliceBlue, bg = c.mediumVioletRed, underline = true })
 end
 
-local function update_devicon_bg(c)
-  local names = vim.fn.getcompletion('BufferLineDevIcon', 'highlight')
-  for _, name in ipairs(names) do
-    -- Selected/Visible/Inactive は自分で付けて作る
-    local base = name:match('^BufferLineDevIcon[%w%p]+$')
-    if base then
-      local hl = vim.api.nvim_get_hl(0, { name = base, link = false })
-      if hl.fg then
-        vim.api.nvim_set_hl(0, base, { fg = hl.fg, bg = c.eerieBlack })
-        vim.api.nvim_set_hl(0, base .. 'Selected', { fg = hl.fg, bg = c.eerieBlack })
-        vim.api.nvim_set_hl(0, base .. 'Visible', { fg = hl.fg, bg = c.eerieBlack })
-        vim.api.nvim_set_hl(0, base .. 'Inactive', { fg = hl.fg, bg = c.eerieBlack })
-      end
-    end
-  end
-end
 function M.setup(colors, theme_name, lualine_theme_name)
   -- クリア & 基本設定
   vim.cmd('highlight clear')
@@ -267,15 +251,6 @@ function M.setup(colors, theme_name, lualine_theme_name)
   setup_lsp_highlights(hl, colors)
   setup_language_specific(hl, colors)
   setup_search_highlights(hl, colors)
-  -- テーマ変更や起動直後、bufferline の描画後に再適用
-  vim.api.nvim_create_autocmd({ 'ColorScheme', 'UIEnter' }, {
-    group = vim.api.nvim_create_augroup('RainbowDropsDeviconBg', { clear = true }),
-    callback = function()
-      vim.schedule(function()
-        update_devicon_bg(colors)
-      end)
-    end,
-  })
 
   -- lualine テーマ設定
   if package.loaded['lualine'] and lualine_theme_name then
