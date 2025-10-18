@@ -627,9 +627,9 @@ return {
           lualine_a = { 'mode' },
           lualine_b = { 'branch', 'diff', 'diagnostics' },
           lualine_c = { 'filename' },
-          lualine_x = { lsp_names, 'filetype', 'encoding' },
-          lualine_y = { 'progress' },
-          lualine_z = { 'location' },
+          lualine_x = { lsp_names, 'filetype' },
+          lualine_y = { 'encoding' },
+          lualine_z = { 'progress', 'location' },
         },
         inactive_sections = {
           lualine_a = {},
