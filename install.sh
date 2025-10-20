@@ -40,7 +40,7 @@ ln -fs $CURRENT_DIRECTORY/.config/git $CONFIG_PATH
 echo '╭──────────────────────────────────────────────────────────╮'
 echo '│                          Other                           │'
 echo '╰──────────────────────────────────────────────────────────╯'
-dotfiles=(bin .zprezto .zshrc .zpreztorc .zprofile .p10k.zsh .tmux.conf .tmux .hyper.js .Brewfile .claude)
+dotfiles=(bin .zprezto .zshrc .zpreztorc .zprofile .p10k.zsh .tmux.conf .tmux .hyper.js .Brewfile)
 for file in $dotfiles; do
   echo "Create symbolic link [$HOME/$file -> $CURRENT_DIRECTORY/$file]"
   ln -fs $CURRENT_DIRECTORY/$file $HOME
@@ -69,7 +69,7 @@ if [[ -d ".claude" ]]; then
       mv ~/.claude/commands ~/.claude/commands.bk
     fi
     echo "Creating symbolic link [$CURRENT_DIRECTORY/.claude/commands -> $HOME/.claude/commands]"
-    ln -sf "$CURRENT_DIRECTORY/.claude/commands" $HOME/.claude/commands
+    ln -sfn "$CURRENT_DIRECTORY/.claude/commands" "$HOME/.claude/commands"
   fi
 fi
 
@@ -78,6 +78,7 @@ echo '│                          Codex                           │'
 echo '╰──────────────────────────────────────────────────────────╯'
 # .codexディレクトリの処理（存在する場合のみ）
 if [[ -d ".codex" ]]; then
+  mkdir -p "$HOME/.codex"
   # .codex内の各ファイルをシンボリックリンク
   for file in .codex/*; do
     if [[ -f "$file" ]]; then
@@ -89,13 +90,13 @@ if [[ -d ".codex" ]]; then
 
   # .codex/prompts ディレクトリの処理（ディレクトリ自体をシンボリックリンク）
   if [[ -d ".codex/prompts" ]]; then
-    # 既存の $HOME/.codex/prompts を $HOME/.codex/prompts.bk にリネーム
-    if [[ -e $HOME/.codex/prompts ]]; then
+    # 既存の $HOME/.codex/prompts を $HOME/.codex/prompts.bk にリネーム（実体がディレクトリの場合のみ）
+    if [[ -e $HOME/.codex/prompts && ! -L $HOME/.codex/prompts ]]; then
       echo "Backing up existing: $HOME/.codex/prompts to $HOME/.codex/prompts.bk"
       mv $HOME/.codex/prompts $HOME/.codex/prompts.bk
     fi
     echo "Creating symbolic link [$CURRENT_DIRECTORY/.codex/prompts -> $HOME/.codex/prompts]"
-    ln -sf "$CURRENT_DIRECTORY/.codex/prompts" $HOME/.codex/prompts
+    ln -sfn "$CURRENT_DIRECTORY/.codex/prompts" "$HOME/.codex/prompts"
   fi
 fi
 
