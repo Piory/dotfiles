@@ -36,6 +36,7 @@ export PATH=$HOME/.pub-cache/bin:$PATH
 export PATH=$HOME/.volta/bin:$PATH
 export PATH=/Applications/Docker.app/Contents/Resources/bin:$PATH
 export PATH=$HOME/go/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
 
 # peco
 ## コマンドの履歴をみるやつ ##
