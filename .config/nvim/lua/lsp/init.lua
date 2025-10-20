@@ -28,6 +28,7 @@ require('mason').setup()
 -- masonを介してlanguage serverを自動インストールする
 local ensure_installed = {
   'typos_lsp',
+  'bashls',
   'lua_ls',
   'sqls',
   'jsonls',

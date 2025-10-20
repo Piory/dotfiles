@@ -34,6 +34,7 @@ local function setup_base_highlights(hl, c)
   hl(0, 'Statement', { fg = c.mediumVioletRed, bold = true })
   hl(0, 'Comment', { fg = c.dimGray, italic = true })
   hl(0, 'Delimiter', { fg = c.lightGrayBlue })
+  hl(0, 'PreProc', { fg = c.lightCyan })
 
   --- 通知関連
   hl(0, 'NotifyBackground', { bg = c.eerieBlack })
@@ -195,6 +196,11 @@ local function setup_lsp_highlights(hl, c)
 end
 
 local function setup_language_specific(hl, c)
+  -- Zsh
+  hl(0, 'zshVariable', { fg = c.goldenrod })
+  hl(0, 'zshCommands', { fg = c.limeGreen })
+  hl(0, 'zshFunction', { fg = c.limeGreen })
+
   -- Lua
   hl(0, '@constructor.lua', { fg = c.lightGrayBlue })
 
