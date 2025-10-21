@@ -188,6 +188,26 @@ return {
     end,
   },
   {
+    'vuki656/package-info.nvim',
+    event = { 'VeryLazy' },
+    ft = { 'json', 'jsonc' },
+    keys = {
+      {
+        '<leader>nc',
+        function()
+          require('package-info').change_version()
+        end,
+        desc = 'Change Package Version',
+      },
+    },
+    dependencies = {
+      'MunifTanjim/nui.nvim',
+    },
+    config = function()
+      require('package-info').setup({})
+    end,
+  },
+  {
     'nvzone/showkeys',
     dependencies = { 'folke/snacks.nvim' },
     keys = {
