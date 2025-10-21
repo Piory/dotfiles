@@ -133,7 +133,7 @@ return {
         },
         formatters_by_ft = {
           lua = { 'stylua' },
-          go = { 'gofmt', 'goimports_reviser', 'gofumpt' },
+          go = { 'gofmt', 'gofumpt' },
           javascript = js_formatters,
           typescript = js_formatters,
           javascriptreact = js_formatters,
@@ -172,9 +172,6 @@ return {
             condition = biome_condition,
           },
           gofmt = {
-            require_cwd = true,
-          },
-          goimports_reviser = {
             require_cwd = true,
           },
           gofumpt = {

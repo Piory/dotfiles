@@ -40,6 +40,7 @@ local ensure_installed = {
   'gh_actions_ls',
   'markdown_oxide',
   'docker_language_server',
+  'golangci_lint_ls',
 }
 require('mason-lspconfig').setup({
   automatic_installation = true,
