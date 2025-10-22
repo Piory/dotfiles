@@ -154,7 +154,7 @@ local function setup_treesitter_highlights(hl, c)
   hl(0, '@function.method', { fg = c.forestGreen, bold = true })
   hl(0, '@function.method.call', { fg = c.limeGreen })
   hl(0, '@func.dotcall', { fg = c.limeGreen })
-  hl(0, '@method', { fg = c.yellowGreen })
+  hl(0, '@method', { fg = c.limeGreen })
   hl(0, '@conditional', { fg = c.blueGreen })
   hl(0, '@repeat', { fg = c.blueGreen })
   hl(0, '@variable', { fg = c.goldenrod })
@@ -177,20 +177,21 @@ end
 
 local function setup_lsp_highlights(hl, c)
   -- LSP ハイライト
-  hl(0, '@lsp.type.namespace', { fg = c.sliver })
-  hl(0, '@lsp.type.parameter', { fg = c.lightSkyBlue2 })
+  hl(0, '@lsp.type.namespace', { link = '@type' })
+  hl(0, '@lsp.type.parameter', { link = '@variable.parameter' })
   hl(0, '@lsp.type.enum', { fg = c.plum })
-  hl(0, '@lsp.type.method', { fg = c.limeGreen })
+  hl(0, '@lsp.type.method', { link = '@function' })
   hl(0, '@lsp.type.type', { fg = c.lightCyan, bold = false })
-  hl(0, '@lsp.type.interface', { fg = c.lightCyan })
+  hl(0, '@lsp.type.interface', { fg = c.lightCyan, bold = false })
   hl(0, '@lsp.type.typeParameter', { fg = c.rosyBrown, bold = true })
   hl(0, '@lsp.typemod.variable.declaration', { fg = c.coral })
   hl(0, '@lsp.typemod.property.static', { fg = c.skyBlue2, italic = true })
   hl(0, '@lsp.typemod.property.annotation', { fg = c.sliver })
-  hl(0, '@lsp.typemod.method.constructor', { fg = c.forestGreen, bold = true })
-  hl(0, '@lsp.typemod.method.defaultLibrary', { fg = c.limeGreen })
-  hl(0, '@lsp.typemod.function.defaultLibrary', { fg = c.limeGreen })
-  hl(0, '@lsp.typemod.class.defaultLibrary', { fg = c.crystalBlue, bold = true })
+  hl(0, '@lsp.typemod.method.constructor', { link = '@function.method' })
+  hl(0, '@lsp.typemod.variable.defaultLibrary', { link = '@field' })
+  hl(0, '@lsp.typemod.method.defaultLibrary', { link = '@function' })
+  hl(0, '@lsp.typemod.function.defaultLibrary', { link = '@function' })
+  hl(0, '@lsp.typemod.class.defaultLibrary', { link = '@type' })
   hl(0, '@lsp.mod.importPrefix', { fg = c.lightGrayBlue })
   hl(0, '@lsp.mod.constructor', { fg = c.forestGreen, bold = true })
   hl(0, '@lsp.mod.instance', { fg = c.skyBlue2 })
@@ -254,14 +255,18 @@ function M.setup(colors, theme_name, lualine_theme_name)
   vim.o.background = 'dark'
   vim.g.colors_name = theme_name
 
-  local hl = vim.api.nvim_set_hl
+  local function set_hl(namespace, name, opts)
+    opts = opts or {}
+    opts.nocombine = true
+    vim.api.nvim_set_hl(namespace, name, opts)
+  end
 
   -- ハイライトグループの設定
-  setup_base_highlights(hl, colors)
-  setup_treesitter_highlights(hl, colors)
-  setup_lsp_highlights(hl, colors)
-  setup_language_specific(hl, colors)
-  setup_search_highlights(hl, colors)
+  setup_base_highlights(set_hl, colors)
+  setup_treesitter_highlights(set_hl, colors)
+  setup_lsp_highlights(set_hl, colors)
+  setup_language_specific(set_hl, colors)
+  setup_search_highlights(set_hl, colors)
 
   -- lualine テーマ設定
   if package.loaded['lualine'] and lualine_theme_name then
