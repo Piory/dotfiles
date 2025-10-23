@@ -177,12 +177,12 @@ end
 
 local function setup_lsp_highlights(hl, c)
   -- LSP ハイライト
-  hl(0, '@lsp.type.namespace', { link = '@type' })
+  hl(0, '@lsp.type.namespace', { fg = c.lightCyan })
   hl(0, '@lsp.type.parameter', { link = '@variable.parameter' })
   hl(0, '@lsp.type.enum', { fg = c.plum })
   hl(0, '@lsp.type.method', { link = '@function' })
-  hl(0, '@lsp.type.type', { fg = c.lightCyan, bold = false })
-  hl(0, '@lsp.type.interface', { fg = c.lightCyan, bold = false })
+  hl(0, '@lsp.type.type', { fg = c.lightCyan })
+  hl(0, '@lsp.type.interface', { fg = c.lightCyan })
   hl(0, '@lsp.type.typeParameter', { fg = c.rosyBrown, bold = true })
   hl(0, '@lsp.typemod.variable.declaration', { fg = c.coral })
   hl(0, '@lsp.typemod.property.static', { fg = c.skyBlue2, italic = true })
