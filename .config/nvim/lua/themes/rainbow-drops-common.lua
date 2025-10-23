@@ -204,6 +204,13 @@ local function setup_lsp_highlights(hl, c)
 end
 
 local function setup_language_specific(hl, c)
+  -- Json
+  hl(0, 'jsonQuote', { link = '@string' })
+  hl(0, 'jsonKeyword', { link = '@string' })
+  hl(0, 'jsonNull', { link = '@keyword' })
+  hl(0, 'jsonBoolean', { link = '@boolean' })
+  hl(0, 'jsonNumber', { link = '@number' })
+
   -- Zsh
   hl(0, 'zshVariable', { fg = c.goldenrod })
   hl(0, 'zshCommands', { fg = c.limeGreen })
