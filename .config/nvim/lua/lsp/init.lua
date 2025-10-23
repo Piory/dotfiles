@@ -21,6 +21,55 @@ vim.api.nvim_create_autocmd('LspAttach', {
     })
   end,
 })
+
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+
+    if not client then
+      return
+    end
+
+    -- When the client is Biome, add an automatic event on
+    -- save that runs Biome's "source.fixAll.biome" code action.
+    -- This takes care of things like JSX props sorting and
+    -- removing unused imports.
+    if client.name == 'biome' then
+      vim.api.nvim_create_autocmd('BufWritePre', {
+        group = vim.api.nvim_create_augroup('BiomeFixAll', { clear = true }),
+        callback = function()
+          vim.lsp.buf.code_action({
+            context = {
+              only = {
+                'source.fixAll.biome',
+              },
+              diagnostics = {},
+            },
+            apply = true,
+          })
+        end,
+      })
+    elseif client.name == 'eslint' then
+      vim.api.nvim_create_autocmd('BufWritePre', {
+        group = vim.api.nvim_create_augroup('ESLintFixAll', { clear = true }),
+        callback = function()
+          vim.lsp.buf.code_action({
+            context = {
+              only = {
+                'source.organizeImports',
+                'source.fixAll',
+                'source.fixAll.eslint',
+              },
+              diagnostics = {},
+            },
+            apply = true,
+          })
+        end,
+      })
+    end
+  end,
+})
+
 require('lspconfig')
 -- パッケージマネージャー(mason)をセットアップする
 require('mason').setup()
