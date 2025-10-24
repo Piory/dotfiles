@@ -11,5 +11,9 @@ Brewfile.lock.json
 .java-version
 
 !.claude
-!.claude/CLAUDE.md
+!.claude/*
+.claude/settings.local.json
+
+!.codex
+!.codex/*
 
