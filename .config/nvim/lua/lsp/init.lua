@@ -56,9 +56,22 @@ vim.api.nvim_create_autocmd('LspAttach', {
           vim.lsp.buf.code_action({
             context = {
               only = {
-                'source.organizeImports',
-                'source.fixAll',
                 'source.fixAll.eslint',
+              },
+              diagnostics = {},
+            },
+            apply = true,
+          })
+        end,
+      })
+    elseif client.name == 'dartls' then
+      vim.api.nvim_create_autocmd('BufWritePre', {
+        group = vim.api.nvim_create_augroup('DartFormat', { clear = true }),
+        callback = function()
+          vim.lsp.buf.code_action({
+            context = {
+              only = {
+                'source.fixAll',
               },
               diagnostics = {},
             },
