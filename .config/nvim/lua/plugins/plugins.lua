@@ -507,16 +507,6 @@ return {
     },
   },
   {
-    'Pocco81/auto-save.nvim',
-    event = 'VeryLazy',
-    config = function()
-      require('auto-save').setup({
-        -- your config goes here
-        -- or just leave it empty :)
-      })
-    end,
-  },
-  {
     'folke/which-key.nvim',
     event = 'VeryLazy',
     opts = {
