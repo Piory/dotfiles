@@ -507,23 +507,12 @@ return {
     },
   },
   {
-    'folke/which-key.nvim',
+    'emmanueltouzery/key-menu.nvim',
     event = 'VeryLazy',
-    opts = {
-      preset = 'modern',
-      win = {
-        border = 'rounded',
-      },
-    },
-    keys = {
-      {
-        '<leader>?',
-        function()
-          require('which-key').show({ global = false })
-        end,
-        desc = 'Buffer Local Keymaps (which-key)',
-      },
-    },
+    config = function()
+      local keyMenu = require('key-menu')
+      keyMenu.set('n', '<Space>')
+    end,
   },
   {
     'lukas-reineke/indent-blankline.nvim',
