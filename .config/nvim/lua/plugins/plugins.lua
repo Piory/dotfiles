@@ -10,6 +10,10 @@ return {
     },
   },
   {
+    'eandrju/cellular-automaton.nvim',
+    cmd = 'CellularAutomaton',
+  },
+  {
     'folke/snacks.nvim',
     event = 'VeryLazy',
     priority = 1000,
