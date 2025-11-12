@@ -21,6 +21,10 @@ type = "stdio"
 command = "npx"
 args = ["chrome-devtools-mcp@latest"]
 description = "Chrome DevTools MCP: run performance traces, inspect the DOM, and perform real-time debugging of your web pages — useful for browser automation, end-to-end testing, and capturing page artifacts."
+[mcp_servers.shadcn]
+command = "npx"
+args = ["shadcn@latest", "mcp"]
+description = "Shadcn UI MCP: specialized in generating components and UI patterns using the Shadcn UI library for React and Tailwind CSS."
 
 [projects."/Users/piory/git/github.com/Piory/ghosgent"]
 trust_level = "trusted"
