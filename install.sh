@@ -98,6 +98,17 @@ if [[ -d ".codex" ]]; then
     echo "Creating symbolic link [$CURRENT_DIRECTORY/.codex/prompts -> $HOME/.codex/prompts]"
     ln -sfn "$CURRENT_DIRECTORY/.codex/prompts" "$HOME/.codex/prompts"
   fi
+
+  # .codex/skills ディレクトリの処理（ディレクトリ自体をシンボリックリンク）
+  if [[ -d ".codex/skills" ]]; then
+    # 既存の $HOME/.codex/skills を $HOME/.codex/skills.bk にリネーム（実体がディレクトリの場合のみ）
+    if [[ -e $HOME/.codex/skills && ! -L $HOME/.codex/skills ]]; then
+      echo "Backing up existing: $HOME/.codex/skills to $HOME/.codex/skills.bk"
+      mv $HOME/.codex/skills $HOME/.codex/skills.bk
+    fi
+    echo "Creating symbolic link [$CURRENT_DIRECTORY/.codex/skills -> $HOME/.codex/skills]"
+    ln -sfn "$CURRENT_DIRECTORY/.codex/skills" "$HOME/.codex/skills"
+  fi
 fi
 
 source $CURRENT_DIRECTORY/.zshrc

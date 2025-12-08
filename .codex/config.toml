@@ -7,6 +7,7 @@ notify = ["bash", "-lc", "afplay /System/Library/Sounds/Ping.aiff"]
 
 [features]
 web_search_request = true
+skills = true
 
 [mcp_servers.serena]
 command = "uvx"
