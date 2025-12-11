@@ -646,7 +646,13 @@ return {
           lualine_a = { 'mode' },
           lualine_b = { 'branch', 'diff', 'diagnostics' },
           lualine_c = { 'filename' },
-          lualine_x = { lsp_names, 'filetype' },
+          lualine_x = {
+            function()
+              return require('auto-session.lib').current_session_name(true)
+            end,
+            lsp_names,
+            'filetype',
+          },
           lualine_y = { 'encoding' },
           lualine_z = { 'progress', 'location' },
         },
