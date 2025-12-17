@@ -31,7 +31,8 @@ require('keymaps')
 require('plugins')
 
 -- カラースキームの設定
-vim.cmd.colorscheme('rainbow-drops-soft')
+-- vim.cmd.colorscheme('rainbow-drops-soft')
+vim.cmd.colorscheme('tokyonight')
 
 -- 背景透明化の設定
 -- vim.cmd([[
