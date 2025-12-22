@@ -12,6 +12,7 @@ skills = true
 [mcp_servers.serena]
 command = "uvx"
 args = ["--from", "git+https://github.com/oraios/serena", "serena", "start-mcp-server", "--context", "codex", "--project", "$(pwd)"]
+startup_timeout_sec = 60
 [mcp_servers.context7]
 args = ["-y", "@upstash/context7-mcp"]
 command = "npx"
@@ -27,6 +28,10 @@ description = "Chrome DevTools MCP: run performance traces, inspect the DOM, and
 command = "npx"
 args = ["shadcn@latest", "mcp"]
 description = "Shadcn UI MCP: specialized in generating components and UI patterns using the Shadcn UI library for React and Tailwind CSS."
+[mcp_servers.notion]
+command = "npx"
+args = ["-y", "mcp-remote", "https://mcp.notion.com/mcp"]
+startup_timeout_sec = 60
 
 [projects."/Users/piory/git/github.com/Piory/ghosgent"]
 trust_level = "trusted"
