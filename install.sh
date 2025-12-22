@@ -38,6 +38,12 @@ echo "Create symbolic link [$CONFIG_PATH/git -> $CURRENT_DIRECTORY/.config/git]"
 ln -fs $CURRENT_DIRECTORY/.config/git $CONFIG_PATH
 
 echo '╭──────────────────────────────────────────────────────────╮'
+echo '│                      Ghostty Config                      │'
+echo '╰──────────────────────────────────────────────────────────╯'
+echo "Create symbolic link [$CONFIG_PATH/ghostty -> $CURRENT_DIRECTORY/.config/ghostty]"
+ln -fs $CURRENT_DIRECTORY/.config/ghostty $CONFIG_PATH
+
+echo '╭──────────────────────────────────────────────────────────╮'
 echo '│                          Other                           │'
 echo '╰──────────────────────────────────────────────────────────╯'
 dotfiles=(bin .zprezto .zshrc .zpreztorc .zprofile .p10k.zsh .tmux.conf .tmux .hyper.js .Brewfile)
