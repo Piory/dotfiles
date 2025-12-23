@@ -147,6 +147,7 @@ local ensure_installed = {
   'markdown_oxide',
   'docker_language_server',
   'golangci_lint_ls',
+  'eslint',
 }
 require('mason-lspconfig').setup({
   automatic_installation = true,
