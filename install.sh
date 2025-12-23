@@ -85,6 +85,8 @@ echo '╰───────────────────────�
 # .codexディレクトリの処理（存在する場合のみ）
 if [[ -d ".codex" ]]; then
   mkdir -p "$HOME/.codex"
+  echo "Creating symbolic link [$HOME/.codex/config.toml -> $CURRENT_DIRECTORY/.codex/config.toml]"
+  ln -fs "$CURRENT_DIRECTORY/.codex/config.toml" "$HOME/.codex/config.toml"
   # .codex内の各ファイルをシンボリックリンク
   for file in .codex/*; do
     if [[ -f "$file" ]]; then
