@@ -8,6 +8,7 @@ notify = ["bash", "-lc", "afplay /System/Library/Sounds/Ping.aiff"]
 [features]
 web_search_request = true
 skills = true
+rmcp_client = true
 
 [mcp_servers.serena]
 command = "uvx"
@@ -28,6 +29,10 @@ description = "Chrome DevTools MCP: run performance traces, inspect the DOM, and
 command = "npx"
 args = ["shadcn@latest", "mcp"]
 description = "Shadcn UI MCP: specialized in generating components and UI patterns using the Shadcn UI library for React and Tailwind CSS."
+[mcp_servers.github]
+url = "https://api.githubcopilot.com/mcp/"
+bearer_token_env_var = "GITHUB_MCP_PAT_TOKEN"
+startup_timeout_sec = 60
 [mcp_servers.notion]
 command = "npx"
 args = ["-y", "mcp-remote", "https://mcp.notion.com/mcp"]
