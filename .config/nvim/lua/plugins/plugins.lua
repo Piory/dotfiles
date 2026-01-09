@@ -62,6 +62,20 @@ return {
         desc = 'Command History',
       },
       {
+        '<leader>gl',
+        function()
+          Snacks.picker.git_log()
+        end,
+        desc = 'Show git log',
+      },
+      {
+        '<leader>gd',
+        function()
+          Snacks.picker.git_diff()
+        end,
+        desc = 'Show git diff',
+      },
+      {
         '<leader>dd',
         function()
           Snacks.bufdelete.delete()
