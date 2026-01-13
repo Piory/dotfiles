@@ -258,6 +258,12 @@ return {
     },
   },
   {
+    'y3owk1n/undo-glow.nvim',
+    opts = {
+      -- your configuration (see Quick Start below)
+    },
+  },
+  {
     'gen740/SmoothCursor.nvim',
     event = 'VeryLazy',
     config = function()
