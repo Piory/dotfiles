@@ -6,6 +6,9 @@
   ],
   "model": "openai/gpt-5.2-codex",
   "small_model": "openai/gpt-5.1-codex-mini",
+  "plugin": [
+    "@mohak34/opencode-notifier@latest"
+  ],
   "mcp": {
     "serena": {
       "type": "local",
