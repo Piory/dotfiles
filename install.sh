@@ -119,6 +119,24 @@ if [[ -d ".codex" ]]; then
   fi
 fi
 
+echo '╭──────────────────────────────────────────────────────────╮'
+echo '│                          Gemini                          │'
+echo '╰──────────────────────────────────────────────────────────╯'
+# .geminiディレクトリの処理（存在する場合のみ）
+if [[ -d ".gemini" ]]; then
+  # .gemini内の各ファイルをシンボリックリンク
+  for file in .gemini/*; do
+    if [[ -f "$file" ]]; then
+      filename=$(basename "$file")
+      echo "Creating symbolic link [$HOME/.gemini/$filename -> $CURRENT_DIRECTORY/.gemini/$filename]"
+      ln -fs "$CURRENT_DIRECTORY/$file" "$HOME/.gemini/$filename"
+    fi
+  done
+  # Codex の AGENTS.md をシンボリックリンク
+  echo "Creating symbolic link [$HOME/.gemini/AGENTS.md -> $CURRENT_DIRECTORY/.codex/AGENTS.md]"
+  ln -fs "$CURRENT_DIRECTORY/.codex/AGENTS.md" "$HOME/.gemini/AGENTS.md"
+fi
+
 source $CURRENT_DIRECTORY/.zshrc
 source $CURRENT_DIRECTORY/.zpreztorc
 
