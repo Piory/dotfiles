@@ -76,6 +76,15 @@ return {
         desc = 'Show git diff',
       },
       {
+        '<leader>gs',
+        function()
+          Snacks.picker.git_status({
+            ignored = false,
+          })
+        end,
+        desc = 'Show git status',
+      },
+      {
         '<leader>dd',
         function()
           Snacks.bufdelete.delete()
