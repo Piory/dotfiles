@@ -16,4 +16,5 @@ Brewfile.lock.json
 
 !.codex
 !.codex/*
-
+!.config/opencode
+!.config/opencode/*
