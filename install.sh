@@ -120,6 +120,26 @@ if [[ -d ".codex" ]]; then
 fi
 
 echo '╭──────────────────────────────────────────────────────────╮'
+echo '│                         OpenCode                         │'
+echo '╰──────────────────────────────────────────────────────────╯'
+# ~/.config/opencode が存在する場合のみ処理
+if [[ -d "$HOME/.config/opencode" && -d "$CURRENT_DIRECTORY/.config/opencode" ]]; then
+  # .config/opencode 内の各ファイル/ディレクトリをシンボリックリンク
+  for entry in "$CURRENT_DIRECTORY/.config/opencode"/*; do
+    if [[ -e "$entry" ]]; then
+      entry_name=$(basename "$entry")
+      target_path="$HOME/.config/opencode/$entry_name"
+      if [[ -e "$target_path" && ! -L "$target_path" ]]; then
+        echo "Backing up existing: $target_path to $target_path.bk"
+        mv "$target_path" "$target_path.bk"
+      fi
+      echo "Creating symbolic link [$target_path -> $entry]"
+      ln -sfn "$entry" "$target_path"
+    fi
+  done
+fi
+
+echo '╭──────────────────────────────────────────────────────────╮'
 echo '│                          Gemini                          │'
 echo '╰──────────────────────────────────────────────────────────╯'
 # .geminiディレクトリの処理（存在する場合のみ）
