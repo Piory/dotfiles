@@ -1,18 +1,6 @@
 ---
-description: Git のコミットメッセージ生成
-mode: subagent
-model: openai/gpt-5.1-codex-mini
-temperature: 0.1
-permission:
-  write: deny
-  edit: deny
-  task: allow
-  bash:
-    "*": ask
-    "git status*": allow
-    "git diff*": allow
-    "git log*": allow
-    "git commit*": allow
+name: Git のコミットメッセージ生成
+description: Git の差分を参照して、適切な日本語のコミットメッセージを絵文字付きで作成します。
 ---
 以下の手順に従って、Git コミットメッセージを作成してください。
 - Git の現在の差分を参照して、適切なコミットメッセージを日本語で作成してください。コミットメッセージは、以下の Git Commit ルールに従い、変更内容に最も適した絵文字を使用してください。ただし、絵文字不要という指示がある場合は絵文字を使用しないでください。
