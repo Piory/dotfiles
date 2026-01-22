@@ -9,6 +9,10 @@ notify = ["bash", "-lc", "afplay /System/Library/Sounds/Ping.aiff"]
 web_search_request = true
 skills = true
 rmcp_client = true
+unified_exec = true
+shell_snapshot = true
+collab=true
+collaboration_modes = true
 
 [mcp_servers.serena]
 command = "uvx"
