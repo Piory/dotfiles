@@ -39,7 +39,7 @@
     },
   },
   "mcp": {
-    "serena": {
+    "Serena": {
       "type": "local",
       "command": [
         "uvx",
@@ -55,7 +55,7 @@
       "enabled": true,
       "timeout": 60000
     },
-    "github": {
+    "GitHub": {
       "type": "remote",
       "url": "https://api.githubcopilot.com/mcp/",
       "headers": {
@@ -64,7 +64,7 @@
       "enabled": true,
       "timeout": 60000
     },
-    "context7": {
+    "Context7": {
       "type": "local",
       "command": [
         "npx",
@@ -74,7 +74,7 @@
       "enabled": true,
       "timeout": 60000
     },
-    "playwright": {
+    "Playwright": {
       "type": "local",
       "command": [
         "npx",
@@ -84,7 +84,7 @@
       "enabled": true,
       "timeout": 60000
     },
-    "notion": {
+    "Notion": {
       "type": "local",
       "command": [
         "npx",
