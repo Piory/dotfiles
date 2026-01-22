@@ -15,7 +15,7 @@
       "rm -rf *": "deny",
       "git push --force*": "deny",
       "sudo *": "deny"
-    },
+    }
   },
   "agent": {
     "build": {
@@ -36,7 +36,7 @@
         "edit": false,
         "bash": false
       }
-    },
+    }
   },
   "mcp": {
     "Serena": {
@@ -91,6 +91,17 @@
         "-y",
         "mcp-remote",
         "https://mcp.notion.com/mcp"
+      ],
+      "enabled": true,
+      "timeout": 60000
+    },
+    "Vercel": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "mcp-remote",
+        "https://mcp.vercel.com"
       ],
       "enabled": true,
       "timeout": 60000
