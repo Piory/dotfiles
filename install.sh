@@ -120,6 +120,19 @@ if [[ -d ".codex" ]]; then
 fi
 
 echo '╭──────────────────────────────────────────────────────────╮'
+echo '│                         Skills                           │'
+echo '╰──────────────────────────────────────────────────────────╯'
+# .agents ディレクトリの処理（存在する場合のみ）
+if [[ -d ".agents" ]]; then
+  if [[ -e "$HOME/.agents" && ! -L "$HOME/.agents" ]]; then
+    echo "Backing up existing: $HOME/.agents to $HOME/.agents.bk"
+    mv "$HOME/.agents" "$HOME/.agents.bk"
+  fi
+  echo "Creating symbolic link [$HOME/.agents -> $CURRENT_DIRECTORY/.agents]"
+  ln -sfn "$CURRENT_DIRECTORY/.agents" "$HOME/.agents"
+fi
+
+echo '╭──────────────────────────────────────────────────────────╮'
 echo '│                         OpenCode                         │'
 echo '╰──────────────────────────────────────────────────────────╯'
 # ~/.config/opencode が存在する場合のみ処理
