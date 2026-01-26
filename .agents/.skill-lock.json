@@ -9,6 +9,24 @@
       "skillFolderHash": "e549f070fca7ca2284e06f17e8a27260443aaf0d",
       "installedAt": "2026-01-26T01:40:04.498Z",
       "updatedAt": "2026-01-26T01:40:04.498Z"
+    },
+    "vercel-react-best-practices": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/agent-skills.git",
+      "skillPath": "skills/react-best-practices/SKILL.md",
+      "skillFolderHash": "b86e3967846abb5beeeb874410d8f2ebf6a3f5e1",
+      "installedAt": "2026-01-26T02:16:08.177Z",
+      "updatedAt": "2026-01-26T02:16:08.177Z"
+    },
+    "web-design-guidelines": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/agent-skills.git",
+      "skillPath": "skills/web-design-guidelines/SKILL.md",
+      "skillFolderHash": "3116f3e62dbd02b44a598b1aa690d2a8938e8f89",
+      "installedAt": "2026-01-26T02:16:08.201Z",
+      "updatedAt": "2026-01-26T02:16:08.201Z"
     }
   }
 }
