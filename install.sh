@@ -11,6 +11,11 @@ git submodule update --init --recursive
 echo 'Start setup dotfiles!!!'
 
 echo '╭──────────────────────────────────────────────────────────╮'
+echo '│                           Brew                           │'
+echo '╰──────────────────────────────────────────────────────────╯'
+brew bundle install --file=$CURRENT_DIRECTORY/.Brewfile
+
+echo '╭──────────────────────────────────────────────────────────╮'
 echo '│                          Prezto                          │'
 echo '╰──────────────────────────────────────────────────────────╯'
 setopt EXTENDED_GLOB
