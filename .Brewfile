@@ -52,6 +52,7 @@ brew "terraformer"
 brew "tig"
 brew "tmux"
 brew "tree"
+brew "tree-sitter-cli"
 brew "universal-ctags", args: ["HEAD"]
 brew "uv"
 brew "vercel-cli"
