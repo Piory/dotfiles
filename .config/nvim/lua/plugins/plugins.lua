@@ -69,13 +69,6 @@ return {
         desc = 'Show git log',
       },
       {
-        '<leader>gd',
-        function()
-          Snacks.picker.git_diff()
-        end,
-        desc = 'Show git diff',
-      },
-      {
         '<leader>gs',
         function()
           Snacks.picker.git_status({
@@ -155,6 +148,21 @@ return {
       scratch = { enabled = true },
       toggle = { enabled = true },
       zen = { enabled = true },
+    },
+  },
+  {
+    'sindrets/diffview.nvim',
+    keys = {
+      {
+        '<leader>gd',
+        '<cmd>DiffviewOpen<cr>',
+        desc = 'Git Diffview Open',
+      },
+      {
+        '<leader>gD',
+        '<cmd>DiffviewClose<cr>',
+        desc = 'Git Diffview Close',
+      },
     },
   },
   {
