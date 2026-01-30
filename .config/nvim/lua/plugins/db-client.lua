@@ -10,14 +10,7 @@ return {
     config = function()
       require('dbee').setup({
         sources = {
-          require('dbee.sources').MemorySource:new({
-            {
-              id = 'R4b',
-              name = 'R4b',
-              type = 'mysql',
-              url = 'root:@tcp(127.0.0.1:3306)/alpha',
-            },
-          }),
+          require('dbee.sources').EnvSource:new('DBEE_CONNECTIONS'),
         },
       })
     end,
