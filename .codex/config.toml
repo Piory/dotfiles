@@ -15,33 +15,33 @@ steer = true
 collab=true
 collaboration_modes = true
 
-[mcp_servers.serena]
+[mcp_servers.Serena]
 command = "uvx"
 args = ["--from", "git+https://github.com/oraios/serena", "serena", "start-mcp-server", "--context", "codex", "--project", "$(pwd)"]
 startup_timeout_sec = 60
-[mcp_servers.context7]
+[mcp_servers.Context7]
 args = ["-y", "@upstash/context7-mcp"]
 command = "npx"
 [mcp_servers.BetterIcons]
 args = ["-y", "better-icons"]
 command = "npx"
-[mcp_servers.playwright]
+[mcp_servers.Playwright]
 args = ["@playwright/mcp@latest"]
 command = "npx"
-[mcp_servers.chrome-devtools]
+[mcp_servers.ChromeDevtools]
 type = "stdio"
 command = "npx"
 args = ["chrome-devtools-mcp@latest"]
 description = "Chrome DevTools MCP: run performance traces, inspect the DOM, and perform real-time debugging of your web pages — useful for browser automation, end-to-end testing, and capturing page artifacts."
-[mcp_servers.shadcn]
+[mcp_servers.Shadcn]
 command = "npx"
 args = ["shadcn@latest", "mcp"]
 description = "Shadcn UI MCP: specialized in generating components and UI patterns using the Shadcn UI library for React and Tailwind CSS."
-[mcp_servers.github]
+[mcp_servers.GitHub]
 url = "https://api.githubcopilot.com/mcp/"
 bearer_token_env_var = "GITHUB_MCP_PAT_TOKEN"
 startup_timeout_sec = 60
-[mcp_servers.notion]
+[mcp_servers.Notion]
 command = "npx"
 args = ["-y", "mcp-remote", "https://mcp.notion.com/mcp"]
 startup_timeout_sec = 60
