@@ -22,6 +22,9 @@ startup_timeout_sec = 60
 [mcp_servers.context7]
 args = ["-y", "@upstash/context7-mcp"]
 command = "npx"
+[mcp_servers.BetterIcons]
+args = ["-y", "better-icons"]
+command = "npx"
 [mcp_servers.playwright]
 args = ["@playwright/mcp@latest"]
 command = "npx"
