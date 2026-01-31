@@ -52,6 +52,7 @@
   "neotest-dart": { "branch": "main", "commit": "5ee074c9593639b60ebc452102d951438c815aac" },
   "neotest-golang": { "branch": "main", "commit": "35bbd3d9bc4310452ac65975ae935e94e1261bf8" },
   "neotest-jest": { "branch": "main", "commit": "3f0cc2cff1ee05394081805c622dc2551b54d8c4" },
+  "nightfox.nvim": { "branch": "main", "commit": "ba47d4b4c5ec308718641ba7402c143836f35aa9" },
   "noice.nvim": { "branch": "main", "commit": "7bfd942445fb63089b59f97ca487d605e715f155" },
   "none-ls.nvim": { "branch": "main", "commit": "3c206dfedf5f1385e9d29f85ffaec7874358592a" },
   "nui.nvim": { "branch": "main", "commit": "de740991c12411b663994b2860f1a4fd0937c130" },
