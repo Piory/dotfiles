@@ -2,11 +2,9 @@ model = "gpt-5.2-codex"
 model_reasoning_effort="high"
 hide_agent_reasoning = true
 network_access = true
-
 notify = ["bash", "-lc", "afplay /System/Library/Sounds/Ping.aiff"]
 
 [features]
-web_search_request = true
 skills = true
 rmcp_client = true
 unified_exec = true
