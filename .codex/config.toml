@@ -18,16 +18,20 @@ collaboration_modes = true
 [mcp_servers.Serena]
 command = "uvx"
 args = ["--from", "git+https://github.com/oraios/serena", "serena", "start-mcp-server", "--context", "codex", "--project", "$(pwd)"]
+description = "Serena MCP: An AI assistant specialized in code generation, code review, and software development tasks."
 startup_timeout_sec = 60
 [mcp_servers.Context7]
 args = ["-y", "@upstash/context7-mcp"]
 command = "npx"
+description = "Context7 MCP: An AI assistant that leverages Context7's capabilities for enhanced code understanding and generation."
 [mcp_servers.BetterIcons]
 args = ["-y", "better-icons"]
 command = "npx"
+description = "Better Icons MCP: An AI assistant specialized in generating and suggesting high-quality icons for web and mobile applications."
 [mcp_servers.Playwright]
 args = ["@playwright/mcp@latest"]
 command = "npx"
+description = "Playwright MCP: An AI assistant that helps with browser automation, end-to-end testing, and web scraping using the Playwright framework."
 [mcp_servers.ChromeDevtools]
 type = "stdio"
 command = "npx"
@@ -40,10 +44,12 @@ description = "Shadcn UI MCP: specialized in generating components and UI patter
 [mcp_servers.GitHub]
 url = "https://api.githubcopilot.com/mcp/"
 bearer_token_env_var = "GITHUB_MCP_PAT_TOKEN"
+description = "GitHub MCP: An AI assistant that integrates with GitHub to provide code suggestions, reviews, and repository management."
 startup_timeout_sec = 60
 [mcp_servers.Notion]
 command = "npx"
 args = ["-y", "mcp-remote", "https://mcp.notion.com/mcp"]
+description = "Notion MCP: An AI assistant that integrates with Notion to help manage notes, tasks, and projects efficiently."
 startup_timeout_sec = 60
 
 [projects."/Users/piory/git/github.com/Piory/ghosgent"]
