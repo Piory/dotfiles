@@ -12,6 +12,8 @@ shell_snapshot = true
 steer = true
 collab=true
 collaboration_modes = true
+apps = true
+personality = true
 
 [mcp_servers.Serena]
 command = "uvx"
