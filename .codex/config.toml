@@ -5,6 +5,7 @@ approval_policy = "never"
 sandbox_mode = "danger-full-access"
 network_access = true
 notify = ["bash", "-lc", "afplay /System/Library/Sounds/Ping.aiff"]
+personality = "pragmatic"
 
 [features]
 skills = true
