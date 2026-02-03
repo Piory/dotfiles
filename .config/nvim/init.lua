@@ -16,6 +16,12 @@ vim.filetype.add({
   extension = {
     arb = 'json',
   },
+  filename = {
+    ['.env'] = 'dotenv',
+  },
+  pattern = {
+    ['.*%.env%..*'] = 'dotenv',
+  },
 })
 
 -- 翻訳の言語設定

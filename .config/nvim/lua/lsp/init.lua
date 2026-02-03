@@ -138,6 +138,7 @@ local ensure_installed = {
   'lua_ls',
   'sqls',
   'jsonls',
+  'tombi',
   'vtsls',
   'gopls',
   'protols',
