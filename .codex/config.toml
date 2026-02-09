@@ -1,59 +1,49 @@
 model = "gpt-5.3-codex"
-model_reasoning_effort="high"
+model_reasoning_effort = "high"
 hide_agent_reasoning = true
 approval_policy = "never"
 sandbox_mode = "danger-full-access"
-network_access = true
 notify = ["bash", "-lc", "afplay /System/Library/Sounds/Ping.aiff"]
 personality = "pragmatic"
-model_personality = "pragmatic"
 
 [features]
-skills = true
-rmcp_client = true
 unified_exec = true
 shell_snapshot = true
 steer = true
-collab=true
+collab = true
 collaboration_modes = true
 apps = true
 personality = true
 
 [mcp_servers.Serena]
 command = "uvx"
-args = ["--from", "git+https://github.com/oraios/serena", "serena", "start-mcp-server", "--context", "codex", "--project", "$(pwd)"]
-description = "Serena MCP: An AI assistant specialized in code generation, code review, and software development tasks."
+args = [
+  "--from",
+  "git+https://github.com/oraios/serena",
+  "serena",
+  "start-mcp-server",
+  "--context",
+  "codex",
+  "--project",
+  "$(pwd)"
+]
 startup_timeout_sec = 60
+
 [mcp_servers.Context7]
 args = ["-y", "@upstash/context7-mcp"]
 command = "npx"
-description = "Context7 MCP: An AI assistant that leverages Context7's capabilities for enhanced code understanding and generation."
-[mcp_servers.BetterIcons]
-args = ["-y", "better-icons"]
-command = "npx"
-description = "Better Icons MCP: An AI assistant specialized in generating and suggesting high-quality icons for web and mobile applications."
+
 [mcp_servers.Playwright]
 args = ["@playwright/mcp@latest"]
 command = "npx"
-description = "Playwright MCP: An AI assistant that helps with browser automation, end-to-end testing, and web scraping using the Playwright framework."
+
 [mcp_servers.ChromeDevtools]
-type = "stdio"
 command = "npx"
 args = ["chrome-devtools-mcp@latest"]
-description = "Chrome DevTools MCP: run performance traces, inspect the DOM, and perform real-time debugging of your web pages — useful for browser automation, end-to-end testing, and capturing page artifacts."
-[mcp_servers.Shadcn]
-command = "npx"
-args = ["shadcn@latest", "mcp"]
-description = "Shadcn UI MCP: specialized in generating components and UI patterns using the Shadcn UI library for React and Tailwind CSS."
+
 [mcp_servers.GitHub]
 url = "https://api.githubcopilot.com/mcp/"
 bearer_token_env_var = "GITHUB_MCP_PAT_TOKEN"
-description = "GitHub MCP: An AI assistant that integrates with GitHub to provide code suggestions, reviews, and repository management."
-startup_timeout_sec = 60
-[mcp_servers.Notion]
-command = "npx"
-args = ["-y", "mcp-remote", "https://mcp.notion.com/mcp"]
-description = "Notion MCP: An AI assistant that integrates with Notion to help manage notes, tasks, and projects efficiently."
 startup_timeout_sec = 60
 
 [projects."/Users/piory/git/github.com/Piory/ghosgent"]
@@ -72,6 +62,9 @@ trust_level = "trusted"
 trust_level = "trusted"
 
 [projects."/Users/piory/git/github.com/keita-keita-keita/yuipoke"]
+trust_level = "trusted"
+
+[projects."/Users/piory/git/github.com/yu-dot-limited/mirai-teracy"]
 trust_level = "trusted"
 
 [notice]
