@@ -49,6 +49,16 @@ echo "Create symbolic link [$CONFIG_PATH/ghostty -> $CURRENT_DIRECTORY/.config/g
 ln -fs $CURRENT_DIRECTORY/.config/ghostty $CONFIG_PATH
 
 echo '╭──────────────────────────────────────────────────────────╮'
+echo '│                       Mise Config                        │'
+echo '╰──────────────────────────────────────────────────────────╯'
+if [[ -e "$CONFIG_PATH/mise" && ! -L "$CONFIG_PATH/mise" ]]; then
+  echo "Backing up existing: $CONFIG_PATH/mise to $CONFIG_PATH/mise.bk"
+  mv "$CONFIG_PATH/mise" "$CONFIG_PATH/mise.bk"
+fi
+echo "Create symbolic link [$CONFIG_PATH/mise -> $CURRENT_DIRECTORY/.config/mise]"
+ln -sfn "$CURRENT_DIRECTORY/.config/mise" "$CONFIG_PATH/mise"
+
+echo '╭──────────────────────────────────────────────────────────╮'
 echo '│                          Other                           │'
 echo '╰──────────────────────────────────────────────────────────╯'
 dotfiles=(bin .zprezto .zshrc .zpreztorc .zprofile .p10k.zsh .tmux.conf .tmux .hyper.js .Brewfile)
