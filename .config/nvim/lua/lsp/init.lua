@@ -149,6 +149,7 @@ local ensure_installed = {
   'docker_language_server',
   'golangci_lint_ls',
   'eslint',
+  'tailwindcss',
   'prismals',
 }
 require('mason-lspconfig').setup({
