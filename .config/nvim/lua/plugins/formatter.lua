@@ -105,6 +105,7 @@ return {
         local fname = vim.api.nvim_buf_get_name(buf)
         local found = vim.fs.find({
           'biome.json',
+          'biome.jsonc',
           'biome.config.js',
           'biome.config.cjs',
         }, { upward = true, path = fname })[1]
