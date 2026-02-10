@@ -56,7 +56,6 @@ fi
 alias vim='nvim'
 alias ctags="`brew --prefix`/bin/ctags"
 
-export PATH=$PATH:`npm bin -g`
 export TERM=xterm-256color
 
 ## PC 毎の固有の設定
@@ -86,3 +85,13 @@ compinit
 
 # Added by Antigravity
 export PATH="/Users/piory/.antigravity/antigravity/bin:$PATH"
+
+# Prefer mise-managed tools in projects that define mise.toml while keeping Volta as fallback elsewhere.
+if command -v mise >/dev/null 2>&1; then
+  eval "$(mise activate zsh)"
+fi
+
+# Keep Volta available, but resolve pnpm from PATH so mise can take precedence in mise.toml projects.
+pnpm() {
+  command pnpm "$@"
+}
