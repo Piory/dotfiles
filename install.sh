@@ -198,6 +198,19 @@ if [[ -d ".agents" ]]; then
 fi
 
 echo '╭──────────────────────────────────────────────────────────╮'
+echo '│                          Serena                          │'
+echo '╰──────────────────────────────────────────────────────────╯'
+if [[ -f "$CURRENT_DIRECTORY/.serena/serena_config.yml" ]]; then
+  mkdir -p "$HOME/.serena"
+  if [[ -e "$HOME/.serena/serena_config.yml" && ! -L "$HOME/.serena/serena_config.yml" ]]; then
+    echo "Backing up existing: $HOME/.serena/serena_config.yml to $HOME/.serena/serena_config.yml.bk"
+    mv "$HOME/.serena/serena_config.yml" "$HOME/.serena/serena_config.yml.bk"
+  fi
+  echo "Creating symbolic link [$HOME/.serena/serena_config.yml -> $CURRENT_DIRECTORY/.serena/serena_config.yml]"
+  ln -sfn "$CURRENT_DIRECTORY/.serena/serena_config.yml" "$HOME/.serena/serena_config.yml"
+fi
+
+echo '╭──────────────────────────────────────────────────────────╮'
 echo '│                         OpenCode                         │'
 echo '╰──────────────────────────────────────────────────────────╯'
 # ~/.config/opencode が存在する場合のみ処理

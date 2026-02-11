@@ -16,5 +16,8 @@ Brewfile.lock.json
 
 !.codex
 !.codex/*
+!.serena/
+.serena/*
+!.serena/serena_config.yml
 !.config/opencode
 !.config/opencode/*
