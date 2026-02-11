@@ -33,20 +33,21 @@ ln -fs $CURRENT_DIRECTORY/.ideavimrc $HOME
 echo '╭──────────────────────────────────────────────────────────╮'
 echo '│                          Neovim                          │'
 echo '╰──────────────────────────────────────────────────────────╯'
+mkdir -p "$CONFIG_PATH"
 echo "Create symbolic link [$CONFIG_PATH/nvim -> $CURRENT_DIRECTORY/.config/nvim]"
-ln -fs $CURRENT_DIRECTORY/.config/nvim $CONFIG_PATH
+ln -sfn "$CURRENT_DIRECTORY/.config/nvim" "$CONFIG_PATH/nvim"
 
 echo '╭──────────────────────────────────────────────────────────╮'
 echo '│                       Git Config                         │'
 echo '╰──────────────────────────────────────────────────────────╯'
 echo "Create symbolic link [$CONFIG_PATH/git -> $CURRENT_DIRECTORY/.config/git]"
-ln -fs $CURRENT_DIRECTORY/.config/git $CONFIG_PATH
+ln -sfn "$CURRENT_DIRECTORY/.config/git" "$CONFIG_PATH/git"
 
 echo '╭──────────────────────────────────────────────────────────╮'
 echo '│                      Ghostty Config                      │'
 echo '╰──────────────────────────────────────────────────────────╯'
 echo "Create symbolic link [$CONFIG_PATH/ghostty -> $CURRENT_DIRECTORY/.config/ghostty]"
-ln -fs $CURRENT_DIRECTORY/.config/ghostty $CONFIG_PATH
+ln -sfn "$CURRENT_DIRECTORY/.config/ghostty" "$CONFIG_PATH/ghostty"
 
 echo '╭──────────────────────────────────────────────────────────╮'
 echo '│                       Mise Config                        │'
