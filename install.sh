@@ -82,8 +82,21 @@ if [[ -e "$CONFIG_PATH/karabiner" && ! -L "$CONFIG_PATH/karabiner" ]]; then
   echo "Backing up existing: $CONFIG_PATH/karabiner to $CONFIG_PATH/karabiner.bk"
   mv "$CONFIG_PATH/karabiner" "$CONFIG_PATH/karabiner.bk"
 fi
-echo "Create symbolic link [$CONFIG_PATH/karabiner -> $CURRENT_DIRECTORY/.config/karabiner]"
-ln -sfn "$CURRENT_DIRECTORY/.config/karabiner" "$CONFIG_PATH/karabiner"
+mkdir -p "$CONFIG_PATH/karabiner"
+
+if [[ -e "$CONFIG_PATH/karabiner/assets" && ! -L "$CONFIG_PATH/karabiner/assets" ]]; then
+  echo "Backing up existing: $CONFIG_PATH/karabiner/assets to $CONFIG_PATH/karabiner/assets.bk"
+  mv "$CONFIG_PATH/karabiner/assets" "$CONFIG_PATH/karabiner/assets.bk"
+fi
+echo "Create symbolic link [$CONFIG_PATH/karabiner/assets -> $CURRENT_DIRECTORY/.config/karabiner/assets]"
+ln -sfn "$CURRENT_DIRECTORY/.config/karabiner/assets" "$CONFIG_PATH/karabiner/assets"
+
+if [[ -e "$CONFIG_PATH/karabiner/karabiner.json" && ! -L "$CONFIG_PATH/karabiner/karabiner.json" ]]; then
+  echo "Backing up existing: $CONFIG_PATH/karabiner/karabiner.json to $CONFIG_PATH/karabiner/karabiner.json.bk"
+  mv "$CONFIG_PATH/karabiner/karabiner.json" "$CONFIG_PATH/karabiner/karabiner.json.bk"
+fi
+echo "Create symbolic link [$CONFIG_PATH/karabiner/karabiner.json -> $CURRENT_DIRECTORY/.config/karabiner/karabiner.json]"
+ln -sfn "$CURRENT_DIRECTORY/.config/karabiner/karabiner.json" "$CONFIG_PATH/karabiner/karabiner.json"
 
 echo '╭──────────────────────────────────────────────────────────╮'
 echo '│                       Mise Config                        │'
