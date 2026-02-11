@@ -14,7 +14,6 @@ echo 'make config directory ->' $CONFIG_PATH
 
 # add submodule
 git submodule update --init --recursive
-echo 'Start setup dotfiles!!!'
 
 echo '╭──────────────────────────────────────────────────────────╮'
 echo '│                           Brew                           │'
@@ -59,6 +58,12 @@ echo '│                       btop Config                        │'
 echo '╰──────────────────────────────────────────────────────────╯'
 echo "Create symbolic link [$CONFIG_PATH/btop -> $CURRENT_DIRECTORY/.config/btop]"
 ln -sfn "$CURRENT_DIRECTORY/.config/btop" "$CONFIG_PATH/btop"
+
+echo '╭──────────────────────────────────────────────────────────╮'
+echo '│                    Karabiner Config                      │'
+echo '╰──────────────────────────────────────────────────────────╯'
+echo "Create symbolic link [$CONFIG_PATH/karabiner -> $CURRENT_DIRECTORY/.config/karabiner]"
+ln -sfn "$CURRENT_DIRECTORY/.config/karabiner" "$CONFIG_PATH/karabiner"
 
 echo '╭──────────────────────────────────────────────────────────╮'
 echo '│                       Mise Config                        │'
