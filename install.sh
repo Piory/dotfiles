@@ -38,30 +38,50 @@ ln -fs $CURRENT_DIRECTORY/.ideavimrc $HOME
 echo '╭──────────────────────────────────────────────────────────╮'
 echo '│                          Neovim                          │'
 echo '╰──────────────────────────────────────────────────────────╯'
+if [[ -e "$CONFIG_PATH/nvim" && ! -L "$CONFIG_PATH/nvim" ]]; then
+  echo "Backing up existing: $CONFIG_PATH/nvim to $CONFIG_PATH/nvim.bk"
+  mv "$CONFIG_PATH/nvim" "$CONFIG_PATH/nvim.bk"
+fi
 echo "Create symbolic link [$CONFIG_PATH/nvim -> $CURRENT_DIRECTORY/.config/nvim]"
 ln -sfn "$CURRENT_DIRECTORY/.config/nvim" "$CONFIG_PATH/nvim"
 
 echo '╭──────────────────────────────────────────────────────────╮'
 echo '│                       Git Config                         │'
 echo '╰──────────────────────────────────────────────────────────╯'
+if [[ -e "$CONFIG_PATH/git" && ! -L "$CONFIG_PATH/git" ]]; then
+  echo "Backing up existing: $CONFIG_PATH/git to $CONFIG_PATH/git.bk"
+  mv "$CONFIG_PATH/git" "$CONFIG_PATH/git.bk"
+fi
 echo "Create symbolic link [$CONFIG_PATH/git -> $CURRENT_DIRECTORY/.config/git]"
 ln -sfn "$CURRENT_DIRECTORY/.config/git" "$CONFIG_PATH/git"
 
 echo '╭──────────────────────────────────────────────────────────╮'
 echo '│                      Ghostty Config                      │'
 echo '╰──────────────────────────────────────────────────────────╯'
+if [[ -e "$CONFIG_PATH/ghostty" && ! -L "$CONFIG_PATH/ghostty" ]]; then
+  echo "Backing up existing: $CONFIG_PATH/ghostty to $CONFIG_PATH/ghostty.bk"
+  mv "$CONFIG_PATH/ghostty" "$CONFIG_PATH/ghostty.bk"
+fi
 echo "Create symbolic link [$CONFIG_PATH/ghostty -> $CURRENT_DIRECTORY/.config/ghostty]"
 ln -sfn "$CURRENT_DIRECTORY/.config/ghostty" "$CONFIG_PATH/ghostty"
 
 echo '╭──────────────────────────────────────────────────────────╮'
 echo '│                       btop Config                        │'
 echo '╰──────────────────────────────────────────────────────────╯'
+if [[ -e "$CONFIG_PATH/btop" && ! -L "$CONFIG_PATH/btop" ]]; then
+  echo "Backing up existing: $CONFIG_PATH/btop to $CONFIG_PATH/btop.bk"
+  mv "$CONFIG_PATH/btop" "$CONFIG_PATH/btop.bk"
+fi
 echo "Create symbolic link [$CONFIG_PATH/btop -> $CURRENT_DIRECTORY/.config/btop]"
 ln -sfn "$CURRENT_DIRECTORY/.config/btop" "$CONFIG_PATH/btop"
 
 echo '╭──────────────────────────────────────────────────────────╮'
 echo '│                    Karabiner Config                      │'
 echo '╰──────────────────────────────────────────────────────────╯'
+if [[ -e "$CONFIG_PATH/karabiner" && ! -L "$CONFIG_PATH/karabiner" ]]; then
+  echo "Backing up existing: $CONFIG_PATH/karabiner to $CONFIG_PATH/karabiner.bk"
+  mv "$CONFIG_PATH/karabiner" "$CONFIG_PATH/karabiner.bk"
+fi
 echo "Create symbolic link [$CONFIG_PATH/karabiner -> $CURRENT_DIRECTORY/.config/karabiner]"
 ln -sfn "$CURRENT_DIRECTORY/.config/karabiner" "$CONFIG_PATH/karabiner"
 
