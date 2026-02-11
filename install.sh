@@ -6,6 +6,12 @@ DEIN_VIM_INSTALL_PATH="$HOME/.cache/dein"
 NODE_VERSION='16.13.2'
 CURRENT_DIRECTORY=$(pwd)
 
+echo '╭──────────────────────────────────────────────────────────╮'
+echo '│                    Start setup dotfiles                  │'
+echo '╰──────────────────────────────────────────────────────────╯'
+mkdir -p "$CONFIG_PATH"
+echo 'make config directory ->' $CONFIG_PATH
+
 # add submodule
 git submodule update --init --recursive
 echo 'Start setup dotfiles!!!'
@@ -33,7 +39,6 @@ ln -fs $CURRENT_DIRECTORY/.ideavimrc $HOME
 echo '╭──────────────────────────────────────────────────────────╮'
 echo '│                          Neovim                          │'
 echo '╰──────────────────────────────────────────────────────────╯'
-mkdir -p "$CONFIG_PATH"
 echo "Create symbolic link [$CONFIG_PATH/nvim -> $CURRENT_DIRECTORY/.config/nvim]"
 ln -sfn "$CURRENT_DIRECTORY/.config/nvim" "$CONFIG_PATH/nvim"
 
@@ -48,6 +53,12 @@ echo '│                      Ghostty Config                      │'
 echo '╰──────────────────────────────────────────────────────────╯'
 echo "Create symbolic link [$CONFIG_PATH/ghostty -> $CURRENT_DIRECTORY/.config/ghostty]"
 ln -sfn "$CURRENT_DIRECTORY/.config/ghostty" "$CONFIG_PATH/ghostty"
+
+echo '╭──────────────────────────────────────────────────────────╮'
+echo '│                       btop Config                        │'
+echo '╰──────────────────────────────────────────────────────────╯'
+echo "Create symbolic link [$CONFIG_PATH/btop -> $CURRENT_DIRECTORY/.config/btop]"
+ln -sfn "$CURRENT_DIRECTORY/.config/btop" "$CONFIG_PATH/btop"
 
 echo '╭──────────────────────────────────────────────────────────╮'
 echo '│                       Mise Config                        │'
