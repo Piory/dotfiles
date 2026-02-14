@@ -1,4 +1,3 @@
-
 # whether to open a graphical window with Serena's logs.
 # This is mainly supported on Windows and (partly) on Linux; not available on macOS.
 # If you want to see the logs in a web browser, use the `web_dashboard` option instead.
@@ -54,16 +53,6 @@ record_tool_usage_stats: false
 # and rate limits may apply.
 token_count_estimator: TIKTOKEN_GPT4O
 
-# MANAGED BY SERENA, KEEP AT THE BOTTOM OF THE YAML AND DON'T EDIT WITHOUT NEED
-# The list of registered projects.
-# To add a project, within a chat, simply ask Serena to "activate the project /path/to/project" or,
-# if the project was previously added, "activate the project <project name>".
-# By default, the project's name will be the name of the directory containing the project, but you may change it
-# by editing the (auto-generated) project configuration file `/path/project/project/.serena/project.yml` file.
-# If you want to maintain full control of the project configuration, create the project.yml file manually and then
-# instruct Serena to activate the project by its path for first-time activation.
-# NOTE: Make sure there are no name collisions in the names of registered projects.
-
 # the list of registered project paths (updated automatically).
 projects:
 - /Users/piory/git/github.com/Ascelta/Ascelta
@@ -77,6 +66,7 @@ projects:
 - /Users/piory/git/github.com/ROOT4-BEAUTY/r4-beauty
 - /Users/piory/git/github.com/keita-keita-keita/mobic-buy
 - /Users/piory/git/github.com/keita-keita-keita/yuipoke
+- /Users/piory/git/github.com/mishima-shokai-lab/hozen-kun
 - /Users/piory/git/github.com/yu-dot-limited/mirai-teracy
 # the language backend to use for code understanding and manipulation.
 # Possible values are:
