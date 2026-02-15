@@ -140,6 +140,7 @@ local ensure_installed = {
   'jsonls',
   'tombi',
   'vtsls',
+  'denols',
   'gopls',
   'protols',
   'terraformls',
