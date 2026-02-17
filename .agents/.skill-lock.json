@@ -108,6 +108,15 @@
       "skillFolderHash": "928950704df8a8b885c03de5da626331e6f29cf8",
       "installedAt": "2026-02-17T01:31:47.346Z",
       "updatedAt": "2026-02-17T01:31:47.346Z"
+    },
+    "brainstorming": {
+      "source": "obra/superpowers",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/obra/superpowers.git",
+      "skillPath": "skills/brainstorming/SKILL.md",
+      "skillFolderHash": "d28aa4ed67fe5a3f1336f0fcccb1e548c67dc864",
+      "installedAt": "2026-02-17T01:33:03.216Z",
+      "updatedAt": "2026-02-17T01:33:03.216Z"
     }
   },
   "dismissed": {
