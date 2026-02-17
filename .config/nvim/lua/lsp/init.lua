@@ -127,6 +127,24 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
+local dot_root_guard_targets = {
+  tailwindcss = true,
+  markdown_oxide = true,
+}
+
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if not client or not dot_root_guard_targets[client.name] then
+      return
+    end
+
+    if client.config.root_dir == '.' then
+      client:stop(true)
+    end
+  end,
+})
+
 require('lspconfig')
 -- パッケージマネージャー(mason)をセットアップする
 require('mason').setup()
