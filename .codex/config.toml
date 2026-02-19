@@ -11,7 +11,7 @@ personality = "pragmatic"
 unified_exec = true
 shell_snapshot = true
 steer = true
-collab = true
+multi_agent = true
 collaboration_modes = true
 apps = true
 personality = true
@@ -46,6 +46,10 @@ args = ["chrome-devtools-mcp@latest"]
 url = "https://api.githubcopilot.com/mcp/"
 bearer_token_env_var = "GITHUB_MCP_PAT_TOKEN"
 startup_timeout_sec = 60
+
+[mcp_servers.pencil]
+command = "/Applications/Pencil.app/Contents/Resources/app.asar.unpacked/out/mcp-server-darwin-arm64"
+args = ["--app", "desktop"]
 
 [projects."/Users/piory/git/github.com/Piory/ghosgent"]
 trust_level = "trusted"

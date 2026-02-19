@@ -1,6 +1,12 @@
 {
+  "permissions": {
+    "allow": [
+      "mcp__pencil"
+    ]
+  },
   "statusLine": {
     "type": "command",
     "command": "bun x ccusage statusline"
-  }
+  },
+  "skipDangerousModePermissionPrompt": true
 }
