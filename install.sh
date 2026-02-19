@@ -142,6 +142,17 @@ if [[ -d ".claude" ]]; then
     echo "Creating symbolic link [$CURRENT_DIRECTORY/.claude/commands -> $HOME/.claude/commands]"
     ln -sfn "$CURRENT_DIRECTORY/.claude/commands" "$HOME/.claude/commands"
   fi
+
+  # .claude/skillsディレクトリの処理（ディレクトリ自体をシンボリックリンク）
+  if [[ -d ".claude/skills" ]]; then
+    # 既存の $HOME/.claude/skills を $HOME/.claude/skills.bk にリネーム（実体がディレクトリの場合のみ）
+    if [[ -e "$HOME/.claude/skills" && ! -L "$HOME/.claude/skills" ]]; then
+      echo "Backing up existing: $HOME/.claude/skills to $HOME/.claude/skills.bk"
+      mv "$HOME/.claude/skills" "$HOME/.claude/skills.bk"
+    fi
+    echo "Creating symbolic link [$CURRENT_DIRECTORY/.claude/skills -> $HOME/.claude/skills]"
+    ln -sfn "$CURRENT_DIRECTORY/.claude/skills" "$HOME/.claude/skills"
+  fi
 fi
 
 echo '╭──────────────────────────────────────────────────────────╮'

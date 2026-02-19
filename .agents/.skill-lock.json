@@ -5,10 +5,10 @@
       "source": "supabase/agent-skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/supabase/agent-skills.git",
-      "skillPath": "skills/postgres-best-practices/SKILL.md",
-      "skillFolderHash": "e549f070fca7ca2284e06f17e8a27260443aaf0d",
+      "skillPath": "skills/supabase-postgres-best-practices/SKILL.md",
+      "skillFolderHash": "95fe6d29daaf88aa9bc3b505ca4defe19ceabf92",
       "installedAt": "2026-01-26T01:40:04.498Z",
-      "updatedAt": "2026-01-26T01:40:04.498Z"
+      "updatedAt": "2026-02-19T02:44:32.608Z"
     },
     "vercel-react-best-practices": {
       "source": "vercel-labs/agent-skills",
@@ -17,7 +17,7 @@
       "skillPath": "skills/react-best-practices/SKILL.md",
       "skillFolderHash": "079b06a135401704ea94ab74c7c9d86c92ba259f",
       "installedAt": "2026-01-26T02:16:08.177Z",
-      "updatedAt": "2026-02-19T02:18:02.597Z"
+      "updatedAt": "2026-02-19T02:53:29.117Z"
     },
     "web-design-guidelines": {
       "source": "ehmo/platform-design-skills",
@@ -26,7 +26,7 @@
       "skillPath": "skills/web/SKILL.md",
       "skillFolderHash": "b4bfbe96f2f41484a4e3f534d4460471fba79550",
       "installedAt": "2026-01-26T02:16:08.201Z",
-      "updatedAt": "2026-02-10T14:02:47.550Z"
+      "updatedAt": "2026-02-19T02:52:17.152Z"
     },
     "vercel-react-native-skills": {
       "source": "vercel-labs/agent-skills",
@@ -35,7 +35,7 @@
       "skillPath": "skills/react-native-skills/SKILL.md",
       "skillFolderHash": "8b4c6a51914e2111ab6f4f00cb81778652aa241d",
       "installedAt": "2026-01-29T06:42:51.954Z",
-      "updatedAt": "2026-01-29T06:42:51.954Z"
+      "updatedAt": "2026-02-19T02:53:29.127Z"
     },
     "vercel-composition-patterns": {
       "source": "vercel-labs/agent-skills",
@@ -44,7 +44,7 @@
       "skillPath": "skills/composition-patterns/SKILL.md",
       "skillFolderHash": "bf90d0a4b83ea054653350f9c67f6de235d3a368",
       "installedAt": "2026-01-29T06:42:51.974Z",
-      "updatedAt": "2026-01-29T06:42:51.974Z"
+      "updatedAt": "2026-02-19T02:53:29.102Z"
     },
     "find-skills": {
       "source": "vercel-labs/skills",
@@ -62,7 +62,7 @@
       "skillPath": "skills/android/SKILL.md",
       "skillFolderHash": "8dc5366a6c9a2395c072a384f174ff2531f6707f",
       "installedAt": "2026-02-10T14:02:47.503Z",
-      "updatedAt": "2026-02-10T14:02:47.503Z"
+      "updatedAt": "2026-02-19T02:52:17.087Z"
     },
     "ios-design-guidelines": {
       "source": "ehmo/platform-design-skills",
@@ -71,7 +71,7 @@
       "skillPath": "skills/ios/SKILL.md",
       "skillFolderHash": "bc5c159b2f59c3760116e445a3268b8b4861654d",
       "installedAt": "2026-02-10T14:02:47.518Z",
-      "updatedAt": "2026-02-10T14:02:47.518Z"
+      "updatedAt": "2026-02-19T02:52:17.103Z"
     },
     "ipados-design-guidelines": {
       "source": "ehmo/platform-design-skills",
@@ -80,7 +80,7 @@
       "skillPath": "skills/ipados/SKILL.md",
       "skillFolderHash": "ef02dd1c42675a0e2f56f4bc461e63b6ce5aa039",
       "installedAt": "2026-02-10T14:02:47.530Z",
-      "updatedAt": "2026-02-10T14:02:47.530Z"
+      "updatedAt": "2026-02-19T02:52:17.120Z"
     },
     "macos-design-guidelines": {
       "source": "ehmo/platform-design-skills",
@@ -89,7 +89,7 @@
       "skillPath": "skills/macos/SKILL.md",
       "skillFolderHash": "85a98f96026fce0aed09a16633de3375214636e4",
       "installedAt": "2026-02-10T14:02:47.540Z",
-      "updatedAt": "2026-02-10T14:02:47.540Z"
+      "updatedAt": "2026-02-19T02:52:17.135Z"
     },
     "ui-ux-pro-max": {
       "source": "nextlevelbuilder/ui-ux-pro-max-skill",
@@ -98,7 +98,7 @@
       "skillPath": ".claude/skills/ui-ux-pro-max/SKILL.md",
       "skillFolderHash": "986c64ad9b8e196a4a737c01872c2eda790daba1",
       "installedAt": "2026-02-17T01:28:36.188Z",
-      "updatedAt": "2026-02-17T01:28:36.188Z"
+      "updatedAt": "2026-02-19T02:56:41.387Z"
     },
     "frontend-design": {
       "source": "anthropics/skills",
@@ -107,7 +107,7 @@
       "skillPath": "skills/frontend-design/SKILL.md",
       "skillFolderHash": "928950704df8a8b885c03de5da626331e6f29cf8",
       "installedAt": "2026-02-17T01:31:47.346Z",
-      "updatedAt": "2026-02-17T01:31:47.346Z"
+      "updatedAt": "2026-02-19T02:57:13.119Z"
     },
     "brainstorming": {
       "source": "obra/superpowers",
@@ -116,7 +116,7 @@
       "skillPath": "skills/brainstorming/SKILL.md",
       "skillFolderHash": "d28aa4ed67fe5a3f1336f0fcccb1e548c67dc864",
       "installedAt": "2026-02-17T01:33:03.216Z",
-      "updatedAt": "2026-02-17T01:33:03.216Z"
+      "updatedAt": "2026-02-19T02:57:40.969Z"
     }
   },
   "dismissed": {
@@ -128,6 +128,7 @@
     "gemini-cli",
     "github-copilot",
     "kimi-cli",
-    "opencode"
+    "opencode",
+    "claude-code"
   ]
 }
