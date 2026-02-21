@@ -21,3 +21,5 @@ Brewfile.lock.json
 !.serena/serena_config.yml
 !.config/opencode
 !.config/opencode/*
+
+!.agents/skills/*/AGENTS.md
