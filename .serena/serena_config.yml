@@ -68,6 +68,7 @@ projects:
 - /Users/piory/git/github.com/keita-keita-keita/yuipoke
 - /Users/piory/git/github.com/mishima-shokai-lab/hozen-kun
 - /Users/piory/git/github.com/yu-dot-limited/mirai-teracy
+- /Users/piory/git/github.com/yu-dot-limited/pos_system
 # the language backend to use for code understanding and manipulation.
 # Possible values are:
 #  * LSP: Use the language server protocol (LSP), spawning freely available language servers
