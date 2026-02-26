@@ -27,6 +27,41 @@ return {
         desc = 'Show Picker',
       },
       {
+        '<leader>fu',
+        function()
+          Snacks.picker.lsp_references()
+        end,
+        desc = 'LSP: 使用箇所を一覧表示',
+      },
+      {
+        '<leader>fd',
+        function()
+          Snacks.picker.lsp_definitions()
+        end,
+        desc = 'LSP: 定義箇所へ移動',
+      },
+      {
+        '<leader>fD',
+        function()
+          Snacks.picker.lsp_declarations()
+        end,
+        desc = 'LSP: 宣言箇所へ移動',
+      },
+      {
+        '<leader>fi',
+        function()
+          Snacks.picker.lsp_implementations()
+        end,
+        desc = 'LSP: 実装候補を一覧表示',
+      },
+      {
+        '<leader>ft',
+        function()
+          Snacks.picker.lsp_type_definitions()
+        end,
+        desc = 'LSP: 型定義へ移動',
+      },
+      {
         '<leader>e',
         function()
           Snacks.picker.explorer()
@@ -34,14 +69,14 @@ return {
         desc = 'File Explorer',
       },
       {
-        '<leader>sf',
+        '<leader>ff',
         function()
           Snacks.picker.files()
         end,
         desc = 'Find File',
       },
       {
-        '<leader>sg',
+        '<leader>fg',
         function()
           Snacks.picker.grep()
         end,
