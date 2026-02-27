@@ -15,6 +15,10 @@ multi_agent = true
 collaboration_modes = true
 apps = true
 personality = true
+default_mode_request_user_input = true
+js_repl = true
+prevent_idle_sleep = true
+responses_websockets_v2 = true
 
 [mcp_servers.Serena]
 command = "uvx"
