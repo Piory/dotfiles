@@ -117,6 +117,15 @@
       "skillFolderHash": "d28aa4ed67fe5a3f1336f0fcccb1e548c67dc864",
       "installedAt": "2026-02-17T01:33:03.216Z",
       "updatedAt": "2026-02-19T02:57:40.969Z"
+    },
+    "playwright-cli": {
+      "source": "microsoft/playwright-cli",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/microsoft/playwright-cli.git",
+      "skillPath": "skills/playwright-cli/SKILL.md",
+      "skillFolderHash": "a5a8823e403adc13b2488aae9968d6d92adbd2d7",
+      "installedAt": "2026-02-28T02:44:52.006Z",
+      "updatedAt": "2026-02-28T02:44:52.006Z"
     }
   },
   "dismissed": {
@@ -124,7 +133,9 @@
   },
   "lastSelectedAgents": [
     "amp",
+    "cline",
     "codex",
+    "cursor",
     "gemini-cli",
     "github-copilot",
     "kimi-cli",
