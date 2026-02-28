@@ -132,14 +132,38 @@ local dot_root_guard_targets = {
   markdown_oxide = true,
 }
 
+local function has_invalid_workspace_folder(client)
+  local folders = client.workspace_folders
+  if type(folders) ~= 'table' then
+    return false
+  end
+
+  for _, folder in ipairs(folders) do
+    if folder and (folder.name == '.' or folder.uri == 'file://./') then
+      return true
+    end
+  end
+
+  return false
+end
+
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)
     local client = vim.lsp.get_client_by_id(args.data.client_id)
-    if not client or not dot_root_guard_targets[client.name] then
+    if not client then
       return
     end
 
-    if client.config.root_dir == '.' then
+    -- markdown_oxide の hover でクラッシュするケースを回避する
+    if client.name == 'markdown_oxide' then
+      client.server_capabilities.hoverProvider = false
+    end
+
+    if not dot_root_guard_targets[client.name] then
+      return
+    end
+
+    if client.config.root_dir == '.' or has_invalid_workspace_folder(client) then
       client:stop(true)
     end
   end,
