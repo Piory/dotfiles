@@ -64,6 +64,14 @@
 5. **Document Results**: Add review section to `tasks/todo.md`
 6. **Capture Lessons**: Update `tasks/lessons.md` after corrections
 
+## Todo Date & Archive Policy
+
+- `tasks/todo.md` の各タスクに `created: YYYY-MM-DD` を付与する
+- 完了時はチェックに加えて `done: YYYY-MM-DD` を付与する
+- `done` から14日経過した完了タスクは `tasks/archive/YYYY-MM.md` へ移動する
+- 未完了タスクはアーカイブしない。30日以上更新がない場合は `stale` と明記して見直す
+- アーカイブ時に `archived_at: YYYY-MM-DD` を記録する
+
 # Core Principles
 
 - **Simplicity First**: Make every change as simple as possible. Impact minimal code.
