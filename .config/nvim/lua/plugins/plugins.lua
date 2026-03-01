@@ -377,6 +377,20 @@ return {
         options = {
           separator_style = 'slant',
           diagnostics = 'nvim_lsp',
+          get_element_icon = function(opts)
+            local mini_icons = require('mini.icons')
+            if opts.directory then
+              return mini_icons.get('directory', opts.path or '')
+            end
+            if opts.path and opts.path ~= '' then
+              local filename = vim.fn.fnamemodify(opts.path, ':t')
+              return mini_icons.get('file', filename)
+            end
+            if opts.filetype and opts.filetype ~= '' then
+              return mini_icons.get('filetype', opts.filetype)
+            end
+            return mini_icons.get('file', '')
+          end,
           diagnostics_indicator = function(count, level, diagnostics_dict, context)
             local s = ' '
             for e, n in pairs(diagnostics_dict) do
