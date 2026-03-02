@@ -3,6 +3,12 @@ local mini_icons_opts = {
     aws = { glyph = '', hl = 'IconAws' },
     supabase = { glyph = '', hl = 'IconSupabase' },
   },
+  extension = {
+    js = { glyph = '', hl = 'IconJavaScript' },
+    lua = { glyph = '', hl = 'DevIconLua' },
+    ts = { glyph = '', hl = 'IconTypeScript' },
+    dockerfile = { glyph = '󰡨', hl = 'DevIconDockerfile' },
+  },
   file = {
     ['package.json'] = { glyph = '', hl = 'DevIconPackageJson' },
     ['package-lock.json'] = { glyph = '', hl = 'DevIconPackageLockJson' },
@@ -19,17 +25,17 @@ local mini_icons_opts = {
     ['pnpm-lock.yaml'] = { glyph = '', hl = 'DevIconPNPMLock' },
     ['pnpm-workspace.yaml'] = { glyph = '', hl = 'DevIconPNPMWorkspace' },
     ['.pnpmfile.cjs'] = { glyph = '', hl = 'DevIconPNPMFile' },
-    ['tsconfig.json'] = { glyph = '', hl = 'DevIconTSConfig' },
-    ['tsconfig.app.json'] = { glyph = '', hl = 'DevIconTSConfig' },
-    ['tsconfig.base.json'] = { glyph = '', hl = 'DevIconTSConfig' },
-    ['tsconfig.build.json'] = { glyph = '', hl = 'DevIconTSConfig' },
-    ['tsconfig.dev.json'] = { glyph = '', hl = 'DevIconTSConfig' },
-    ['tsconfig.eslint.json'] = { glyph = '', hl = 'DevIconEslintrc' },
-    ['tsconfig.lib.json'] = { glyph = '', hl = 'DevIconTSConfig' },
-    ['tsconfig.node.json'] = { glyph = '', hl = 'DevIconTSConfig' },
-    ['tsconfig.prod.json'] = { glyph = '', hl = 'DevIconTSConfig' },
-    ['tsconfig.spec.json'] = { glyph = '', hl = 'DevIconTSConfig' },
-    ['tsconfig.test.json'] = { glyph = '', hl = 'DevIconTSConfig' },
+    ['tsconfig.json'] = { glyph = '', hl = 'IconTypeScript' },
+    ['tsconfig.app.json'] = { glyph = '', hl = 'IconTypeScript' },
+    ['tsconfig.base.json'] = { glyph = '', hl = 'IconTypeScript' },
+    ['tsconfig.build.json'] = { glyph = '', hl = 'IconTypeScript' },
+    ['tsconfig.dev.json'] = { glyph = '', hl = 'IconTypeScript' },
+    ['tsconfig.eslint.json'] = { glyph = '', hl = 'IconTypeScript' },
+    ['tsconfig.lib.json'] = { glyph = '', hl = 'IconTypeScript' },
+    ['tsconfig.node.json'] = { glyph = '', hl = 'IconTypeScript' },
+    ['tsconfig.prod.json'] = { glyph = '', hl = 'IconTypeScript' },
+    ['tsconfig.spec.json'] = { glyph = '', hl = 'IconTypeScript' },
+    ['tsconfig.test.json'] = { glyph = '', hl = 'IconTypeScript' },
     ['.eslintrc'] = { glyph = '', hl = 'DevIconEslintrc' },
     ['.eslintrc.js'] = { glyph = '', hl = 'DevIconEslintrc' },
     ['.eslintrc.cjs'] = { glyph = '', hl = 'DevIconEslintrc' },
@@ -129,8 +135,10 @@ local mini_icons_opts = {
 local function set_icon_highlights()
   vim.api.nvim_set_hl(0, 'IconAws', { fg = '#FF9900' })
   vim.api.nvim_set_hl(0, 'IconDeno', { fg = '#000000' })
+  vim.api.nvim_set_hl(0, 'IconJavaScript', { fg = '#F7DF1E' })
   vim.api.nvim_set_hl(0, 'IconPostCSS', { fg = '#DD3A0A' })
   vim.api.nvim_set_hl(0, 'IconSupabase', { fg = '#3ECF8E' })
+  vim.api.nvim_set_hl(0, 'IconTypeScript', { fg = '#3178C6' })
 end
 
 return {
