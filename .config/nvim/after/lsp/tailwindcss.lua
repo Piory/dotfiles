@@ -90,6 +90,13 @@ return {
         'twJoin',
         'twMerge',
       },
+      experimental = {
+        classRegex = {
+          '[\\w$]*ClassName\\s*=\\s*["\'`]([^"\'`]*)["\'`]',
+          '[\\w$]*ClassName\\s*:\\s*["\'`]([^"\'`]*)["\'`]',
+          '[\\w$]*ClassName\\s*:[^=\\n]+\\s*=\\s*["\'`]([^"\'`]*)["\'`]',
+        },
+      },
       includeLanguages = {
         eelixir = 'html-eex',
         elixir = 'phoenix-heex',
