@@ -80,6 +80,16 @@ return {
         'classList',
         'ngClass',
       },
+      classFunctions = {
+        'cva',
+        'cn',
+        'clsx',
+        'classNames',
+        'cx',
+        'tv',
+        'twJoin',
+        'twMerge',
+      },
       includeLanguages = {
         eelixir = 'html-eex',
         elixir = 'phoenix-heex',
