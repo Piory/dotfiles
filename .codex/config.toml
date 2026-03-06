@@ -1,4 +1,4 @@
-model = "gpt-5.3-codex"
+model = "gpt-5.4"
 model_reasoning_effort = "xhigh"
 project_doc_fallback_filenames = ["CLAUDE.md"]
 hide_agent_reasoning = true
@@ -6,6 +6,7 @@ approval_policy = "never"
 sandbox_mode = "danger-full-access"
 notify = ["bash", "-lc", "afplay /System/Library/Sounds/Ping.aiff"]
 personality = "pragmatic"
+service_tier = "fast"
 
 [features]
 unified_exec = true
@@ -19,6 +20,7 @@ default_mode_request_user_input = true
 js_repl = true
 prevent_idle_sleep = true
 responses_websockets_v2 = true
+fast_mode = true
 
 [mcp_servers.Serena]
 command = "uvx"
