@@ -15,9 +15,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/vercel-labs/agent-skills.git",
       "skillPath": "skills/react-best-practices/SKILL.md",
-      "skillFolderHash": "079b06a135401704ea94ab74c7c9d86c92ba259f",
+      "skillFolderHash": "fce8b5a24ff4ff2fc5db6aa1051e03b53c6b5bf1",
       "installedAt": "2026-01-26T02:16:08.177Z",
-      "updatedAt": "2026-02-19T02:53:29.117Z"
+      "updatedAt": "2026-03-10T06:06:48.039Z"
     },
     "web-design-guidelines": {
       "source": "ehmo/platform-design-skills",
@@ -96,9 +96,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git",
       "skillPath": ".claude/skills/ui-ux-pro-max/SKILL.md",
-      "skillFolderHash": "986c64ad9b8e196a4a737c01872c2eda790daba1",
+      "skillFolderHash": "75e1acaafe8b08e59d4b86fc253ac7873aff6bba",
       "installedAt": "2026-02-17T01:28:36.188Z",
-      "updatedAt": "2026-02-19T02:56:41.387Z"
+      "updatedAt": "2026-03-10T06:06:53.660Z"
     },
     "frontend-design": {
       "source": "anthropics/skills",
@@ -114,9 +114,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/obra/superpowers.git",
       "skillPath": "skills/brainstorming/SKILL.md",
-      "skillFolderHash": "d28aa4ed67fe5a3f1336f0fcccb1e548c67dc864",
+      "skillFolderHash": "3e0a3c5dce6700e3690e35d1cf1e5691f57a7b70",
       "installedAt": "2026-02-17T01:33:03.216Z",
-      "updatedAt": "2026-02-19T02:57:40.969Z"
+      "updatedAt": "2026-03-10T06:06:58.009Z"
     },
     "playwright-cli": {
       "source": "microsoft/playwright-cli",
