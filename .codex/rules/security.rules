@@ -1,0 +1,14 @@
+# Block the macOS security CLI because it can access keychain secrets.
+prefix_rule(
+    pattern = [["security", "/usr/bin/security"]],
+    decision = "forbidden",
+    justification = "The macOS security command can expose keychain secrets. Ask the user for the needed value or use safer non-secret inputs instead.",
+    match = [
+        "security find-generic-password -wa github.com",
+        "/usr/bin/security find-internet-password -s api.openai.com",
+    ],
+    not_match = [
+        "git status",
+        "bash -lc 'echo security'",
+    ],
+)
