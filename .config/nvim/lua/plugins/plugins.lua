@@ -83,7 +83,7 @@ return {
         desc = 'Live Grep',
       },
       {
-        '<leader>sb',
+        '<leader>fb',
         function()
           Snacks.picker.buffers()
         end,
@@ -167,6 +167,7 @@ return {
           '.dist',
           '.next',
           '.tamagui',
+          '*/.tsc',
           'build',
           'dist',
           'out',
