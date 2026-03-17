@@ -63,6 +63,7 @@ projects:
 - /Users/piory/git/github.com/ROOT4-BEAUTY/alpha-proto
 - /Users/piory/git/github.com/ROOT4-BEAUTY/alpha-server
 - /Users/piory/git/github.com/ROOT4-BEAUTY/data-analysis
+- /Users/piory/git/github.com/ROOT4-BEAUTY/kaminote
 - /Users/piory/git/github.com/ROOT4-BEAUTY/r4-beauty
 - /Users/piory/git/github.com/keita-keita-keita/mobic-buy
 - /Users/piory/git/github.com/keita-keita-keita/yuipoke
@@ -115,6 +116,26 @@ default_modes:
 # list of paths to ignore across all projects.
 # Same syntax as gitignore, so you can use * and **.
 # These patterns are merged additively with each project's own ignored_paths.
+
+# list of paths to ignore across all projects.
+# Same syntax as gitignore, so you can use * and **.
+# These patterns are merged additively with each project's own ignored_paths.
+
+# list of paths to ignore across all projects.
+# Same syntax as gitignore, so you can use * and **.
+# These patterns are merged additively with each project's own ignored_paths.
+
+# list of paths to ignore across all projects.
+# Same syntax as gitignore, so you can use * and **.
+# These patterns are merged additively with each project's own ignored_paths.
+
+# list of paths to ignore across all projects.
+# Same syntax as gitignore, so you can use * and **.
+# These patterns are merged additively with each project's own ignored_paths.
+
+# list of paths to ignore across all projects.
+# Same syntax as gitignore, so you can use * and **.
+# These patterns are merged additively with each project's own ignored_paths.
 ignored_paths: []
 
 # time budget (seconds) for requests when tools request symbol info (currently
@@ -127,3 +148,20 @@ ignored_paths: []
 # or with tool calls that find very many symbols.
 # Can be overridden in project.yml.
 symbol_info_budget: 10.0
+
+# whether global memories (the "global" topic) are allowed to be deleted or edited by the agent.
+# Global memories are stored in ~/.serena/memories/global/ and shared across all projects.
+# Set to false to protect global memories from accidental modification by agents.
+# Note: We recommend tracking global memories with git.
+project_serena_folder_location: $projectDir/.serena
+
+# list of regex patterns which, when matched, mark a memory entry as read‑only.
+# For example, "global/.*" will mark all global memories as read-only.
+# You can extend the list on a per-project basis in the project.yml configuration file.
+read_only_memory_patterns: []
+
+# line ending convention to use when writing source files.
+# Possible values: "lf" (Unix), "crlf" (Windows), "native" (platform default).
+# Note that Serena's own files (e.g. memories and configuration files) always use native line endings.
+# This setting can be overridden on a per-project basis in project.yml files.
+line_ending: native
