@@ -7,6 +7,7 @@ sandbox_mode = "danger-full-access"
 notify = ["bash", "-lc", "afplay /System/Library/Sounds/Ping.aiff"]
 personality = "pragmatic"
 service_tier = "fast"
+plan_mode_reasoning_effort = "high"
 
 [agents]
 max_threads = 6
@@ -18,6 +19,7 @@ default_mode_request_user_input = true
 js_repl = true
 prevent_idle_sleep = true
 responses_websockets_v2 = true
+multi_agent = true
 
 [mcp_servers.Serena]
 command = "uvx"
@@ -32,10 +34,6 @@ args = [
   "$(pwd)"
 ]
 startup_timeout_sec = 60
-
-[mcp_servers.Context7]
-args = ["-y", "@upstash/context7-mcp"]
-command = "npx"
 
 [mcp_servers.ChromeDevtools]
 command = "npx"

@@ -1,0 +1,14 @@
+name = "commit_message_writer"
+description = "Git差分を確認し、日本語・絵文字付きConventional Commit形式のコミットメッセージを作成して、必要ならコミットまで行う。"
+model = "gpt-5.3-codex-spark"
+model_reasoning_effort = "medium"
+sandbox_mode = "workspace-write"
+developer_instructions = """
+コミットメッセージの作成と、ユーザーが明示した場合のみコミット実行に特化した subagent です。
+必ず最初に `git status -sb` と `git diff` を確認し、差分が 1 つの論理単位か、複数コミットへ分割すべきかを判断してください。
+コミットメッセージは日本語の `絵文字 type: 説明` を基本とし、`type(scope):` は使わず、明示依頼がない限りファイル編集・`git commit --amend`・`git push` は行わないでください。コミット対象が曖昧な場合や未認識の変更がある場合は、勝手に含めず確認を優先してください。
+"""
+
+[[skills.config]]
+path = "../../.agents/skills/commit-message/SKILL.md"
+enabled = true

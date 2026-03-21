@@ -193,6 +193,17 @@ if [[ -d ".codex" ]]; then
     echo "Creating symbolic link [$CURRENT_DIRECTORY/.codex/skills -> $HOME/.codex/skills]"
     ln -sfn "$CURRENT_DIRECTORY/.codex/skills" "$HOME/.codex/skills"
   fi
+
+  # .codex/agents ディレクトリの処理（ディレクトリ自体をシンボリックリンク）
+  if [[ -d ".codex/agents" ]]; then
+    # 既存の $HOME/.codex/agents を $HOME/.codex/agents.bk にリネーム（実体がディレクトリの場合のみ）
+    if [[ -e $HOME/.codex/agents && ! -L $HOME/.codex/agents ]]; then
+      echo "Backing up existing: $HOME/.codex/agents to $HOME/.codex/agents.bk"
+      mv $HOME/.codex/agents $HOME/.codex/agents.bk
+    fi
+    echo "Creating symbolic link [$CURRENT_DIRECTORY/.codex/agents -> $HOME/.codex/agents]"
+    ln -sfn "$CURRENT_DIRECTORY/.codex/agents" "$HOME/.codex/agents"
+  fi
 fi
 
 echo '╭──────────────────────────────────────────────────────────╮'
