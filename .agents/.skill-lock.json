@@ -162,6 +162,15 @@
       "skillFolderHash": "ad17eb27952b39a6ab0061bd50e8a2213b63a3ec",
       "installedAt": "2026-03-24T05:24:53.413Z",
       "updatedAt": "2026-03-24T05:24:53.413Z"
+    },
+    "delight": {
+      "source": "pbakaus/impeccable",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/pbakaus/impeccable.git",
+      "skillPath": ".agents/skills/delight/SKILL.md",
+      "skillFolderHash": "15775cdff26163e5d17ab42b0f51bed4b484b72a",
+      "installedAt": "2026-03-24T05:30:15.006Z",
+      "updatedAt": "2026-03-24T05:30:15.006Z"
     }
   },
   "dismissed": {
