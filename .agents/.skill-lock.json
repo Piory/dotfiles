@@ -153,6 +153,15 @@
       "skillFolderHash": "47e0a989704c772f1911dbacaebdf94071a8d66d",
       "installedAt": "2026-03-24T05:23:14.092Z",
       "updatedAt": "2026-03-24T05:23:14.092Z"
+    },
+    "next-best-practices": {
+      "source": "vercel-labs/next-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/next-skills.git",
+      "skillPath": "skills/next-best-practices/SKILL.md",
+      "skillFolderHash": "ad17eb27952b39a6ab0061bd50e8a2213b63a3ec",
+      "installedAt": "2026-03-24T05:24:53.413Z",
+      "updatedAt": "2026-03-24T05:24:53.413Z"
     }
   },
   "dismissed": {
