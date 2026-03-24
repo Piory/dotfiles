@@ -126,6 +126,15 @@
       "skillFolderHash": "a5a8823e403adc13b2488aae9968d6d92adbd2d7",
       "installedAt": "2026-02-28T02:44:52.006Z",
       "updatedAt": "2026-02-28T02:44:52.006Z"
+    },
+    "gh-cli": {
+      "source": "github/awesome-copilot",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/github/awesome-copilot.git",
+      "skillPath": "skills/gh-cli/SKILL.md",
+      "skillFolderHash": "437437f7f20bcdbbdb3081cf164435a388c0a39a",
+      "installedAt": "2026-03-24T05:14:07.691Z",
+      "updatedAt": "2026-03-24T05:14:07.691Z"
     }
   },
   "dismissed": {
@@ -133,13 +142,16 @@
   },
   "lastSelectedAgents": [
     "amp",
+    "antigravity",
     "cline",
     "codex",
     "cursor",
+    "deepagents",
     "gemini-cli",
     "github-copilot",
     "kimi-cli",
     "opencode",
+    "warp",
     "claude-code"
   ]
 }
