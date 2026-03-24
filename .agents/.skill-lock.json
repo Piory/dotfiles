@@ -15,18 +15,18 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/vercel-labs/agent-skills.git",
       "skillPath": "skills/react-best-practices/SKILL.md",
-      "skillFolderHash": "fce8b5a24ff4ff2fc5db6aa1051e03b53c6b5bf1",
+      "skillFolderHash": "69bf4a7eeeaa772290c1c5efd19da0865f903af8",
       "installedAt": "2026-01-26T02:16:08.177Z",
-      "updatedAt": "2026-03-10T06:06:48.039Z"
+      "updatedAt": "2026-03-24T05:18:37.364Z"
     },
     "web-design-guidelines": {
       "source": "ehmo/platform-design-skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/ehmo/platform-design-skills.git",
       "skillPath": "skills/web/SKILL.md",
-      "skillFolderHash": "b4bfbe96f2f41484a4e3f534d4460471fba79550",
+      "skillFolderHash": "286a86b06a4d7d68a49cf989feccd5c28bba400f",
       "installedAt": "2026-01-26T02:16:08.201Z",
-      "updatedAt": "2026-02-19T02:52:17.152Z"
+      "updatedAt": "2026-03-24T05:18:41.918Z"
     },
     "vercel-react-native-skills": {
       "source": "vercel-labs/agent-skills",
@@ -51,45 +51,45 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/vercel-labs/skills.git",
       "skillPath": "skills/find-skills/SKILL.md",
-      "skillFolderHash": "c2f31172b6f256272305a5e6e7228b258446899f",
+      "skillFolderHash": "3013fdeb8a11b10b1eb795ec3ae8bfca38f7c26d",
       "installedAt": "2026-01-29T06:42:58.651Z",
-      "updatedAt": "2026-01-29T06:42:58.651Z"
+      "updatedAt": "2026-03-24T05:18:45.630Z"
     },
     "android-design-guidelines": {
       "source": "ehmo/platform-design-skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/ehmo/platform-design-skills.git",
       "skillPath": "skills/android/SKILL.md",
-      "skillFolderHash": "8dc5366a6c9a2395c072a384f174ff2531f6707f",
+      "skillFolderHash": "00d134286e6d76ca92a414232f008d8e629da961",
       "installedAt": "2026-02-10T14:02:47.503Z",
-      "updatedAt": "2026-02-19T02:52:17.087Z"
+      "updatedAt": "2026-03-24T05:18:49.806Z"
     },
     "ios-design-guidelines": {
       "source": "ehmo/platform-design-skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/ehmo/platform-design-skills.git",
       "skillPath": "skills/ios/SKILL.md",
-      "skillFolderHash": "bc5c159b2f59c3760116e445a3268b8b4861654d",
+      "skillFolderHash": "a557bc63f0a28702214a7edc486705b4a0a5fd75",
       "installedAt": "2026-02-10T14:02:47.518Z",
-      "updatedAt": "2026-02-19T02:52:17.103Z"
+      "updatedAt": "2026-03-24T05:18:54.375Z"
     },
     "ipados-design-guidelines": {
       "source": "ehmo/platform-design-skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/ehmo/platform-design-skills.git",
       "skillPath": "skills/ipados/SKILL.md",
-      "skillFolderHash": "ef02dd1c42675a0e2f56f4bc461e63b6ce5aa039",
+      "skillFolderHash": "3a9c920ac996379d69b0058a06c91c7d3df5e33b",
       "installedAt": "2026-02-10T14:02:47.530Z",
-      "updatedAt": "2026-02-19T02:52:17.120Z"
+      "updatedAt": "2026-03-24T05:18:58.685Z"
     },
     "macos-design-guidelines": {
       "source": "ehmo/platform-design-skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/ehmo/platform-design-skills.git",
       "skillPath": "skills/macos/SKILL.md",
-      "skillFolderHash": "85a98f96026fce0aed09a16633de3375214636e4",
+      "skillFolderHash": "e0d7bccfcde02ddc429c2c1cd40f8c20be9ebb30",
       "installedAt": "2026-02-10T14:02:47.540Z",
-      "updatedAt": "2026-02-19T02:52:17.135Z"
+      "updatedAt": "2026-03-24T05:19:02.889Z"
     },
     "ui-ux-pro-max": {
       "source": "nextlevelbuilder/ui-ux-pro-max-skill",
@@ -114,9 +114,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/obra/superpowers.git",
       "skillPath": "skills/brainstorming/SKILL.md",
-      "skillFolderHash": "3e0a3c5dce6700e3690e35d1cf1e5691f57a7b70",
+      "skillFolderHash": "2934541ea5541995c4a8eed5b4bda3cba4d24e85",
       "installedAt": "2026-02-17T01:33:03.216Z",
-      "updatedAt": "2026-03-10T06:06:58.009Z"
+      "updatedAt": "2026-03-24T05:19:06.614Z"
     },
     "playwright-cli": {
       "source": "microsoft/playwright-cli",
