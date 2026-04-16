@@ -6,9 +6,10 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/supabase/agent-skills.git",
       "skillPath": "skills/supabase-postgres-best-practices/SKILL.md",
-      "skillFolderHash": "95fe6d29daaf88aa9bc3b505ca4defe19ceabf92",
+      "skillFolderHash": "1ee0423a38c358caa23150dfaaed01bbae020bea",
+      "pluginName": "postgres-best-practices",
       "installedAt": "2026-01-26T01:40:04.498Z",
-      "updatedAt": "2026-02-19T02:44:32.608Z"
+      "updatedAt": "2026-04-16T08:27:25.326Z"
     },
     "vercel-react-best-practices": {
       "source": "vercel-labs/agent-skills",
@@ -171,6 +172,16 @@
       "skillFolderHash": "15775cdff26163e5d17ab42b0f51bed4b484b72a",
       "installedAt": "2026-03-24T05:30:15.006Z",
       "updatedAt": "2026-03-24T05:30:15.006Z"
+    },
+    "supabase": {
+      "source": "supabase/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/supabase/agent-skills.git",
+      "skillPath": "skills/supabase/SKILL.md",
+      "skillFolderHash": "512c575a9b68d271682f9a39a01e4e9ea1156fa1",
+      "pluginName": "supabase",
+      "installedAt": "2026-04-16T08:27:24.884Z",
+      "updatedAt": "2026-04-16T08:27:24.884Z"
     }
   },
   "dismissed": {
@@ -183,6 +194,7 @@
     "codex",
     "cursor",
     "deepagents",
+    "firebender",
     "gemini-cli",
     "github-copilot",
     "kimi-cli",
