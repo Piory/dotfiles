@@ -45,6 +45,11 @@ args = ["chrome-devtools-mcp@latest"]
 command = "/Applications/Pencil.app/Contents/Resources/app.asar.unpacked/out/mcp-server-darwin-arm64"
 args = ["--app", "desktop"]
 
+[memories]
+generate_memories = true
+use_memories = true
+no_memories_if_mcp_or_web_search = false
+
 [projects."/Users/piory/git/github.com/Piory/ghosgent"]
 trust_level = "trusted"
 
@@ -103,3 +108,17 @@ enabled = true
 
 [plugins."github@openai-curated"]
 enabled = true
+
+[plugins."expo@openai-curated"]
+enabled = true
+
+[plugins."slack@openai-curated"]
+enabled = true
+
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[marketplaces.openai-bundled]
+last_updated = "2026-04-17T06:13:15Z"
+source_type = "local"
+source = "/Users/piory/.codex/.tmp/bundled-marketplaces/openai-bundled"
