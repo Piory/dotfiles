@@ -1,4 +1,4 @@
-model = "gpt-5.4"
+model = "gpt-5.5"
 model_reasoning_effort = "high"
 project_doc_fallback_filenames = ["CLAUDE.md"]
 hide_agent_reasoning = true
@@ -119,6 +119,6 @@ enabled = true
 enabled = true
 
 [marketplaces.openai-bundled]
-last_updated = "2026-04-17T06:13:15Z"
+last_updated = "2026-04-21T06:37:11Z"
 source_type = "local"
 source = "/Users/piory/.codex/.tmp/bundled-marketplaces/openai-bundled"
