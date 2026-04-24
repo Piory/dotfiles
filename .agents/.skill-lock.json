@@ -16,9 +16,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/vercel-labs/agent-skills.git",
       "skillPath": "skills/react-best-practices/SKILL.md",
-      "skillFolderHash": "69bf4a7eeeaa772290c1c5efd19da0865f903af8",
+      "skillFolderHash": "343db72180d05814949fef7d46be96b5c6ee86b3",
       "installedAt": "2026-01-26T02:16:08.177Z",
-      "updatedAt": "2026-03-24T05:18:37.364Z"
+      "updatedAt": "2026-04-19T06:43:17.402Z"
     },
     "web-design-guidelines": {
       "source": "ehmo/platform-design-skills",
@@ -115,18 +115,18 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/obra/superpowers.git",
       "skillPath": "skills/brainstorming/SKILL.md",
-      "skillFolderHash": "2934541ea5541995c4a8eed5b4bda3cba4d24e85",
+      "skillFolderHash": "f260c775073816860fef8a37c032ac77e2ff5821",
       "installedAt": "2026-02-17T01:33:03.216Z",
-      "updatedAt": "2026-03-24T05:19:06.614Z"
+      "updatedAt": "2026-04-19T06:43:22.305Z"
     },
     "playwright-cli": {
       "source": "microsoft/playwright-cli",
       "sourceType": "github",
       "sourceUrl": "https://github.com/microsoft/playwright-cli.git",
       "skillPath": "skills/playwright-cli/SKILL.md",
-      "skillFolderHash": "a5a8823e403adc13b2488aae9968d6d92adbd2d7",
+      "skillFolderHash": "b901dcc64256dbb1b32744975a0bafaeb4478da5",
       "installedAt": "2026-02-28T02:44:52.006Z",
-      "updatedAt": "2026-02-28T02:44:52.006Z"
+      "updatedAt": "2026-04-19T06:43:26.394Z"
     },
     "gh-cli": {
       "source": "github/awesome-copilot",
@@ -151,9 +151,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/vercel/vercel.git",
       "skillPath": "skills/vercel-cli/SKILL.md",
-      "skillFolderHash": "47e0a989704c772f1911dbacaebdf94071a8d66d",
+      "skillFolderHash": "1c26bc69224cb2b8399e5d2e28f6268ff1048426",
       "installedAt": "2026-03-24T05:23:14.092Z",
-      "updatedAt": "2026-03-24T05:23:14.092Z"
+      "updatedAt": "2026-04-19T06:43:29.716Z"
     },
     "next-best-practices": {
       "source": "vercel-labs/next-skills",
@@ -169,9 +169,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/pbakaus/impeccable.git",
       "skillPath": ".agents/skills/delight/SKILL.md",
-      "skillFolderHash": "15775cdff26163e5d17ab42b0f51bed4b484b72a",
+      "skillFolderHash": "91a8624bf4bc516d7535d40a6d419389f5df6631",
       "installedAt": "2026-03-24T05:30:15.006Z",
-      "updatedAt": "2026-03-24T05:30:15.006Z"
+      "updatedAt": "2026-04-19T06:43:35.138Z"
     },
     "supabase": {
       "source": "supabase/agent-skills",

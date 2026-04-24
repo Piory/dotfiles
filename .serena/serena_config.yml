@@ -1,9 +1,9 @@
+
 # whether to open a graphical window with Serena's logs.
 # This is mainly supported on Windows and (partly) on Linux; not available on macOS.
-# If you want to see the logs in a web browser, use the `web_dashboard` option instead.
-# Limitations: doesn't seem to work with the community version of Claude Desktop for Linux
-# Might also cause problems with some MCP clients - if you have any issues, try disabling this
-
+# If you prefer a browser-based tool, use the `web_dashboard` option instead.
+# Further information: https://oraios.github.io/serena/02-usage/060_dashboard.html
+#
 # Being able to inspect logs is useful both for troubleshooting and for monitoring the tool calls,
 # especially when using the agno playground, since the tool calls are not always shown,
 # and the input params are never shown in the agno UI.
@@ -15,15 +15,21 @@
 # we have to live with this limitation for now.
 gui_log_window: false
 
-# whether to open the Serena web dashboard (which will be accessible through your web browser) that
-# shows Serena's current session logs - as an alternative to the GUI log window which
-# is supported on all platforms.
+# whether to start the Serena Dashboard, which provides detailed information on your Serena session,
+# the current configuration and furthermore allows some settings to be conveniently modified on the fly.
+# We strongly recommend to always enable this option!
+# If you want to prevent the Dashboard window from being opened on launch,
+# set `web_dashboard_open_on_launch` to false (see below).
+# Further information: https://oraios.github.io/serena/02-usage/060_dashboard.html
 web_dashboard: true
 
-# whether to open a browser window with the web dashboard when Serena starts (provided that web_dashboard
-# is enabled). If set to False, you can still open the dashboard manually by navigating to
-# http://localhost:24282/dashboard/ in your web browser (24282 = 0x5EDA, SErena DAshboard).
-# If you have multiple instances running, a higher port will be used; try port 24283, 24284, etc.
+# whether to open the Dashboard window/browser tab when Serena starts (provided that web_dashboard is enabled).
+# If set to false, you can still open the dashboard manually by clicking on the Serena icon in your system
+# tray on Windows and macOS. On Linux, there is no system tray support, so you can only open the dashboard by
+# a) telling the LLM to "open the dashboard" (provided that the open_dashboard tool is enabled) or by
+# b) manually navigating to http://localhost:24282/dashboard/ in your web browser (actual port
+#    may be higher if you have multiple instances running; try ports 24283, 24284, etc.)
+# See also: https://oraios.github.io/serena/02-usage/060_dashboard.html
 web_dashboard_open_on_launch: false
 
 # the minimum log level for the GUI log window and the dashboard (10 = debug, 20 = info, 30 = warning, 40 = error)
@@ -45,12 +51,13 @@ included_optional_tools: []
 # whether to record tool usage statistics, they will be shown in the web dashboard if recording is active.
 record_tool_usage_stats: false
 
-# Only relevant if `record_tool_usage` is True; the name of the token count estimator to use for tool usage statistics.
+# the name of the token count estimator to use for tool usage statistics.
 # See the `RegisteredTokenCountEstimator` enum for available options.
 #
-# Note: some token estimators (like tiktoken) may require downloading data files
-# on the first run, which can take some time and require internet access. Others, like the Anthropic ones, may require an API key
-# and rate limits may apply.
+# By default, a very naive character count estimator is used, which simply counts the number of characters.
+# You can configure this to TIKTOKEN_GPT4 to use a local tiktoken-based estimator for GPT-4 (will download tiktoken
+# data files on first run), or ANTHROPIC_CLAUDE_SONNET_4 which will use the (free of cost) Anthropic API to
+# estimate the token count using the Claude Sonnet 4 tokenizer.
 token_count_estimator: TIKTOKEN_GPT4O
 
 # the list of registered project paths (updated automatically).
@@ -112,40 +119,13 @@ default_modes:
 # list of paths to ignore across all projects.
 # Same syntax as gitignore, so you can use * and **.
 # These patterns are merged additively with each project's own ignored_paths.
-
-# list of paths to ignore across all projects.
-# Same syntax as gitignore, so you can use * and **.
-# These patterns are merged additively with each project's own ignored_paths.
-
-# list of paths to ignore across all projects.
-# Same syntax as gitignore, so you can use * and **.
-# These patterns are merged additively with each project's own ignored_paths.
-
-# list of paths to ignore across all projects.
-# Same syntax as gitignore, so you can use * and **.
-# These patterns are merged additively with each project's own ignored_paths.
-
-# list of paths to ignore across all projects.
-# Same syntax as gitignore, so you can use * and **.
-# These patterns are merged additively with each project's own ignored_paths.
-
-# list of paths to ignore across all projects.
-# Same syntax as gitignore, so you can use * and **.
-# These patterns are merged additively with each project's own ignored_paths.
-
-# list of paths to ignore across all projects.
-# Same syntax as gitignore, so you can use * and **.
-# These patterns are merged additively with each project's own ignored_paths.
-
-# list of paths to ignore across all projects.
-# Same syntax as gitignore, so you can use * and **.
-# These patterns are merged additively with each project's own ignored_paths.
 ignored_paths: []
 
-# time budget (seconds) for requests when tools request symbol info (currently
-# only supported for LSP-based tools).
-# If the budget is exceeded, Serena stops issuing further symbol-info-related
-# requests and returns partial info results.
+# time budget (seconds) per tool call for the retrieval of additional symbol information
+# such as docstrings or parameter information.
+# (currently only used by LSP-based tools).
+# If the budget is exceeded, Serena stops issuing further retrieval requests
+# and returns partial info results.
 # 0 disables the budget (no early stopping). Negative values are invalid.
 # This is an advanced setting that can help alleviate problems with LSP servers
 # that have a slow implementation of request_hover (clangd is one of those)
@@ -153,10 +133,12 @@ ignored_paths: []
 # Can be overridden in project.yml.
 symbol_info_budget: 10.0
 
-# whether global memories (the "global" topic) are allowed to be deleted or edited by the agent.
-# Global memories are stored in ~/.serena/memories/global/ and shared across all projects.
-# Set to false to protect global memories from accidental modification by agents.
-# Note: We recommend tracking global memories with git.
+# template for the location of the per-project .serena data folder (memories, caches, etc.).
+# Supports the following placeholders:
+#   $projectDir         - the absolute path to the project root directory
+#   $projectFolderName  - the name of the project directory
+# Default: "$projectDir/.serena" (data stored inside the project directory)
+# Example for a central location: "/projects-metadata/$projectFolderName/.serena"
 project_serena_folder_location: $projectDir/.serena
 
 # list of regex patterns which, when matched, mark a memory entry as read‑only.
@@ -178,3 +160,18 @@ line_ending: native
 # You can extend the list on a per-project basis in the project.yml configuration file.
 # Example: ["_archive/.*", "_episodes/.*"]
 ignored_memory_patterns: []
+
+# defines the interface (application mode) used for the web dashboard (if enabled).
+# If empty/null, use platform-dependent default. Otherwise, possible values:
+#  * browser: the dashboard is opened in the default browser (if `web_dashboard_open_on_launch` is true)
+#      This is supported on all platforms.
+#  * app: the dashboard is opened in a separate native-like app window with accompanying tray icon, whose
+#      lifecycle is tied to the Serena process.
+#      If `web_dashboard_open_on_launch` is false, the dashboard can be conveniently accessed via the tray icon.
+#      This is supported on Windows and macOS, but note that on macOS, where tray icons are very visible,
+#      this may result in too many icons being displayed when using multi-agent setups.
+#  * tray_manager: use a global tray icon to provide access to the dashboards of all running Serena instances,
+#      opening the dashboard in browser tabs when selected from the tray menu.
+#      This is EXPERIMENTAL. It is tested on Windows only. We will establish macOS support, but it is yet untested.
+#      On Linux, this cannot be universally supported, but it may work in some desktop environments.
+web_dashboard_interface:
