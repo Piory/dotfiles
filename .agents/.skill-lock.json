@@ -124,9 +124,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/microsoft/playwright-cli.git",
       "skillPath": "skills/playwright-cli/SKILL.md",
-      "skillFolderHash": "b901dcc64256dbb1b32744975a0bafaeb4478da5",
+      "skillFolderHash": "ff92cdde57ecce01607406a4667dc0f2772dfac1",
       "installedAt": "2026-02-28T02:44:52.006Z",
-      "updatedAt": "2026-04-19T06:43:26.394Z"
+      "updatedAt": "2026-05-06T09:31:53.567Z"
     },
     "gh-cli": {
       "source": "github/awesome-copilot",
@@ -160,9 +160,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/vercel-labs/next-skills.git",
       "skillPath": "skills/next-best-practices/SKILL.md",
-      "skillFolderHash": "ad17eb27952b39a6ab0061bd50e8a2213b63a3ec",
+      "skillFolderHash": "a236d702277c5364cf6f540712a8dddb46e79a46",
       "installedAt": "2026-03-24T05:24:53.413Z",
-      "updatedAt": "2026-03-24T05:24:53.413Z"
+      "updatedAt": "2026-05-06T09:31:55.507Z"
     },
     "delight": {
       "source": "pbakaus/impeccable",
@@ -178,10 +178,18 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/supabase/agent-skills.git",
       "skillPath": "skills/supabase/SKILL.md",
-      "skillFolderHash": "512c575a9b68d271682f9a39a01e4e9ea1156fa1",
-      "pluginName": "supabase",
+      "skillFolderHash": "0a6d2a53c392275e02d8f88c728efe5c45427f11",
       "installedAt": "2026-04-16T08:27:24.884Z",
-      "updatedAt": "2026-04-16T08:27:24.884Z"
+      "updatedAt": "2026-05-06T09:31:59.749Z"
+    },
+    "chrome-devtools": {
+      "source": "github/awesome-copilot",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/github/awesome-copilot.git",
+      "skillPath": "skills/chrome-devtools/SKILL.md",
+      "skillFolderHash": "1425ccd89c83988f6bdbc9e801f81e9f1faf86ea",
+      "installedAt": "2026-05-06T09:31:19.711Z",
+      "updatedAt": "2026-05-06T09:31:19.711Z"
     }
   },
   "dismissed": {
@@ -194,6 +202,7 @@
     "codex",
     "cursor",
     "deepagents",
+    "dexto",
     "firebender",
     "gemini-cli",
     "github-copilot",

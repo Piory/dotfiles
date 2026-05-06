@@ -8,5 +8,7 @@
     "type": "command",
     "command": "bun x ccusage statusline"
   },
-  "skipDangerousModePermissionPrompt": true
+  "skipDangerousModePermissionPrompt": true,
+  "editorMode": "vim",
+  "preferredNotifChannel": "terminal_bell"
 }
