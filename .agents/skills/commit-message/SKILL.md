@@ -13,6 +13,8 @@ description: Git差分を確認して、日本語・絵文字付きConventional 
 - 「git add してコミットして」
 
 ## 基本方針
+- Codex で `commit_message_writer` subagent が利用可能な場合は、コミットメッセージ作成とコミット実行をこの subagent に委譲する。
+- `commit_message_writer` subagent が利用できない場合のみ、このスキル内の手順を直接実行する。
 - 必ず差分確認後にコミットメッセージを作る。
 - メッセージは日本語で作成する。
 - 形式は `絵文字 type: 説明` を基本とする。
