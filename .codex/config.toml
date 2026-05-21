@@ -1,13 +1,14 @@
 model = "gpt-5.5"
-model_reasoning_effort = "high"
-project_doc_fallback_filenames = ["CLAUDE.md"]
+model_reasoning_effort = "medium"
+project_doc_fallback_filenames = [ "CLAUDE.md" ]
 hide_agent_reasoning = true
 approval_policy = "on-request"
 sandbox_mode = "workspace-write"
-notify = ["bash", "-lc", "afplay /System/Library/Sounds/Ping.aiff"]
 personality = "pragmatic"
 plan_mode_reasoning_effort = "high"
 approvals_reviewer = "guardian_subagent"
+notify = [ "/Users/piory/.codex/plugins/cache/openai-bundled/computer-use/1.0.791/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended", "--previous-notify", "[\"bash\",\"-lc\",\"afplay \\/System\\/Library\\/Sounds\\/Ping.aiff\"]" ]
+service_tier = "fast"
 
 [agents]
 max_threads = 6
@@ -24,28 +25,20 @@ image_detail_original = true
 guardian_approval = true
 terminal_resize_reflow = true
 goals = true
+mentions_v2 = true
 
 [mcp_servers.Serena]
 command = "uvx"
-args = [
-  "--from",
-  "git+https://github.com/oraios/serena",
-  "serena",
-  "start-mcp-server",
-  "--context",
-  "codex",
-  "--project",
-  "$(pwd)"
-]
+args = [ "--from", "git+https://github.com/oraios/serena", "serena", "start-mcp-server", "--context", "codex", "--project", "$(pwd)" ]
 startup_timeout_sec = 60
 
 [mcp_servers.ChromeDevtools]
 command = "npx"
-args = ["chrome-devtools-mcp@latest"]
+args = [ "chrome-devtools-mcp@latest" ]
 
 [mcp_servers.pencil]
 command = "/Applications/Pencil.app/Contents/Resources/app.asar.unpacked/out/mcp-server-darwin-arm64"
-args = ["--app", "desktop"]
+args = [ "--app", "desktop", "--agent", "codexCLI" ]
 
 [memories]
 generate_memories = true
@@ -95,7 +88,7 @@ hide_rate_limit_model_nudge = true
 
 [tui]
 notification_condition = "always"
-status_line = ["codex-version", "model-with-reasoning", "context-used", "weekly-limit", "five-hour-limit", "project-name", "run-state"]
+status_line = [ "codex-version", "model-with-reasoning", "context-used", "weekly-limit", "five-hour-limit", "project-name", "run-state" ]
 theme = "dracula"
 status_line_use_colors = true
 
@@ -123,7 +116,16 @@ enabled = true
 [plugins."notion@openai-curated"]
 enabled = true
 
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[plugins."chrome@openai-bundled"]
+enabled = true
+
+[plugins."superpowers@openai-curated"]
+enabled = true
+
 [marketplaces.openai-bundled]
-last_updated = "2026-04-21T06:37:11Z"
+last_updated = "2026-05-18T06:23:40Z"
 source_type = "local"
 source = "/Users/piory/.codex/.tmp/bundled-marketplaces/openai-bundled"
