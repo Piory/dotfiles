@@ -6,10 +6,10 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/supabase/agent-skills.git",
       "skillPath": "skills/supabase-postgres-best-practices/SKILL.md",
-      "skillFolderHash": "1ee0423a38c358caa23150dfaaed01bbae020bea",
+      "skillFolderHash": "6f1495c72c918e6f80c2f69df9005eacd5c57d7a",
       "pluginName": "postgres-best-practices",
       "installedAt": "2026-01-26T01:40:04.498Z",
-      "updatedAt": "2026-04-16T08:27:25.326Z"
+      "updatedAt": "2026-06-06T09:23:30.785Z"
     },
     "vercel-react-best-practices": {
       "source": "vercel-labs/agent-skills",
@@ -178,9 +178,10 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/supabase/agent-skills.git",
       "skillPath": "skills/supabase/SKILL.md",
-      "skillFolderHash": "0a6d2a53c392275e02d8f88c728efe5c45427f11",
+      "skillFolderHash": "9911179cac6d704329e20c6d27b94175121a4160",
+      "pluginName": "supabase",
       "installedAt": "2026-04-16T08:27:24.884Z",
-      "updatedAt": "2026-05-06T09:31:59.749Z"
+      "updatedAt": "2026-06-06T09:23:30.787Z"
     },
     "chrome-devtools": {
       "source": "github/awesome-copilot",
@@ -208,17 +209,17 @@
   "lastSelectedAgents": [
     "amp",
     "antigravity",
+    "antigravity-cli",
     "cline",
     "codex",
     "cursor",
     "deepagents",
-    "dexto",
-    "firebender",
     "gemini-cli",
     "github-copilot",
-    "kimi-cli",
+    "kimi-code-cli",
     "opencode",
     "warp",
+    "zed",
     "claude-code"
   ]
 }
