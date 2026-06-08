@@ -1,14 +1,19 @@
 model = "gpt-5.5"
-model_reasoning_effort = "medium"
-project_doc_fallback_filenames = [ "CLAUDE.md" ]
+model_reasoning_effort = "high"
+project_doc_fallback_filenames = ["CLAUDE.md"]
 hide_agent_reasoning = true
 approval_policy = "on-request"
 sandbox_mode = "workspace-write"
 personality = "pragmatic"
 plan_mode_reasoning_effort = "high"
 approvals_reviewer = "guardian_subagent"
-notify = [ "/Users/piory/.codex/plugins/cache/openai-bundled/computer-use/1.0.791/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended", "--previous-notify", "[\"bash\",\"-lc\",\"afplay \\/System\\/Library\\/Sounds\\/Ping.aiff\"]" ]
 service_tier = "fast"
+notify = [
+  "/Users/piory/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient",
+  "turn-ended",
+  "--previous-notify",
+  "[\"bash\",\"-lc\",\"afplay \\/System\\/Library\\/Sounds\\/Ping.aiff\"]"
+]
 
 [agents]
 max_threads = 6
@@ -17,7 +22,7 @@ max_depth = 1
 [features]
 apps = true
 default_mode_request_user_input = true
-js_repl = true
+js_repl = false
 prevent_idle_sleep = true
 responses_websockets_v2 = true
 multi_agent = true
@@ -29,16 +34,42 @@ mentions_v2 = true
 
 [mcp_servers.Serena]
 command = "uvx"
-args = [ "--from", "git+https://github.com/oraios/serena", "serena", "start-mcp-server", "--context", "codex", "--project", "$(pwd)" ]
-startup_timeout_sec = 60
+args = [
+  "--from",
+  "git+https://github.com/oraios/serena",
+  "serena",
+  "start-mcp-server",
+  "--context",
+  "codex",
+  "--project",
+  "$(pwd)"
+]
+startup_timeout_sec = 60.0
 
 [mcp_servers.ChromeDevtools]
 command = "npx"
-args = [ "chrome-devtools-mcp@latest" ]
+args = ["chrome-devtools-mcp@latest"]
+
+[mcp_servers.node_repl]
+command = "/Applications/Codex.app/Contents/Resources/node_repl"
+startup_timeout_sec = 120.0
+
+[mcp_servers.node_repl.env]
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+BROWSER_USE_MARKETPLACE_NAME = "openai-bundled"
+CODEX_CLI_PATH = "/Applications/Codex.app/Contents/Resources/codex"
+CODEX_HOME = "/Users/piory/.codex"
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = ""
+NODE_REPL_NODE_PATH = "/Applications/Codex.app/Contents/Resources/node"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "496c7b3cb95b4bc20cff49b513150606e0da0000c92bf752206bee5a6c248423"
+NODE_REPL_TRUSTED_CODE_PATHS = "/Users/piory/.codex"
+NODE_REPL_UNTRUSTED_ENV_ALLOWLIST = "BROWSER_USE_MARKETPLACE_NAME"
+SKY_CUA_SERVICE_PATH = "/Users/piory/.codex/.tmp/bundled-marketplaces/openai-bundled/plugins/computer-use/Codex Computer Use.app"
 
 [mcp_servers.pencil]
 command = "/Applications/Pencil.app/Contents/Resources/app.asar.unpacked/out/mcp-server-darwin-arm64"
-args = [ "--app", "desktop", "--agent", "codexCLI" ]
+args = ["--app", "desktop", "--agent", "codexCLI"]
 
 [memories]
 generate_memories = true
@@ -85,10 +116,19 @@ trust_level = "trusted"
 
 [notice]
 hide_rate_limit_model_nudge = true
+fast_default_opt_out = true
 
 [tui]
 notification_condition = "always"
-status_line = [ "codex-version", "model-with-reasoning", "context-used", "weekly-limit", "five-hour-limit", "project-name", "run-state" ]
+status_line = [
+  "codex-version",
+  "model-with-reasoning",
+  "context-used",
+  "weekly-limit",
+  "five-hour-limit",
+  "project-name",
+  "run-state"
+]
 theme = "dracula"
 status_line_use_colors = true
 
@@ -125,7 +165,64 @@ enabled = true
 [plugins."superpowers@openai-curated"]
 enabled = true
 
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
 [marketplaces.openai-bundled]
-last_updated = "2026-05-18T06:23:40Z"
+last_updated = "2026-05-27T04:13:51Z"
 source_type = "local"
 source = "/Users/piory/.codex/.tmp/bundled-marketplaces/openai-bundled"
+
+[marketplaces.openai-primary-runtime]
+last_updated = "2026-05-27T04:47:17Z"
+source_type = "local"
+source = "/Users/piory/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
+
+[desktop]
+appearanceLightCodeThemeId = "codex"
+appearanceDarkCodeThemeId = "tokyo-night"
+preventSleepWhileRunning = true
+keepRemoteControlAwakeWhilePluggedIn = true
+git-commit-instructions = "以下の手順に従って、Git コミットメッセージを作成してください。\n- Git の現在の差分を参照して、適切なコミットメッセージを日本語で作成してください。コミットメッセージは、以下の Git Commit ルールに従い、変更内容に最も適した絵文字を使用してください。ただし、絵文字不要という指示がある場合は絵文字を使用しないでください。\n- 必要に応じて、コミットを分割してください。無理に分割する必要はありませんが、論理的に分けられる場合は分割してください。\n- 以下の手順を守ってください：\n  1. Git の現在の差分を確認する\n    2. git status -sb で変更されたファイルをリストアップ\n    3. git diff で具体的な変更内容を確認\n  2. 変更内容に基づいて、適切な絵文字を選択\n  3. コミットメッセージを日本語で作成\n  4. そのコミットメッセージにした意図を説明して、承認を求める\n\n# Git Commit ルール\n- 必ず Git の現在の差分を参照してからコミットメッセージを考えること\n- コミットメッセージを考える場合は、必ず Git Commit Guidelinesに従うこと\n\n## Git Commit Guidelines\n\n### Commit Message Format\n\n- Use conventional commit format with emoji prefix: `:emoji: type: description`\n- Keep commit messages concise and descriptive\n- **IMPORTANT**: All commit messages must be written in Japanese (日本語)\n- **IMPORTANT**: Do NOT include \"Generated with Claude Code\" or similar AI-generated disclaimers in commit messages\n- Focus on the actual changes made, not the tool used to make them\n\n### Emoji Prefix Rules (Gitmoji Standard)\n\nChoose appropriate emojis to represent different types of commits according to [gitmoji.dev](https://gitmoji.dev/) standard:\n\n#### 🎯 Core Development\n\n- 🎉 `:tada:` - Begin a project (プロジェクト開始)\n- ✨ `:sparkles:` - Introduce new features (新機能)\n- 🐛 `:bug:` - Fix a bug (バグ修正)\n- 🚑️ `:ambulance:` - Critical hotfix (緊急修正)\n- ⚡️ `:zap:` - Improve performance (パフォーマンス改善)\n- 🎨 `:art:` - Improve structure / format of the code (コード構造・フォーマット改善)\n- ♻️ `:recycle:` - Refactor code (コードリファクタリング)\n\n#### 🔒 Security & Quality\n\n- 🔒️ `:lock:` - Fix security or privacy issues (セキュリティ・プライバシー修正)\n- 🔐 `:closed_lock_with_key:` - Add or update secrets (シークレット追加・更新)\n- 🚨 `:rotating_light:` - Fix compiler / linter warnings (コンパイラ・リンター警告修正)\n- ✅ `:white_check_mark:` - Add, update, or pass tests (テスト追加・更新・合格)\n- 🧪 `:test_tube:` - Add a failing test (失敗テスト追加)\n\n#### 📚 Documentation & UI\n\n- 📝 `:memo:` - Add or update documentation (ドキュメント追加・更新)\n- 💄 `:lipstick:` - Add or update the UI and style files (UI・スタイル更新)\n- 💅 `:nail_care:` - Update UI and style files (UIファイル更新)\n- 🎨 `:art:` - Improve structure / format of the code (コード構造改善)\n\n#### 🚀 Deployment & CI/CD\n\n- 🚀 `:rocket:` - Deploy stuff (デプロイ)\n- 💚 `:green_heart:` - Fix CI Build (CIビルド修正)\n- 👷 `:construction_worker:` - Add or update CI build system (CIビルドシステム更新)\n- 📦️ `:package:` - Add or update compiled files or packages (パッケージ・コンパイル済みファイル更新)\n- 🔖 `:bookmark:` - Release / Version tags (リリース・バージョンタグ)\n\n#### ⚙️ Configuration & Dependencies\n\n- 🔧 `:wrench:` - Add or update configuration files (設定ファイル更新)\n- 🔨 `:hammer:` - Add or update development scripts (開発スクリプト更新)\n- ⚙️ `:gear:` - Add or update configuration files (設定変更)\n- ⬆️ `:arrow_up:` - Upgrade dependencies (依存関係アップグレード)\n- ⬇️ `:arrow_down:` - Downgrade dependencies (依存関係ダウングレード)\n- 📌 `:pushpin:` - Pin dependencies to specific versions (依存関係バージョン固定)\n\n#### 🗂️ File Operations\n\n- 🔥 `:fire:` - Remove code or files (コード・ファイル削除)\n- 🚚 `:truck:` - Move or rename resources (リソース移動・リネーム)\n- 📱 `:iphone:` - Work on responsive design (レスポンシブデザイン対応)\n- 🍱 `:bento:` - Add or update assets (アセット追加・更新)\n- 📄 `:page_facing_up:` - Add or update license (ライセンス追加・更新)\n\n#### 🌐 Internationalization & Accessibility\n\n- 🌐 `:globe_with_meridians:` - Internationalization and localization (国際化・地域化)\n- ♿️ `:wheelchair:` - Improve accessibility (アクセシビリティ改善)\n- 🏷️ `:label:` - Add or update types (型追加・更新)\n\n#### 🔄 Development Process\n\n- 🚧 `:construction:` - Work in progress (作業中)\n- 🚀 `:rocket:` - Deploy stuff (デプロイ)\n- 🔀 `:twisted_rightwards_arrows:` - Merge branches (ブランチマージ)\n- ⏪️ `:rewind:` - Revert changes (変更の取り消し)\n- 💥 `:boom:` - Introduce breaking changes (破壊的変更)\n\n#### 🏗️ Architecture & Structure\n\n- 🏗️ `:building_construction:` - Make architectural changes (アーキテクチャ変更)\n- 🧱 `:bricks:` - Infrastructure related changes (インフラ関連変更)\n- 📱 `:iphone:` - Work on responsive design (レスポンシブ対応)\n- 🤖 `:robot:` - Add or update automated scripts (自動化スクリプト)\n\n#### 🐳 DevOps & Environment\n\n- 🐳 `:whale:` - Work about Docker (Docker関連)\n- ☸️ `:wheel_of_dharma:` - Work about Kubernetes (Kubernetes関連)\n- 🔧 `:wrench:` - Add or update configuration files (設定ファイル)\n\n#### 🎯 Specific Categories\n\n- 💸 `:money_with_wings:` - Remove code or files (コスト削減・最適化)\n- 🍻 `:beers:` - Write code drunkenly (非推奨・技術的負債)\n- 💬 `:speech_balloon:` - Add or update text and literals (テキスト・リテラル更新)\n- 🗃️ `:card_file_box:` - Perform database related changes (データベース変更)\n- 📊 `:bar_chart:` - Add or update analytics or track code (分析・トラッキング)\n\n### Examples\n\n```\n✅ Good commit messages (Japanese with emojis):\n✨ feat: ユーザー認証システムの追加\n🐛 fix: Reactバージョン互換性の問題を解決\n♻️ refactor: appからpresentationパッケージへの機能移動\n📝 docs: README.mdのセットアップ手順を更新\n🔧 chore: ESLint設定の調整\n🚑️ hotfix: セキュリティ脆弱性の緊急修正\n⚡️ perf: データベースクエリのパフォーマンス改善\n💄 style: ログインフォームのUIデザイン更新\n🔒️ security: JWTトークン検証の強化\n\n❌ Avoid (English):\nfeat: add user authentication system\n\n❌ Avoid (AI disclaimers):\nfeat: ユーザー認証システムの追加\n\n🤖 Generated with [Claude Code](https://claude.ai/code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\n```\n\n### Benefits\n\n- Makes commit messages more understandable and visually appealing\n- Improves communication within the development team\n- Creates a colorful and engaging repository history\n- Helps quickly identify the nature of changes in git logs"
+default-service-tier = "priority"
+
+[desktop.appearanceLightChromeTheme]
+accent = "#0169cc"
+contrast = 45
+ink = "#0d0d0d"
+opaqueWindows = false
+surface = "#ffffff"
+
+[desktop.appearanceLightChromeTheme.fonts]
+
+[desktop.appearanceLightChromeTheme.semanticColors]
+diffAdded = "#00a240"
+diffRemoved = "#e02e2a"
+skill = "#751ed9"
+
+[desktop.appearanceDarkChromeTheme]
+accent = "#3d59a1"
+contrast = 60
+ink = "#a9b1d6"
+opaqueWindows = false
+surface = "#1a1b26"
+
+[desktop.appearanceDarkChromeTheme.fonts]
+ui = "ui-monospace, \"SFMono-Regular\", \"SF Mono\", Menlo, Consolas, \"Liberation Mono\", monospace"
+
+[desktop.appearanceDarkChromeTheme.semanticColors]
+diffAdded = "#449dab"
+diffRemoved = "#914c54"
+skill = "#9d7cd8"
+
+[desktop.open-in-target-preferences]
+global = "ghostty"
+
+[desktop.open-in-target-preferences.perPath]
+"/Users/piory/git/github.com/yu-dot-limited/pos_system" = "ghostty"
