@@ -194,6 +194,7 @@ local ensure_installed = {
   'eslint',
   'tailwindcss',
   'prismals',
+  'astro',
 }
 require('mason-lspconfig').setup({
   automatic_installation = true,
