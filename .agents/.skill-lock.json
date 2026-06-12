@@ -201,6 +201,15 @@
       "pluginName": "mattpocock-skills",
       "installedAt": "2026-05-22T00:13:55.731Z",
       "updatedAt": "2026-05-22T00:13:55.731Z"
+    },
+    "simplify": {
+      "source": "brianlovin/claude-config",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/brianlovin/claude-config.git",
+      "skillPath": "skills/simplify/SKILL.md",
+      "skillFolderHash": "83566973442dc05bcf5abbe83053e8a8e5f50b6b",
+      "installedAt": "2026-06-12T03:07:11.307Z",
+      "updatedAt": "2026-06-12T03:07:11.307Z"
     }
   },
   "dismissed": {
@@ -219,7 +228,6 @@
     "kimi-code-cli",
     "opencode",
     "warp",
-    "zed",
-    "claude-code"
+    "zed"
   ]
 }
