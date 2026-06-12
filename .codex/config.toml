@@ -44,7 +44,7 @@ args = [
   "--project",
   "$(pwd)"
 ]
-startup_timeout_sec = 60.0
+startup_timeout_sec = 60
 
 [mcp_servers.ChromeDevtools]
 command = "npx"
@@ -52,7 +52,7 @@ args = ["chrome-devtools-mcp@latest"]
 
 [mcp_servers.node_repl]
 command = "/Applications/Codex.app/Contents/Resources/node_repl"
-startup_timeout_sec = 120.0
+startup_timeout_sec = 120
 
 [mcp_servers.node_repl.env]
 BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
