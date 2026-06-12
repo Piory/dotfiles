@@ -10,5 +10,6 @@
   },
   "skipDangerousModePermissionPrompt": true,
   "editorMode": "vim",
-  "preferredNotifChannel": "terminal_bell"
+  "preferredNotifChannel": "terminal_bell",
+  "model": "claude-fable-5[1m]"
 }
