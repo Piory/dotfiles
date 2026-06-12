@@ -67,7 +67,6 @@ projects:
 - /Users/piory/git/github.com/Ascelta/Ascelta
 - /Users/piory/git/github.com/Piory/deepai-e2e
 - /Users/piory/git/github.com/Piory/dotfiles
-- /Users/piory/git/github.com/Piory/ghosgent
 - /Users/piory/git/github.com/ROOT4-BEAUTY/alpha-client
 - /Users/piory/git/github.com/ROOT4-BEAUTY/alpha-proto
 - /Users/piory/git/github.com/ROOT4-BEAUTY/alpha-server
@@ -79,6 +78,7 @@ projects:
 - /Users/piory/git/github.com/mishima-shokai-lab/hozen-kun
 - /Users/piory/git/github.com/yu-dot-limited/mirai-teracy
 - /Users/piory/git/github.com/yu-dot-limited/pos_system
+- /private/tmp/hozen-kun-fix-reinvite
 # the language backend to use for code understanding and manipulation.
 # Possible values are:
 #  * LSP: Use the language server protocol (LSP), spawning freely available language servers
