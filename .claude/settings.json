@@ -4,12 +4,18 @@
       "mcp__pencil"
     ]
   },
+  "model": "opus",
   "statusLine": {
     "type": "command",
-    "command": "bun x ccusage statusline"
+    "command": "sh ~/.claude/statusline-command.sh"
+  },
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true
   },
   "skipDangerousModePermissionPrompt": true,
+  "theme": "dark-ansi",
   "editorMode": "vim",
   "preferredNotifChannel": "terminal_bell",
-  "model": "claude-fable-5[1m]"
+  "inputNeededNotifEnabled": true,
+  "agentPushNotifEnabled": true
 }
