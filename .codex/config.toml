@@ -135,7 +135,7 @@ theme = "dracula"
 status_line_use_colors = true
 
 [tui.model_availability_nux]
-"gpt-5.5" = 2
+"gpt-5.5" = 4
 
 [plugins."google-calendar@openai-curated"]
 enabled = true
