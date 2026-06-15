@@ -1,6 +1,6 @@
 model = "gpt-5.5"
 model_reasoning_effort = "high"
-project_doc_fallback_filenames = ["CLAUDE.md"]
+project_doc_fallback_filenames = [ "CLAUDE.md" ]
 hide_agent_reasoning = true
 approval_policy = "on-request"
 sandbox_mode = "workspace-write"
@@ -8,12 +8,7 @@ personality = "pragmatic"
 plan_mode_reasoning_effort = "high"
 approvals_reviewer = "guardian_subagent"
 service_tier = "fast"
-notify = [
-  "/Users/piory/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient",
-  "turn-ended",
-  "--previous-notify",
-  "[\"bash\",\"-lc\",\"afplay \\/System\\/Library\\/Sounds\\/Ping.aiff\"]"
-]
+notify = [ "/Users/piory/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended", "--previous-notify", "[\"bash\",\"-lc\",\"afplay \\/System\\/Library\\/Sounds\\/Ping.aiff\"]" ]
 
 [agents]
 max_threads = 6
@@ -34,21 +29,12 @@ mentions_v2 = true
 
 [mcp_servers.Serena]
 command = "uvx"
-args = [
-  "--from",
-  "git+https://github.com/oraios/serena",
-  "serena",
-  "start-mcp-server",
-  "--context",
-  "codex",
-  "--project",
-  "$(pwd)"
-]
+args = [ "--from", "git+https://github.com/oraios/serena", "serena", "start-mcp-server", "--context", "codex", "--project", "$(pwd)" ]
 startup_timeout_sec = 60
 
 [mcp_servers.ChromeDevtools]
 command = "npx"
-args = ["chrome-devtools-mcp@latest"]
+args = [ "chrome-devtools-mcp@latest" ]
 
 [mcp_servers.node_repl]
 args = []
@@ -71,7 +57,7 @@ CODEX_CLI_PATH = "/Applications/Codex.app/Contents/Resources/codex"
 
 [mcp_servers.pencil]
 command = "/Applications/Pencil.app/Contents/Resources/app.asar.unpacked/out/mcp-server-darwin-arm64"
-args = ["--app", "desktop", "--agent", "codexCLI"]
+args = [ "--app", "desktop", "--agent", "codexCLI" ]
 
 [memories]
 generate_memories = true
@@ -122,15 +108,7 @@ fast_default_opt_out = true
 
 [tui]
 notification_condition = "always"
-status_line = [
-  "codex-version",
-  "model-with-reasoning",
-  "context-used",
-  "weekly-limit",
-  "five-hour-limit",
-  "project-name",
-  "run-state"
-]
+status_line = [ "codex-version", "model-with-reasoning", "context-used", "weekly-limit", "five-hour-limit", "project-name", "run-state" ]
 theme = "dracula"
 status_line_use_colors = true
 
@@ -202,7 +180,6 @@ opaqueWindows = false
 surface = "#ffffff"
 
 [desktop.appearanceLightChromeTheme.fonts]
-
 [desktop.appearanceLightChromeTheme.semanticColors]
 diffAdded = "#00a240"
 diffRemoved = "#e02e2a"
