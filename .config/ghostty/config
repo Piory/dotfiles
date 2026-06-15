@@ -51,3 +51,4 @@ font-family = "Hack Nerd Font"
 font-size = 13
 theme = tokyonight
 font-thicken = true
+desktop-notifications = true
