@@ -106,9 +106,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/anthropics/skills.git",
       "skillPath": "skills/frontend-design/SKILL.md",
-      "skillFolderHash": "928950704df8a8b885c03de5da626331e6f29cf8",
+      "skillFolderHash": "0d5b74a14bdf3ebcd64f352d06376a2ef05ed296",
       "installedAt": "2026-02-17T01:31:47.346Z",
-      "updatedAt": "2026-02-19T02:57:13.119Z"
+      "updatedAt": "2026-06-16T04:51:54.736Z"
     },
     "brainstorming": {
       "source": "obra/superpowers",
@@ -124,36 +124,18 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/microsoft/playwright-cli.git",
       "skillPath": "skills/playwright-cli/SKILL.md",
-      "skillFolderHash": "ff92cdde57ecce01607406a4667dc0f2772dfac1",
+      "skillFolderHash": "6bf055ae36a2460e4a8f70eaec772ab7ac7e12e4",
       "installedAt": "2026-02-28T02:44:52.006Z",
-      "updatedAt": "2026-05-06T09:31:53.567Z"
-    },
-    "gh-cli": {
-      "source": "github/awesome-copilot",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/github/awesome-copilot.git",
-      "skillPath": "skills/gh-cli/SKILL.md",
-      "skillFolderHash": "437437f7f20bcdbbdb3081cf164435a388c0a39a",
-      "installedAt": "2026-03-24T05:14:07.691Z",
-      "updatedAt": "2026-03-24T05:14:07.691Z"
-    },
-    "tdd": {
-      "source": "mattpocock/skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/mattpocock/skills.git",
-      "skillPath": "tdd/SKILL.md",
-      "skillFolderHash": "28d7822c112f22cf499099881856fdec07bc83a8",
-      "installedAt": "2026-03-24T05:17:24.687Z",
-      "updatedAt": "2026-03-24T05:17:24.687Z"
+      "updatedAt": "2026-06-16T04:51:58.123Z"
     },
     "vercel-cli": {
       "source": "vercel/vercel",
       "sourceType": "github",
       "sourceUrl": "https://github.com/vercel/vercel.git",
       "skillPath": "skills/vercel-cli/SKILL.md",
-      "skillFolderHash": "1c26bc69224cb2b8399e5d2e28f6268ff1048426",
+      "skillFolderHash": "68b73c64ef914318faa6d569981a26e853f82deb",
       "installedAt": "2026-03-24T05:23:14.092Z",
-      "updatedAt": "2026-04-19T06:43:29.716Z"
+      "updatedAt": "2026-06-16T04:52:04.123Z"
     },
     "next-best-practices": {
       "source": "vercel-labs/next-skills",
@@ -163,15 +145,6 @@
       "skillFolderHash": "a236d702277c5364cf6f540712a8dddb46e79a46",
       "installedAt": "2026-03-24T05:24:53.413Z",
       "updatedAt": "2026-05-06T09:31:55.507Z"
-    },
-    "delight": {
-      "source": "pbakaus/impeccable",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/pbakaus/impeccable.git",
-      "skillPath": ".agents/skills/delight/SKILL.md",
-      "skillFolderHash": "91a8624bf4bc516d7535d40a6d419389f5df6631",
-      "installedAt": "2026-03-24T05:30:15.006Z",
-      "updatedAt": "2026-04-19T06:43:35.138Z"
     },
     "supabase": {
       "source": "supabase/agent-skills",
@@ -197,10 +170,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/mattpocock/skills.git",
       "skillPath": "skills/engineering/grill-with-docs/SKILL.md",
-      "skillFolderHash": "2c6aa7079cc705a6e0c319fcf23a0fa39968de29",
-      "pluginName": "mattpocock-skills",
+      "skillFolderHash": "2c3a4e48571bfe42203ed7b49cae85f31ef4b6f2",
       "installedAt": "2026-05-22T00:13:55.731Z",
-      "updatedAt": "2026-05-22T00:13:55.731Z"
+      "updatedAt": "2026-06-16T04:52:01.723Z"
     },
     "simplify": {
       "source": "brianlovin/claude-config",
