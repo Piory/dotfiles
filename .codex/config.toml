@@ -8,13 +8,13 @@ personality = "pragmatic"
 plan_mode_reasoning_effort = "high"
 approvals_reviewer = "guardian_subagent"
 service_tier = "fast"
-notify = [ "/Users/piory/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended", "--previous-notify", "[\"bash\",\"-lc\",\"afplay \\/System\\/Library\\/Sounds\\/Ping.aiff\"]" ]
 
 [agents]
 max_threads = 6
 max_depth = 1
 
 [features]
+hooks = true
 apps = true
 default_mode_request_user_input = true
 js_repl = false
