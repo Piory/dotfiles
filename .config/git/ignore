@@ -11,8 +11,6 @@ tags.lock
 .ctags
 
 **/.claude/settings.local.json
-CLAUDE.md
-AGENTS.md
 WARP.md
 
 .claude
