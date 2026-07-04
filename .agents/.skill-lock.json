@@ -182,6 +182,15 @@
       "skillFolderHash": "83566973442dc05bcf5abbe83053e8a8e5f50b6b",
       "installedAt": "2026-06-12T03:07:11.307Z",
       "updatedAt": "2026-06-12T03:07:11.307Z"
+    },
+    "jsdoc-typescript-docs": {
+      "source": "patricio0312rev/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/patricio0312rev/skills.git",
+      "skillPath": "foundation/jsdoc-typescript-docs/SKILL.md",
+      "skillFolderHash": "514dae05ae0a71196e21e6b23657c857b577e9cd",
+      "installedAt": "2026-06-17T06:57:46.577Z",
+      "updatedAt": "2026-06-17T06:57:46.577Z"
     }
   },
   "dismissed": {
@@ -200,6 +209,7 @@
     "kimi-code-cli",
     "opencode",
     "warp",
-    "zed"
+    "zed",
+    "claude-code"
   ]
 }
