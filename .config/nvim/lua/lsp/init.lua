@@ -202,3 +202,7 @@ require('mason-lspconfig').setup({
 })
 
 vim.lsp.enable(ensure_installed)
+
+-- Xcode 同梱の sourcekit-lsp（mason ではインストールできないため個別に有効化。
+-- 設定は after/lsp/sourcekit.lua）
+vim.lsp.enable('sourcekit')
