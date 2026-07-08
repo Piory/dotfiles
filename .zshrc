@@ -41,20 +41,20 @@ export PATH=$HOME/.cargo/bin:$PATH
 # peco
 ## コマンドの履歴をみるやつ ##
 function peco-history-selection() {
-    BUFFER=$(history 1 | sort -k1,1nr | perl -ne 'BEGIN { my @lines = (); } s/^\s*\d+\*?\s*//; $in=$_; if (!(grep {$in eq $_} @lines)) { push(@lines, $in); print $in; }' | peco --query "$LBUFFER")
-    CURSOR=${#BUFFER}
-    zle reset-prompt
+  BUFFER=$(history 1 | sort -k1,1nr | perl -ne 'BEGIN { my @lines = (); } s/^\s*\d+\*?\s*//; $in=$_; if (!(grep {$in eq $_} @lines)) { push(@lines, $in); print $in; }' | peco --query "$LBUFFER")
+  CURSOR=${#BUFFER}
+  zle reset-prompt
 }
 zle -N peco-history-selection
 bindkey '^R' peco-history-selection
 
 if [ -f ~/.bashrc ]; then
-        . ~/.bashrc
+  . ~/.bashrc
 fi
 
 ## エイリアス
 alias vim='nvim'
-alias ctags="`brew --prefix`/bin/ctags"
+alias ctags="$(brew --prefix)/bin/ctags"
 
 export TERM=xterm-256color
 
@@ -64,16 +64,14 @@ export TERM=xterm-256color
 [[ -e "$HOME/bin/functions.zsh" ]] && source "$HOME/bin/functions.zsh"
 [[ -e "$HOME/bin/tmux-ide.zsh" ]] && source "$HOME/bin/tmux-ide.zsh"
 
-
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/piory/.lmstudio/bin"
-
 
 # pnpm
 export PNPM_HOME="/Users/piory/Library/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 export VOLTA_FEATURE_PNPM=1
 # pnpm end
@@ -94,4 +92,10 @@ fi
 # Keep Volta available, but resolve pnpm from PATH so mise can take precedence in mise.toml projects.
 pnpm() {
   command pnpm "$@"
+}
+
+function preset_git_sign_passphrase() {
+  gpg-connect-agent /bye &>/dev/null
+  eval $(op signin)
+  env GPG_PASSPHRASE="op://Personal/GPG/password" op run --no-masking -- printenv GPG_PASSPHRASE | /opt/homebrew/opt/gnupg/libexec/gpg-preset-passphrase --preset 7A330973950FF9601B84AF2F0F7D62BEC117C6E1
 }
