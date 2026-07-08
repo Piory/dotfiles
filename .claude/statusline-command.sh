@@ -7,6 +7,9 @@ input=$(cat)
 # Run ccusage with the saved input
 ccusage_out=$(echo "$input" | bun x ccusage statusline 2>/dev/null)
 
+# Extract the Claude Code version (shown at the far left)
+version=$(echo "$input" | jq -r '.version // empty' 2>/dev/null)
+
 # Extract rate limits (present only for Claude.ai Pro/Max after the first API response)
 five_pct=$(echo "$input" | jq -r '.rate_limits.five_hour.used_percentage // empty' 2>/dev/null)
 week_pct=$(echo "$input" | jq -r '.rate_limits.seven_day.used_percentage // empty' 2>/dev/null)
@@ -43,11 +46,24 @@ fi
 rate=""
 [ -n "$segs" ] && rate="⏳ ${segs}"
 
-# Output: ccusage result + rate limits
+# Version prefix (far left)
+ver=""
+[ -n "$version" ] && ver="${DIM}v${version}${RESET}"
+
+# Output: version + ccusage result + rate limits
+body=""
 if [ -n "$ccusage_out" ] && [ -n "$rate" ]; then
-  printf '%s %s|%s %s' "$ccusage_out" "$DIM" "$RESET" "$rate"
+  body=$(printf '%s %s|%s %s' "$ccusage_out" "$DIM" "$RESET" "$rate")
 elif [ -n "$ccusage_out" ]; then
-  printf '%s' "$ccusage_out"
+  body="$ccusage_out"
 elif [ -n "$rate" ]; then
-  printf '%s' "$rate"
+  body="$rate"
+fi
+
+if [ -n "$ver" ] && [ -n "$body" ]; then
+  printf '%s %s|%s %s' "$ver" "$DIM" "$RESET" "$body"
+elif [ -n "$ver" ]; then
+  printf '%s' "$ver"
+else
+  printf '%s' "$body"
 fi
