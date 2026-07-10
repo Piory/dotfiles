@@ -1,0 +1,8 @@
+[ui]
+sidebar_width = 64
+sidebar_min_width = 18
+sidebar_max_width = 72
+agent_panel_sort = "priority"
+
+[keys]
+split_vertical = ["prefix+v", "prefix+|"]

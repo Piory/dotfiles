@@ -109,6 +109,17 @@ echo "Create symbolic link [$CONFIG_PATH/mise -> $CURRENT_DIRECTORY/.config/mise
 ln -sfn "$CURRENT_DIRECTORY/.config/mise" "$CONFIG_PATH/mise"
 
 echo '╭──────────────────────────────────────────────────────────╮'
+echo '│                       Herdr Config                       │'
+echo '╰──────────────────────────────────────────────────────────╯'
+mkdir -p "$CONFIG_PATH/herdr"
+if [[ -e "$CONFIG_PATH/herdr/config.toml" && ! -L "$CONFIG_PATH/herdr/config.toml" ]]; then
+  echo "Backing up existing: $CONFIG_PATH/herdr/config.toml to $CONFIG_PATH/herdr/config.toml.bk"
+  mv "$CONFIG_PATH/herdr/config.toml" "$CONFIG_PATH/herdr/config.toml.bk"
+fi
+echo "Create symbolic link [$CONFIG_PATH/herdr/config.toml -> $CURRENT_DIRECTORY/.config/herdr/config.toml]"
+ln -sfn "$CURRENT_DIRECTORY/.config/herdr/config.toml" "$CONFIG_PATH/herdr/config.toml"
+
+echo '╭──────────────────────────────────────────────────────────╮'
 echo '│                          Other                           │'
 echo '╰──────────────────────────────────────────────────────────╯'
 dotfiles=(bin .zprezto .zshrc .zpreztorc .zprofile .p10k.zsh .tmux.conf .tmux .hyper.js .Brewfile)
