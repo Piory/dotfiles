@@ -4,5 +4,9 @@ sidebar_min_width = 18
 sidebar_max_width = 72
 agent_panel_sort = "priority"
 
+show_agent_labels_on_pane_borders = true
 [keys]
 split_vertical = ["prefix+v", "prefix+|"]
+
+[ui.toast]
+delivery = "system"

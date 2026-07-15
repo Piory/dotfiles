@@ -1,5 +1,5 @@
 model = "gpt-5.6-sol"
-model_reasoning_effort = "ultra"
+model_reasoning_effort = "xhigh"
 project_doc_fallback_filenames = [ "CLAUDE.md" ]
 hide_agent_reasoning = true
 approval_policy = "on-request"
@@ -9,7 +9,8 @@ plan_mode_reasoning_effort = "high"
 approvals_reviewer = "guardian_subagent"
 service_tier = "fast"
 suppress_unstable_features_warning = true
-notify = [ "/Users/piory/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended" ]
+
+notify = ["/Users/piory/.codex/plugins/cache/openai-bundled/computer-use/1.0.1000366/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
 
 [agents]
 max_threads = 6
@@ -59,15 +60,15 @@ BROWSER_USE_CODEX_APP_VERSION = "26.707.31428"
 SKY_CUA_SERVICE_PATH = "/Users/piory/.codex/plugins/cache/openai-bundled/computer-use/1.0.1000366/Codex Computer Use.app"
 CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex"
 
+[mcp_servers.computer-use]
+command = "./Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient"
+args = [ "mcp" ]
+cwd = "."
+enabled = false
+
 [mcp_servers.pencil]
 command = "/Applications/Pencil.app/Contents/Resources/app.asar.unpacked/out/mcp-server-darwin-arm64"
 args = [ "--app", "desktop", "--agent", "codexCLI" ]
-
-[mcp_servers.computer-use]
-command = "./Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient"
-args = ["mcp"]
-cwd = "."
-enabled = false
 
 [memories]
 generate_memories = true
@@ -229,8 +230,6 @@ global = "ghostty"
 
 [desktop.open-in-target-preferences.perPath]
 "/Users/piory/git/github.com/yu-dot-limited/pos_system" = "ghostty"
-
-[hooks.state]
 
 [hooks.state."/Users/piory/.codex/hooks.json:pre_tool_use:0:0"]
 trusted_hash = "sha256:be22864d6941d9bcae2d28e1a83501f712a5b8932fa15dcf62f00b488055edf3"
