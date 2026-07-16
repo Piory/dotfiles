@@ -188,7 +188,7 @@ source_type = "local"
 source = "/Users/piory/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-07-16T06:47:42Z"
+last_updated = "2026-07-16T07:47:41Z"
 source_type = "local"
 source = "/Users/piory/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
