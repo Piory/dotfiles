@@ -120,6 +120,17 @@ echo "Create symbolic link [$CONFIG_PATH/herdr/config.toml -> $CURRENT_DIRECTORY
 ln -sfn "$CURRENT_DIRECTORY/.config/herdr/config.toml" "$CONFIG_PATH/herdr/config.toml"
 
 echo '╭──────────────────────────────────────────────────────────╮'
+echo '│                        Hunk Config                       │'
+echo '╰──────────────────────────────────────────────────────────╯'
+mkdir -p "$CONFIG_PATH/hunk"
+if [[ -e "$CONFIG_PATH/hunk/config.toml" && ! -L "$CONFIG_PATH/hunk/config.toml" ]]; then
+  echo "Backing up existing: $CONFIG_PATH/hunk/config.toml to $CONFIG_PATH/hunk/config.toml.bk"
+  mv "$CONFIG_PATH/hunk/config.toml" "$CONFIG_PATH/hunk/config.toml.bk"
+fi
+echo "Create symbolic link [$CONFIG_PATH/hunk/config.toml -> $CURRENT_DIRECTORY/.config/hunk/config.toml]"
+ln -sfn "$CURRENT_DIRECTORY/.config/hunk/config.toml" "$CONFIG_PATH/hunk/config.toml"
+
+echo '╭──────────────────────────────────────────────────────────╮'
 echo '│                          Other                           │'
 echo '╰──────────────────────────────────────────────────────────╯'
 dotfiles=(bin .zprezto .zshrc .zpreztorc .zprofile .p10k.zsh .tmux.conf .tmux .hyper.js .Brewfile)
