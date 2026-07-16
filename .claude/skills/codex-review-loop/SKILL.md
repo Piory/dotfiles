@@ -70,6 +70,16 @@ node "<codex-companion.mjs のパス>" review "" # 例: ~/.claude/plugins/cache/
 - **完了待ち**: `herdr pane read <pane>` を until ループで監視し、ステータスが `Working`→`Ready`
   に安定するまで待つ（run_in_background の Bash + `while ... grep -q "Working"; do sleep 15; done`）。
   古い `Worked for` マーカーを拾って早発火しないよう、`Working` の消失で判定する。
+- **質問対応（重要・`Working` の消失＝完了とは限らない）**: Codex は作業中に**承認/質問プロンプトで一時停止**
+  することがある。監視ループが発火したら必ず画面を読み、「**質問か完了か**」を判別する。
+  - **質問なら即回答してから作業継続**（放置すると止まったまま進まない）。回答方法（TUI）:
+    選択肢は数字/矢印で選び、既定は `Recommended`。注記を付けるなら
+    `send-keys <pane> "tab"` → `send-text <pane> "<注記>"` → `send-keys <pane> "enter"`。
+    注記不要なら `send-keys <pane> "enter"` で既定選択を送信。
+  - Codex の指摘が誤っていれば（例: 誤った API 非推奨情報）**注記で訂正を添えてから**正しい選択肢を選ぶ。
+  - Codex は「認知していない変更」（自分が作っていない未追跡ファイル等）を検知して確認してくることがある
+    → 意図的なら「意図的な変更（触れず続行）」を選び、理由を注記する。
+  - **完了なら**（`─ Worked for ... ─` の区切り＋最終報告が出て `Ready`）ステップ6の検証へ。
 
 ### 6. 自分の環境で検証（Codex の報告を鵜呑みにしない）
 - プロジェクトのテスト・型チェック・（あれば）ビルドを自分で回す。件数が減っていないか確認。
