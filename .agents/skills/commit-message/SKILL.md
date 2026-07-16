@@ -1,6 +1,7 @@
 ---
 name: commit-message
 description: Git差分を確認して、日本語・絵文字付きConventional Commit形式のコミットメッセージを作成し、必要ならコミットまで実行する。
+model: sonnet
 ---
 
 # コミットメッセージ作成スキル
