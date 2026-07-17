@@ -1,7 +1,8 @@
 model = "gpt-5.6-sol"
-model_reasoning_effort = "max"
+model_reasoning_effort = "xhigh"
 project_doc_fallback_filenames = [ "CLAUDE.md" ]
-hide_agent_reasoning = true
+hide_agent_reasoning = false
+show_raw_agent_reasoning = true
 approval_policy = "on-request"
 sandbox_mode = "workspace-write"
 personality = "pragmatic"
