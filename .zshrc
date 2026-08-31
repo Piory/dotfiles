@@ -99,3 +99,6 @@ function preset_git_sign_passphrase() {
   eval $(op signin)
   env GPG_PASSPHRASE="op://Personal/GPG/password" op run --no-masking -- printenv GPG_PASSPHRASE | /opt/homebrew/opt/gnupg/libexec/gpg-preset-passphrase --preset 7A330973950FF9601B84AF2F0F7D62BEC117C6E1
 }
+
+# direnv（ディレクトリ単位の環境変数自動切替）
+eval "$(direnv hook zsh)"
