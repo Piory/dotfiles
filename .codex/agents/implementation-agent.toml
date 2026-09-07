@@ -1,6 +1,6 @@
 name = "implementation-agent"
 description = "親エージェントが承認した実装仕様に従い、必要なコード変更、整理、テスト、検証を完了して結果を報告する。"
-model = "gpt-5.6-sol"
+model = "gpt-6-astra"
 model_reasoning_effort = "xhigh"
 sandbox_mode = "workspace-write"
 developer_instructions = """

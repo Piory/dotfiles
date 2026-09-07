@@ -1,6 +1,6 @@
 name = "implementation-planner"
 description = "実装要求を既存コード・ドメイン文書と照合し、質問を親エージェント経由で解決して、承認可能な実装仕様を作成する。"
-model = "gpt-5.6-sol"
+model = "gpt-6-astra"
 model_reasoning_effort = "max"
 sandbox_mode = "read-only"
 developer_instructions = """
