@@ -4,7 +4,7 @@
       "mcp__pencil"
     ]
   },
-  "model": "claude-fable-5[1m]",
+  "model": "opus[1m]",
   "statusLine": {
     "type": "command",
     "command": "sh ~/.claude/statusline-command.sh"
@@ -22,6 +22,8 @@
     }
   },
   "effortLevel": "xhigh",
+  "askUserQuestionTimeout": "never",
+  "dialogExpiry": "never",
   "skipDangerousModePermissionPrompt": true,
   "theme": "dark-ansi",
   "editorMode": "vim",
