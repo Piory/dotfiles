@@ -182,13 +182,23 @@ echo '│                          Codex                           │'
 echo '╰──────────────────────────────────────────────────────────╯'
 # .codexディレクトリの処理（存在する場合のみ）
 if [[ -d ".codex" ]]; then
+  # グローバル設定本体を専用名から config.toml にリンクする。
+  # 入力: HOME と CURRENT_DIRECTORY。出力: ホーム側の設定リンク。
+  # 設定本体が通常ファイルでない場合は標準エラーへ診断を出力し、終了コード 1 で中断する。
+  if [[ ! -f "$CURRENT_DIRECTORY/.codex/user-config.toml" ]]; then
+    printf 'エラー: %s が通常ファイルとして存在しません。設定リンクを変更せず中断します。\n' "$CURRENT_DIRECTORY/.codex/user-config.toml" >&2
+    exit 1
+  fi
   mkdir -p "$HOME/.codex"
-  echo "Creating symbolic link [$HOME/.codex/config.toml -> $CURRENT_DIRECTORY/.codex/config.toml]"
-  ln -fs "$CURRENT_DIRECTORY/.codex/config.toml" "$HOME/.codex/config.toml"
-  # .codex内の各ファイルをシンボリックリンク
+  echo "Creating symbolic link [$HOME/.codex/config.toml -> $CURRENT_DIRECTORY/.codex/user-config.toml]"
+  ln -fs "$CURRENT_DIRECTORY/.codex/user-config.toml" "$HOME/.codex/config.toml"
+  # .codex 内の通常ファイルをホーム側の同名リンクにする。設定本体2種は専用リンクを保つため除外する。
   for file in .codex/*; do
     if [[ -f "$file" ]]; then
       filename=$(basename "$file")
+      if [[ "$filename" == "config.toml" || "$filename" == "user-config.toml" ]]; then
+        continue
+      fi
       echo "Creating symbolic link [$HOME/.codex/$filename -> $CURRENT_DIRECTORY/.codex/$filename]"
       ln -fs "$CURRENT_DIRECTORY/$file" "$HOME/.codex/$filename"
     fi
@@ -205,15 +215,22 @@ if [[ -d ".codex" ]]; then
     ln -sfn "$CURRENT_DIRECTORY/.codex/prompts" "$HOME/.codex/prompts"
   fi
 
-  # .codex/skills ディレクトリの処理（ディレクトリ自体をシンボリックリンク）
-  if [[ -d ".codex/skills" ]]; then
-    # 既存の $HOME/.codex/skills を $HOME/.codex/skills.bk にリネーム（実体がディレクトリの場合のみ）
-    if [[ -e $HOME/.codex/skills && ! -L $HOME/.codex/skills ]]; then
-      echo "Backing up existing: $HOME/.codex/skills to $HOME/.codex/skills.bk"
-      mv $HOME/.codex/skills $HOME/.codex/skills.bk
+  # Codex が .system を展開する領域はリンクせず、共有スキルは ~/.agents/skills を使う。
+  # 入力: HOME と CURRENT_DIRECTORY。既知の壊れた旧リンクだけを復旧する。
+  # 不明な状態や操作失敗では終了コード 1 で中断し、それ以外は既存内容を維持する。
+  if [[ -L "$HOME/.codex/skills" && ! -e "$HOME/.codex/skills" ]]; then
+    # 末尾の改行も比較に残し、別パスを既知の旧リンクと誤認しない。
+    if [[ "$(readlink -n "$HOME/.codex/skills" && printf '.')" != "$CURRENT_DIRECTORY/.codex/skills." ]]; then
+      printf 'エラー: %s は不明なリンク先の壊れたシンボリックリンクです。変更せず中断します。\n' "$HOME/.codex/skills" >&2
+      exit 1
     fi
-    echo "Creating symbolic link [$CURRENT_DIRECTORY/.codex/skills -> $HOME/.codex/skills]"
-    ln -sfn "$CURRENT_DIRECTORY/.codex/skills" "$HOME/.codex/skills"
+    unlink "$HOME/.codex/skills" || exit 1
+  elif [[ -e "$HOME/.codex/skills" && ! -d "$HOME/.codex/skills" && ! -L "$HOME/.codex/skills" ]]; then
+    printf 'エラー: %s はディレクトリでも有効なシンボリックリンクでもありません。変更せず中断します。\n' "$HOME/.codex/skills" >&2
+    exit 1
+  fi
+  if [[ ! -e "$HOME/.codex/skills" && ! -L "$HOME/.codex/skills" ]]; then
+    mkdir "$HOME/.codex/skills" || exit 1
   fi
 
   # .codex/agents ディレクトリの処理（ディレクトリ自体をシンボリックリンク）
