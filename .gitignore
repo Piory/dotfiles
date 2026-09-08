@@ -10,6 +10,8 @@ Brewfile.lock.json
 
 .java-version
 
+__pycache__/
+
 !.claude
 !.claude/*
 .claude/settings.local.json
