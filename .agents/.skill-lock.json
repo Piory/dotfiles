@@ -210,6 +210,15 @@
       "pluginName": "mattpocock-skills",
       "installedAt": "2026-08-31T12:16:58.600Z",
       "updatedAt": "2026-08-31T12:16:58.600Z"
+    },
+    "natural-japanese": {
+      "source": "coji/natural-japanese",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/coji/natural-japanese.git",
+      "skillPath": "skills/natural-japanese/SKILL.md",
+      "skillFolderHash": "77fce8fc457a41321ac4963065590fb91c14f781",
+      "installedAt": "2026-09-08T07:45:45.799Z",
+      "updatedAt": "2026-09-08T07:45:45.799Z"
     }
   },
   "dismissed": {
