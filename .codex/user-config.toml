@@ -43,8 +43,7 @@ args = [
   "start-mcp-server",
   "--context",
   "codex",
-  "--project",
-  "$(pwd)"
+  "--project-from-cwd"
 ]
 startup_timeout_sec = 60
 
