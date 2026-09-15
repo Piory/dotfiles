@@ -219,6 +219,15 @@
       "skillFolderHash": "77fce8fc457a41321ac4963065590fb91c14f781",
       "installedAt": "2026-09-08T07:45:45.799Z",
       "updatedAt": "2026-09-08T07:45:45.799Z"
+    },
+    "seo-audit": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/coreyhaines31/marketingskills.git",
+      "skillPath": "skills/seo-audit/SKILL.md",
+      "skillFolderHash": "88e419e823dc951fc243243ec91e888c5088f7f1",
+      "installedAt": "2026-09-11T13:01:51.415Z",
+      "updatedAt": "2026-09-11T13:01:51.415Z"
     }
   },
   "dismissed": {
