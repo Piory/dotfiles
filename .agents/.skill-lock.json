@@ -6,10 +6,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/supabase/agent-skills.git",
       "skillPath": "skills/supabase-postgres-best-practices/SKILL.md",
-      "skillFolderHash": "6f1495c72c918e6f80c2f69df9005eacd5c57d7a",
-      "pluginName": "postgres-best-practices",
+      "skillFolderHash": "27bde25111c4cd5e6f803fc9db5fbffe27bb26cf",
       "installedAt": "2026-01-26T01:40:04.498Z",
-      "updatedAt": "2026-06-06T09:23:30.785Z"
+      "updatedAt": "2026-09-15T02:18:39.257Z"
     },
     "vercel-react-best-practices": {
       "source": "vercel-labs/agent-skills",
@@ -52,9 +51,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/vercel-labs/skills.git",
       "skillPath": "skills/find-skills/SKILL.md",
-      "skillFolderHash": "3013fdeb8a11b10b1eb795ec3ae8bfca38f7c26d",
+      "skillFolderHash": "76a98a285cb0434f3d39e1a873823556330e398b",
       "installedAt": "2026-01-29T06:42:58.651Z",
-      "updatedAt": "2026-03-24T05:18:45.630Z"
+      "updatedAt": "2026-09-15T02:18:43.954Z"
     },
     "android-design-guidelines": {
       "source": "ehmo/platform-design-skills",
@@ -97,64 +96,54 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git",
       "skillPath": ".claude/skills/ui-ux-pro-max/SKILL.md",
-      "skillFolderHash": "75e1acaafe8b08e59d4b86fc253ac7873aff6bba",
+      "skillFolderHash": "f0415e89eeadda8933a49a3f432acae52fa542aa",
       "installedAt": "2026-02-17T01:28:36.188Z",
-      "updatedAt": "2026-03-10T06:06:53.660Z"
+      "updatedAt": "2026-09-15T02:18:52.774Z"
     },
     "frontend-design": {
       "source": "anthropics/skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/anthropics/skills.git",
       "skillPath": "skills/frontend-design/SKILL.md",
-      "skillFolderHash": "0d5b74a14bdf3ebcd64f352d06376a2ef05ed296",
+      "skillFolderHash": "d79e2a5bb4df4a386c2adcdd9ab8709bba28c3f6",
       "installedAt": "2026-02-17T01:31:47.346Z",
-      "updatedAt": "2026-06-16T04:51:54.736Z"
+      "updatedAt": "2026-09-15T02:18:57.996Z"
     },
     "brainstorming": {
       "source": "obra/superpowers",
       "sourceType": "github",
       "sourceUrl": "https://github.com/obra/superpowers.git",
       "skillPath": "skills/brainstorming/SKILL.md",
-      "skillFolderHash": "f260c775073816860fef8a37c032ac77e2ff5821",
+      "skillFolderHash": "881fc4ac82a25e61a58d332426b5673efe060da0",
       "installedAt": "2026-02-17T01:33:03.216Z",
-      "updatedAt": "2026-04-19T06:43:22.305Z"
+      "updatedAt": "2026-09-15T02:19:02.169Z"
     },
     "playwright-cli": {
       "source": "microsoft/playwright-cli",
       "sourceType": "github",
       "sourceUrl": "https://github.com/microsoft/playwright-cli.git",
       "skillPath": "skills/playwright-cli/SKILL.md",
-      "skillFolderHash": "6bf055ae36a2460e4a8f70eaec772ab7ac7e12e4",
+      "skillFolderHash": "10104bd92881e5ca5688f0a2cd1372e3c0e413a9",
       "installedAt": "2026-02-28T02:44:52.006Z",
-      "updatedAt": "2026-06-16T04:51:58.123Z"
+      "updatedAt": "2026-09-15T02:19:06.377Z"
     },
     "vercel-cli": {
       "source": "vercel/vercel",
       "sourceType": "github",
       "sourceUrl": "https://github.com/vercel/vercel.git",
       "skillPath": "skills/vercel-cli/SKILL.md",
-      "skillFolderHash": "68b73c64ef914318faa6d569981a26e853f82deb",
+      "skillFolderHash": "99e54d3ab28a4db88b5adf9b3742ac50676318de",
       "installedAt": "2026-03-24T05:23:14.092Z",
-      "updatedAt": "2026-06-16T04:52:04.123Z"
-    },
-    "next-best-practices": {
-      "source": "vercel-labs/next-skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/vercel-labs/next-skills.git",
-      "skillPath": "skills/next-best-practices/SKILL.md",
-      "skillFolderHash": "a236d702277c5364cf6f540712a8dddb46e79a46",
-      "installedAt": "2026-03-24T05:24:53.413Z",
-      "updatedAt": "2026-05-06T09:31:55.507Z"
+      "updatedAt": "2026-09-15T02:19:09.370Z"
     },
     "supabase": {
       "source": "supabase/agent-skills",
       "sourceType": "github",
       "sourceUrl": "https://github.com/supabase/agent-skills.git",
       "skillPath": "skills/supabase/SKILL.md",
-      "skillFolderHash": "9911179cac6d704329e20c6d27b94175121a4160",
-      "pluginName": "supabase",
+      "skillFolderHash": "3c890031c3df7b4ea2561bd3a452a94df0e9a53d",
       "installedAt": "2026-04-16T08:27:24.884Z",
-      "updatedAt": "2026-06-06T09:23:30.787Z"
+      "updatedAt": "2026-09-15T02:18:43.384Z"
     },
     "chrome-devtools": {
       "source": "github/awesome-copilot",
@@ -170,9 +159,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/mattpocock/skills.git",
       "skillPath": "skills/engineering/grill-with-docs/SKILL.md",
-      "skillFolderHash": "2c3a4e48571bfe42203ed7b49cae85f31ef4b6f2",
+      "skillFolderHash": "eedaf2562c83155115e9c649fa3ecaac2e10e81d",
       "installedAt": "2026-05-22T00:13:55.731Z",
-      "updatedAt": "2026-06-16T04:52:01.723Z"
+      "updatedAt": "2026-09-15T02:19:14.268Z"
     },
     "simplify": {
       "source": "brianlovin/claude-config",
@@ -191,15 +180,6 @@
       "skillFolderHash": "514dae05ae0a71196e21e6b23657c857b577e9cd",
       "installedAt": "2026-06-17T06:57:46.577Z",
       "updatedAt": "2026-06-17T06:57:46.577Z"
-    },
-    "herdr": {
-      "source": "ogulcancelik/herdr",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/ogulcancelik/herdr.git",
-      "skillPath": "SKILL.md",
-      "skillFolderHash": "c8850a2e3e284033142db0f8117fa5998c68bd59",
-      "installedAt": "2026-07-10T06:44:26.993Z",
-      "updatedAt": "2026-07-10T06:44:26.993Z"
     },
     "grilling": {
       "source": "mattpocock/skills",
@@ -228,6 +208,15 @@
       "skillFolderHash": "88e419e823dc951fc243243ec91e888c5088f7f1",
       "installedAt": "2026-09-11T13:01:51.415Z",
       "updatedAt": "2026-09-11T13:01:51.415Z"
+    },
+    "openai-docs": {
+      "source": "openai/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/openai/skills.git",
+      "skillPath": "skills/.curated/openai-docs/SKILL.md",
+      "skillFolderHash": "8d6942d62878ca60e546a1fc66b5e8f461954545",
+      "installedAt": "2026-09-15T02:17:06.583Z",
+      "updatedAt": "2026-09-15T02:17:06.583Z"
     }
   },
   "dismissed": {
@@ -246,7 +235,6 @@
     "kimi-code-cli",
     "opencode",
     "warp",
-    "zed",
-    "claude-code"
+    "zed"
   ]
 }
