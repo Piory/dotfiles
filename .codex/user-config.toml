@@ -129,6 +129,9 @@ trust_level = "trusted"
 [projects."/Users/piory/git/gitlab.com/Piory/ghosgent"]
 trust_level = "trusted"
 
+[projects."/Users/piory/git/github.com/Piory/smash-coach"]
+trust_level = "trusted"
+
 [notice]
 hide_rate_limit_model_nudge = true
 fast_default_opt_out = true
@@ -151,7 +154,7 @@ status_line_use_colors = true
 [tui.model_availability_nux]
 "gpt-5.5" = 4
 "gpt-5.6-sol" = 4
-gpt-6-astra = 3
+gpt-6-astra = 4
 
 [plugins."google-calendar@openai-curated"]
 enabled = true
@@ -210,6 +213,9 @@ enabled = true
 [plugins."unified-computer-use@openai-bundled"]
 enabled = true
 
+[plugins."ponytail@ponytail"]
+enabled = true
+
 [marketplaces.openai-bundled]
 source_type = "local"
 source = "/Users/piory/.codex/.tmp/bundled-marketplaces/openai-bundled"
@@ -217,6 +223,10 @@ source = "/Users/piory/.codex/.tmp/bundled-marketplaces/openai-bundled"
 [marketplaces.openai-primary-runtime]
 source_type = "local"
 source = "/Users/piory/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
+
+[marketplaces.ponytail]
+source_type = "git"
+source = "https://github.com/DietrichGebert/ponytail.git"
 
 [desktop]
 appearanceLightCodeThemeId = "codex"
@@ -266,6 +276,8 @@ global = "ghostty"
 [desktop.open-in-target-preferences.perPath]
 "/Users/piory/git/github.com/yu-dot-limited/pos_system" = "ghostty"
 
+[hooks.state]
+
 [hooks.state."/Users/piory/.codex/hooks.json:pre_tool_use:0:0"]
 trusted_hash = "sha256:be22864d6941d9bcae2d28e1a83501f712a5b8932fa15dcf62f00b488055edf3"
 
@@ -283,3 +295,12 @@ trusted_hash = "sha256:086f9f0324fd43dd9d478ab1aa29da75865dca08c58b0bea85aee6ab3
 
 [hooks.state."/Users/piory/.codex/hooks.json:session_start:1:0"]
 trusted_hash = "sha256:aeb8351051c90d7d514547e390df885063b8d7e5b406c43c6e2704c10919bb87"
+
+[hooks.state."ponytail@ponytail:hooks/claude-codex-hooks.json:session_start:0:0"]
+trusted_hash = "sha256:5f81d38f47448a1581c08ec877e044d9e04dd6f814dce3f2671f7a8edadd719b"
+
+[hooks.state."ponytail@ponytail:hooks/claude-codex-hooks.json:user_prompt_submit:0:0"]
+trusted_hash = "sha256:6a6f42bc3b58d6262db38bfd74d7f340fcca2b09cdb134aad365063f0bfefca4"
+
+[hooks.state."ponytail@ponytail:hooks/claude-codex-hooks.json:subagent_start:0:0"]
+trusted_hash = "sha256:1423b56c1322f96c8f74c51c1e7ae9a047b904c1fa43ee9165d462fd7a6e70ef"
