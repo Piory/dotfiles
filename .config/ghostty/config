@@ -52,3 +52,8 @@ font-size = 13
 theme = tokyonight
 font-thicken = true
 desktop-notifications = true
+
+# >>> herdr-radar font block
+font-codepoint-map = U+E1A0-U+E1B6="Herdr Agent Icons Max"
+font-codepoint-map = U+E1C0-U+E1C5="Herdr Agent Icons Max"
+# <<< herdr-radar font block
