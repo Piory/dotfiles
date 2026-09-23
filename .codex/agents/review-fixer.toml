@@ -1,6 +1,6 @@
 name = "review-fixer"
 description = "親エージェントが事実確認した codex review の指摘だけを、承認済み仕様を維持したまま最小範囲で修正して検証する。"
-model = "gpt-5.6-sol"
+model = "gpt-6-sol"
 model_reasoning_effort = "xhigh"
 sandbox_mode = "workspace-write"
 developer_instructions = """
