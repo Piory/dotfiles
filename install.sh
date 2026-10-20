@@ -182,21 +182,21 @@ echo '│                          Codex                           │'
 echo '╰──────────────────────────────────────────────────────────╯'
 # .codexディレクトリの処理（存在する場合のみ）
 if [[ -d ".codex" ]]; then
-  # グローバル設定本体を専用名から config.toml にリンクする。
+  # リポジトリの設定本体をホーム側の config.toml にリンクする。
   # 入力: HOME と CURRENT_DIRECTORY。出力: ホーム側の設定リンク。
   # 設定本体が通常ファイルでない場合は標準エラーへ診断を出力し、終了コード 1 で中断する。
-  if [[ ! -f "$CURRENT_DIRECTORY/.codex/user-config.toml" ]]; then
-    printf 'エラー: %s が通常ファイルとして存在しません。設定リンクを変更せず中断します。\n' "$CURRENT_DIRECTORY/.codex/user-config.toml" >&2
+  if [[ ! -f "$CURRENT_DIRECTORY/.codex/config.toml" ]]; then
+    printf 'エラー: %s が通常ファイルとして存在しません。設定リンクを変更せず中断します。\n' "$CURRENT_DIRECTORY/.codex/config.toml" >&2
     exit 1
   fi
   mkdir -p "$HOME/.codex"
-  echo "Creating symbolic link [$HOME/.codex/config.toml -> $CURRENT_DIRECTORY/.codex/user-config.toml]"
-  ln -fs "$CURRENT_DIRECTORY/.codex/user-config.toml" "$HOME/.codex/config.toml"
-  # .codex 内の通常ファイルをホーム側の同名リンクにする。設定本体2種は専用リンクを保つため除外する。
+  echo "Creating symbolic link [$HOME/.codex/config.toml -> $CURRENT_DIRECTORY/.codex/config.toml]"
+  ln -fs "$CURRENT_DIRECTORY/.codex/config.toml" "$HOME/.codex/config.toml" || exit 1
+  # 設定本体は上でリンク済みのため除外する。
   for file in .codex/*; do
     if [[ -f "$file" ]]; then
       filename=$(basename "$file")
-      if [[ "$filename" == "config.toml" || "$filename" == "user-config.toml" ]]; then
+      if [[ "$filename" == "config.toml" ]]; then
         continue
       fi
       echo "Creating symbolic link [$HOME/.codex/$filename -> $CURRENT_DIRECTORY/.codex/$filename]"
