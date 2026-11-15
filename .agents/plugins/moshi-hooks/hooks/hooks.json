@@ -1,0 +1,48 @@
+{
+  "hooks": {
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/opt/homebrew/opt/moshi-hook/bin/moshi-hook' goose-hook",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/opt/homebrew/opt/moshi-hook/bin/moshi-hook' goose-hook",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/opt/homebrew/opt/moshi-hook/bin/moshi-hook' goose-hook",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/opt/homebrew/opt/moshi-hook/bin/moshi-hook' goose-hook",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
