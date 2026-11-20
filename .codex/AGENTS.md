@@ -1,66 +1,40 @@
-# 品質保証ルール
-- 必ず日本語で回答すること
-- 回答では、なんでもかんでも箇条書きにせず、比較・一覧・対応関係などテーブル表記が適している場合はテーブルを使用すること
-- ハルシネーション禁止：事実確認できない内容を断言しないこと
-- 不明な場合は「わかりません」と答える
-- 推測の場合は必ず「（推測です）」と明記する
-- 仕様・対象範囲・権限の判断に必要な情報が不足する場合は質問すること。コードや文書で確認できる事実は先に調査し、憶測で補わないこと
-- ユーザーに質問するときは `question` を使用すること
-- 非同期質問は、質問が二重送信される不具合があるため使用しないこと。
-- ユーザーの判断・承認が必要な質問では、明示的な回答を得るまで、その判断に依存する作業を進めないこと。質問ツールの時間切れ、空の回答、未送信の推奨選択肢をユーザーの回答・同意・承認とみなさないこと。
-- 質問が時間切れになった場合は、未回答であることと必要な確認事項を通常のメッセージで伝え、回答待ちとして停止すること。自動で推奨案を採用したり、同じ質問ツールを無限に再実行したりしないこと。
-- この回答待ちルールはエージェントの行動を制約するものであり、Codex の質問画面側のタイマーを無効化するものではない。`AGENTS.md` への記載だけでタイムアウトを無効化できると説明しないこと。
-- コミットやコミットメッセージを生成する際は、それだけに集中し、他もファイルを変更しないこと
-- セキュリティに関する内容は特に慎重に扱い、誤情報を提供しないこと
-- 余計な作業は行わないこと。指示された内容にのみ集中すること
-- 認知していない変更があった場合は、元に戻さずに意図的な変更か必ずユーザーへ確認すること
+# 作業範囲と確認
+
+- 依頼の成果物と完了条件を確認し、許可された実装・修正・安全なローカル検証は、再承認を求めず完了まで進める。調査のみの依頼ではファイルを変更しない。
+- コードや文書で確認できることは先に調べる。仕様・対象範囲・権限についてユーザーの判断が必要な場合や、未承認の範囲拡大・破壊的操作・外部への変更・追加権限が必要な場合は、実行前に確認する。
+- ユーザーへの質問には同期の User Question（`request_user_input`）を使う。二重送信を避けるため、非同期質問は使わない。
+- 時間切れ・空回答・未送信の選択肢は承認ではない。未回答なら確認事項を本文で伝え、同じ質問ツールを繰り返さず、明示的な返答があるまでその判断に依存する作業を止める。このルールは質問画面のタイマーを無効にするものではない。
+- 身に覚えのない差分を見つけたら、元に戻したりコミットに含めたりせず、意図した変更か確認する。
+- コミットやコミットメッセージの作成を依頼されたときは、作業ファイルを編集しない。push と PR 作成は、それぞれ明示的に依頼された場合だけ行う。
 - Pythonなどのコード実行を禁止します。ただし、`.agents/skills` 内の Python ファイル実行は許可します。
-- 指示があるまで PR の作成は行わないこと
-- ユーザーの明示的な指示がない限り、勝手に push しないこと
-- ライブラリの使い方を確認する際は find-docs スキルを使用すること
-- テストを作成する場合は、必ず `$単体テスト設計・実装` スキルを確認すること
-- 原則として親エージェント自身が仕様整理、実装、検証、レビュー指摘の修正を行うこと。サブエージェントへの委譲は、ユーザーが明示的に依頼した場合のみ行うこと。コミット作業もこの原則に従う。
-- 既存の `commit_message_writer`、`implementation-planner`、`implementation-agent`、`review-fixer` を新規起動する際は、親が起動ツールの引数に `fork_turns: "2"` を明示し、親の直近2ターンを引き継ぐこと。古いターンにある必要な仕様・制約・判断は依頼文に補うこと。これは起動時の指定であり、設定ファイルへの追加や起動済みエージェントへの遡及適用は行わない。
-- 起動ツールが `fork_turns` を受け付けない場合は、未対応の引数を渡したり、全履歴の継承で代用したりせず、制約を報告して代替方法を確認すること。
-- `implementation-workflow` は必須とせず、ユーザーがサブエージェントによる実装を明示的に依頼した場合のみ使用すること。
-- コード変更を伴う実装後は、必ず `review-loop` スキルを使用し、`codex review`、指摘の事実確認、修正・検証、再レビューを、未解決の有効な指摘がなくなるまで行うこと。`codex review` の別プロセス実行は許可し、サブエージェントへの委譲とは区別する。
-- レビュー専用の Codex プロセス、および親がレビューを担当すると明示されたサブエージェントは、`review-loop` を再実行しないこと。レビュー失敗や修正不能で停止した場合は、完了扱いにせず未解決事項を報告すること。
-- アプリケーションの実装コードに直接影響しない文書・説明・エージェント向け指示のみの変更では、`review-loop` の実施は不要とする。ただし、ユーザーがレビューを明示的に依頼した場合は実施する。
 
-# ライブラリの調査・採用方針
-- 実装前に、必要な機能を実現できる既存ライブラリがないか調査すること。要件を満たすものがあれば、独自実装よりもその利用を優先すること。まず標準機能や導入済みのライブラリで対応できないか確認し、不要な依存関係は増やさないこと。
-- 採用判断では、GitHubのスター数、パッケージのダウンロード数、継続的なメンテナンスの有無を重視すること。保守状況は、リリース履歴やIssue・PRへの対応などから確認すること。人気の高さだけで決めず、要件への適合性、互換性、ライセンス、セキュリティも確認すること。
-- ライブラリを採用した場合は、名称、用途、採用理由を必ずユーザーに報告すること。判断の根拠として、確認した利用実績や保守状況を参照元とともに示し、確認できなかった情報はその旨を明記すること。
+# 回答
 
-# 作業範囲と完了条件
-- 依頼内容から成果物と完了条件を明確にし、許可済み範囲の実装・修正・安全なローカル検証は、その都度の再承認を求めず完了まで進めること。初回実装だけで終了せず、必要な検証とレビューを含めること。
-- 仕様・範囲の拡大、破壊的操作、外部への変更、追加権限が必要な操作は、依頼に含まれるか確認し、許可がなければ実行前に質問すること。未回答を承認とみなさないこと。
-- 検証は変更の影響範囲と受け入れ条件に合わせて選ぶこと。現在の差分に対する成功済みの結果は再利用し、変更の影響を受ける検証は再実行すること。全体検証は共有基盤への影響やリポジトリの必須条件がある場合に行うこと。
-- 必要な検証の失敗・未実行や未解決事項があれば、完了扱いにせず、理由と残存事項を報告すること。
+- 日本語で回答する。比較や対応関係は、箇条書きより読み取りやすければ表にする。
+- 確認できないことは断言しない。不明なら「わかりません」、推測なら「（推測です）」と明記する。特にセキュリティに関する回答では根拠を確認する。
 
-# ファイルの参照ルール
-- 適用される指示を確認したうえで、対象コード、呼び出し元、関連テストなど今回の判断に必要な範囲を読むこと。毎回の全リポジトリ調査や無関係な文書・スキルの一括読み込みは行わないこと。
-- ファイルの参照や検索を行う際は Serena MCP を使用すること
-- Serena MCP を使用する対象は、Codex が参照しているワークスペース内のファイルのみとすること
-- ワークスペース外のファイル取得には Serena MCP を使用しないこと
-- スキル関連の取得には Serena MCP を使用しないこと
+# ファイルと資料の参照
 
-<!-- context7 -->
-Use the `ctx7` CLI to fetch current documentation whenever the user asks about a library, framework, SDK, API, CLI tool, or cloud service — even well-known ones like React, Next.js, Prisma, Express, Tailwind, Django, or Spring Boot. This includes API syntax, configuration, version migration, library-specific debugging, setup instructions, and CLI tool usage. Use even when you think you know the answer — your training data may not reflect recent changes. Prefer this over web search for library docs.
+- 適用される指示を確認し、対象コード・呼び出し元・関連テストなど、今回の判断に必要な範囲だけを読む。
+- ワークスペース内のファイルの参照・検索には Serena MCP を使う。ただし、スキル関連のファイルとワークスペース外のファイルには使わない。
+- ライブラリ・フレームワーク・SDK・API・CLI・クラウドサービスの使い方や仕様は `find-docs` スキルで確認する。資料を取得できなければその旨を伝え、未確認の仕様を断言しない。
 
-Do not use for: refactoring, writing scripts from scratch, debugging business logic, code review, or general programming concepts.
+# ライブラリの採用
 
-## Steps
+- 実装前に、標準機能や導入済みのライブラリで要件を満たせるか確認する。不足する場合は既存ライブラリを調べ、適切なものがあれば独自実装より優先する。
+- 新しい依存を採用するときは、GitHub のスター数・ダウンロード数・保守状況（リリース履歴、Issue や PR への対応）を重視し、要件との適合性・互換性・ライセンス・セキュリティも確認する。
+- ライブラリを採用したら、名称・用途・採用理由を報告する。新規採用では利用実績と保守状況の出典を添え、確認できなかった項目も明記する。
 
-1. Resolve library: `npx ctx7@latest library <name> "<what to look up>"` — use the official library name with proper punctuation (e.g., "Next.js" not "nextjs", "Customer.io" not "customerio", "Three.js" not "threejs")
-2. Pick the best match (ID format: `/org/project`) by: exact name match, description relevance, code snippet count, source reputation (High/Medium preferred), and benchmark score (higher is better). If results don't look right, try alternate names or queries (e.g., "next.js" not "nextjs", or rephrase the question)
-3. Fetch docs: `npx ctx7@latest docs <libraryId> "<what to look up>"` — run a separate `docs` command per distinct concept if the question spans multiple topics, unless it's about how they interact
-4. Answer using the fetched documentation
+# 検証と完了
 
-You MUST call `library` first to get a valid ID unless the user provides one directly in `/org/project` format. Be specific about what to look up in the library's documentation — specific and detailed queries return better results than vague single words, but keep each query to a single concept unless the question is about how concepts interact; combined multi-topic queries dilute ranking and return shallow results for each topic. Do not run more than 3 commands per question. Do not include sensitive information (API keys, passwords, credentials) in queries.
+- テストを作成・変更するときは、必ず `$単体テスト設計・実装` スキルを確認する。
+- 変更の影響範囲と完了条件に合う検証を行う。現在の差分で成功済みの結果は再利用し、その後の変更が影響する検証だけを再実行する。共有基盤に影響する場合やリポジトリで必須の場合は全体を検証する。
+- コード変更を伴う実装後は、必ず `review-loop` スキルを使い、有効な指摘が残らなくなるまで対応する。実装に直接影響しない文書・説明・エージェント向け指示のみの変更では、明示的なレビュー依頼がない限り不要。
+- `codex review` の別プロセス実行はサブエージェントへの委譲ではない。レビュー専用プロセスや、親がレビューを担当すると明示されたサブエージェントでは、`review-loop` を再実行しない。
+- 必要な検証・レビューが未実行または失敗した場合や、未解決事項がある場合は、完了とせず理由と残った作業を伝える。
 
-For version-specific docs, use `/org/project/version` from the `library` output (e.g., `/vercel/next.js/v14.3.0`).
+# サブエージェントへの委譲
 
-If a command fails with a quota error, inform the user and suggest `npx ctx7@latest login` or setting `CONTEXT7_API_KEY` env var for higher limits. Do not silently fall back to training data.
-Run Context7 CLI requests outside Codex's default sandbox. If a Context7 CLI command fails with DNS or network errors such as ENOTFOUND, host resolution failures, or fetch failed, rerun it outside the sandbox instead of retrying inside the sandbox.
-<!-- context7 -->
+- 仕様整理から実装・検証・レビュー指摘の修正・コミットまで、原則として親自身が行う。委譲はユーザーが明示的に依頼した場合だけ行い、実装の委譲には `implementation-workflow` を使う。
+- `commit_message_writer`、`implementation-planner`、`implementation-agent`、`review-fixer` の新規起動時は、起動ツールに `fork_turns: "2"` を指定する。直近2ターンより前の必要な仕様・制約・判断は依頼文に補う。この指定は設定ファイルには追加せず、起動済みのエージェントにも遡及しない。
+- 起動ツールが `fork_turns` に未対応なら、未対応の引数を渡したり全履歴の継承で代用したりせず、代替方法をユーザーに確認する。
